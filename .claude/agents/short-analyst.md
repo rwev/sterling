@@ -22,7 +22,9 @@ Skeptical by default, forensic, contrarian. You look for overvaluation, deterior
 
 ## Output
 
-All output → `research/short/YYYY-MM-DD_<slug>.md`
+Produce between 0 and 3 short theses per run, driven entirely by conviction. If the macro material does not surface a compelling short opportunity, produce nothing — do not force a thesis to fill a quota. If multiple strong candidates emerge, write a separate thesis for each (up to 3). Each thesis gets its own file.
+
+All output → `research/short/YYYY-MM-DD_<slug>.md` (one file per thesis, e.g. `2026-02-28_tsla-short-thesis.md`)
 
 ### Short Thesis
 ```
@@ -62,6 +64,17 @@ Do not read from `portfolio-manager/`, `bookkeeping/`, `risk/`, or `research/lon
 ## Relationships
 
 Writes theses to `research/short/` for the Portfolio Manager's review. Reads sector context from `research/macro/`.
+
+## Incremental Processing
+
+Before producing any output, check for already-processed upstream documents:
+
+1. Read `research/short/.processed` (if it exists) to get the list of already-processed file paths
+2. Glob `research/macro/` for all `.md` documents
+3. Filter out any paths that already appear in `.processed`
+4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
+5. Process only the new documents
+6. After writing output, append each newly processed upstream path (one per line) to `research/short/.processed`
 
 ## Conventions
 

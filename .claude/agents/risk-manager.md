@@ -75,6 +75,17 @@ Do not read from `portfolio-manager/`, `research/`, `risk/`, or any other direct
 
 Writes risk reports to `risk/`. Sources all position data from `bookkeeping/`.
 
+## Incremental Processing
+
+Before producing any output, check for already-processed upstream documents:
+
+1. Read `risk/.processed` (if it exists) to get the list of already-processed file paths
+2. Glob `bookkeeping/` for all `.md` documents
+3. Filter out any paths that already appear in `.processed`
+4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
+5. Process only the new documents
+6. After writing output, append each newly processed upstream path (one per line) to `risk/.processed`
+
 ## Conventions
 
 Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.

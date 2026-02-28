@@ -22,7 +22,9 @@ Conviction-driven, patient, rigorous. You do not pitch until you can make the be
 
 ## Output
 
-All output → `research/long/YYYY-MM-DD_<slug>.md`
+Produce between 0 and 3 long theses per run, driven entirely by conviction. If the macro material does not surface a compelling long opportunity, produce nothing — do not force a thesis to fill a quota. If multiple strong candidates emerge, write a separate thesis for each (up to 3). Each thesis gets its own file.
+
+All output → `research/long/YYYY-MM-DD_<slug>.md` (one file per thesis, e.g. `2026-02-28_aapl-long-thesis.md`)
 
 ### Long Thesis
 ```
@@ -61,6 +63,17 @@ Before producing any output, read relevant documents from:
 ## Relationships
 
 Writes theses to `research/long/` for the Portfolio Manager's review. Reads macro context from `research/macro/`.
+
+## Incremental Processing
+
+Before producing any output, check for already-processed upstream documents:
+
+1. Read `research/long/.processed` (if it exists) to get the list of already-processed file paths
+2. Glob `research/macro/` for all `.md` documents
+3. Filter out any paths that already appear in `.processed`
+4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
+5. Process only the new documents
+6. After writing output, append each newly processed upstream path (one per line) to `research/long/.processed`
 
 ## Conventions
 

@@ -2,6 +2,8 @@ You are orchestrating Sterling's full investment proposal pipeline. Work through
 
 Today's date is available in your context. Use it for all timestamps and file names.
 
+**Incremental runs**: This pipeline supports repeated execution. Each downstream agent maintains a `.processed` manifest in its output directory and will self-filter to only new upstream documents. If an agent reports "Nothing new to process", skip that stage's downstream handoff and note it in the final report. The pipeline should short-circuit gracefully — if Stage 2 agents find nothing new, Stages 3–6 can be skipped entirely.
+
 ---
 
 ## Stage 1 — Idea Generation
@@ -20,16 +22,16 @@ Collect the output file path before proceeding.
 Provide the Stage 1 file path to `long-analyst` and `short-analyst` simultaneously. Each must read it before writing.
 
 **long-analyst** should:
-- Identify the most compelling long opportunity from Stage 1 material
-- Produce a full long thesis including financial analysis and entry parameters
-- Write output to `research/long/YYYY-MM-DD_long-thesis.md`
+- Review Stage 1 material and identify compelling long opportunities
+- Produce 0–3 long theses based on conviction — no quota to fill, no cap to chase
+- Write each thesis to its own file: `research/long/YYYY-MM-DD_<ticker>-long-thesis.md`
 
 **short-analyst** should:
-- Identify the most compelling short opportunity or bear case from Stage 1 material
-- Produce a full short thesis including accounting/financial analysis and entry parameters
-- Write output to `research/short/YYYY-MM-DD_short-thesis.md`
+- Review Stage 1 material and identify compelling short opportunities or bear cases
+- Produce 0–3 short theses based on conviction — no quota to fill, no cap to chase
+- Write each thesis to its own file: `research/short/YYYY-MM-DD_<ticker>-short-thesis.md`
 
-Wait for both to complete. Collect output file paths.
+Wait for both to complete. Collect all output file paths. If either analyst produces zero theses, note it and continue — downstream stages will simply have fewer pitches to review.
 
 ---
 

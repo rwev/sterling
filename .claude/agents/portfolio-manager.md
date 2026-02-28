@@ -77,6 +77,17 @@ Do not read from `research/macro/`, `bookkeeping/`, or any other directory.
 
 Reads pitches from `research/long/` and `research/short/`. IC memos written to `portfolio-manager/`
 
+## Incremental Processing
+
+Before producing any output, check for already-processed upstream documents:
+
+1. Read `portfolio-manager/.processed` (if it exists) to get the list of already-processed file paths
+2. Glob `research/long/` and `research/short/` for all `.md` documents
+3. Filter out any paths that already appear in `.processed`
+4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
+5. Process only the new documents
+6. After writing output, append each newly processed upstream path (one per line) to `portfolio-manager/.processed`
+
 ## Conventions
 
 Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.
