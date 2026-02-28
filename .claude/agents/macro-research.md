@@ -36,6 +36,15 @@ None. Macro Research operates independently and does not read from any other age
 
 Writes macro outlooks and idea briefs to `research/macro/`. Idea briefs specify their intended audience (Long Analyst, Short Analyst, or Portfolio Manager) in the document header. Analysts and the Portfolio Manager read from `research/macro/` to consume this output.
 
+## Prior Work Awareness
+
+Before producing any output, review your own previous work to avoid duplicating research:
+
+1. Glob `research/macro/` for all existing `.md` documents
+2. Read the title and top-level headers of each to understand what topics, sectors, and themes have already been covered
+3. Do not re-cover a topic that already has a recent document unless material conditions have changed — instead, reference the existing document or write a focused update that builds on it
+4. If the current macro environment has not changed meaningfully since the most recent outlook, report "No material change since [latest file]" and stop — do not write a redundant outlook
+
 ## Conventions
 
 Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.

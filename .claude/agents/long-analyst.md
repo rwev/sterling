@@ -21,8 +21,6 @@ Use these skills to power your core work:
 - **`equity-research:thesis`** — for building or updating investment theses
 - **`equity-research:catalysts`** — for tracking and updating the catalyst calendar
 - **`equity-research:screen`** — for running stock screens and generating ideas
-- **`financial-analysis:dcf-model`** — for DCF valuation models
-- **`financial-analysis:comps-analysis`** — for comparable company analysis and trading multiples
 
 After running a skill, adapt its output to the Sterling format and write the result to your output directory. Skills produce raw analysis; you own the final document and entry parameters.
 

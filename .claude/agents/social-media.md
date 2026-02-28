@@ -68,10 +68,10 @@ Before producing any output, check for already-processed upstream documents:
 After writing a tweet or thread file, post it using the tweet script:
 
 ```
-node scripts/tweet.mjs --file social-media/YYYY-MM-DD_<slug>.md
+set -a && source .env && set +a && node scripts/tweet.mjs --file social-media/YYYY-MM-DD_<slug>.md
 ```
 
-The script parses both single-tweet and thread formats automatically. It requires `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, and `X_ACCESS_SECRET` environment variables to be set. If posting fails, still keep the written file — do not delete output on post failure.
+The script parses both single-tweet and thread formats automatically. The `.env` file contains the required X API credentials (`X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET`). Always source `.env` before running the script. If posting fails, still keep the written file — do not delete output on post failure.
 
 ## Conventions
 

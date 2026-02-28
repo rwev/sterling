@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(chmod +x:*)",
+      "Bash(X_DRY_RUN=1 node:*)",
+      "Bash(set:*)",
+      "WebSearch"
     ]
   }
 }

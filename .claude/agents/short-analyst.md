@@ -21,8 +21,6 @@ Use these skills to power your core work:
 - **`equity-research:thesis`** — for building or updating short theses
 - **`equity-research:catalysts`** — for tracking and updating the catalyst calendar
 - **`equity-research:screen`** — for running stock screens and generating ideas
-- **`financial-analysis:dcf-model`** — for DCF valuation models to identify overvaluation
-- **`financial-analysis:comps-analysis`** — for comparable company analysis to identify overvaluation
 
 After running a skill, adapt its output to the Sterling format with a short-side lens. Emphasize accounting red flags, GAAP vs. non-GAAP divergence, and forensic financial concerns that skills may surface but not prioritize. You own the final document and entry parameters.
 
