@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Sterling is a simulated hedge fund knowledge base. All team members — traders, researchers (long and short), auditors, bookkeepers, executors, and executive decision makers — produce and share documents in this repository.
+Sterling is a simulated hedge fund knowledge base. All team members — analysts (long and short), bookkeepers, risk managers, and portfolio managers — produce and share documents in this repository.
 
 ## Document Conventions
 
@@ -12,6 +12,7 @@ Sterling is a simulated hedge fund knowledge base. All team members — traders,
 - **Timestamps**: Every document must begin with a timestamp in ISO 8601 format: `YYYY-MM-DD HH:MM UTC`.
 - **Audience**: Documents are addressed to the team and/or directors. Write in the voice of the relevant team member role.
 - **Tone**: Professional, concise, factual. Avoid hedging language unless the content itself is a risk assessment.
+- **Market Data**: All agents must use current market prices and data as of today's date. Use web search to fetch live quotes, yields, index levels, and any other market data before writing. Never rely on stale or memorized prices. If a price cannot be confirmed as current, state the source and date explicitly.
 
 ## Folder Structure
 
@@ -19,28 +20,41 @@ Work is sorted by team function:
 
 ```
 sterling/
-  traders/          # Trade logs, position updates, execution notes
   research/
-    long/           # Long-side thesis documents, due diligence
-    short/          # Short-side thesis documents, due diligence
-  audit/            # Compliance and audit reports
-  bookkeeping/      # P&L summaries, NAV calculations, ledger entries
-  execution/        # Order execution logs, broker communications
-  executive/        # Investment committee memos, strategic decisions
-  shared/           # Cross-team communications, meeting minutes
+    macro/            # Macro outlooks, idea briefs
+    long/             # Long-side thesis documents, due diligence
+    short/            # Short-side thesis documents, due diligence
+  portfolio-manager/  # Investment committee memos, strategic decisions
+  bookkeeping/        # P&L summaries, NAV calculations, ledger entries
+  risk/               # Risk reports, exposure analysis
+  investor-relations/ # Portfolio updates for investors
 ```
 
 ## Team Roles and Responsibilities
 
 | Role | Folder | Primary Output |
 |---|---|---|
-| Trader | `traders/` | Trade logs, position notes |
-| Long Research | `research/long/` | Long thesis, entry rationale |
-| Short Research | `research/short/` | Short thesis, entry rationale |
-| Auditor | `audit/` | Compliance reviews, position audits |
+| Macro Research | `research/macro/` | Macro outlooks, idea briefs |
+| Long Analyst | `research/long/` | Long thesis, entry rationale |
+| Short Analyst | `research/short/` | Short thesis, entry rationale |
+| Portfolio Manager | `portfolio-manager/` | IC memos, directives |
 | Bookkeeper | `bookkeeping/` | P&L, NAV, ledger |
-| Executor | `execution/` | Order logs, fill confirmations |
-| Executive | `executive/` | IC memos, directives |
+| Risk Manager | `risk/` | Risk reports, exposure analysis |
+| Investor Relations | `investor-relations/` | Portfolio updates for investors |
+
+## Agent Data Flow
+
+Agents communicate through documents, not directly. Each agent reads from upstream directories and writes to its own.
+
+| Agent | Reads from | Writes to |
+|---|---|---|
+| Macro Research | *(none — external data only)* | `research/macro/` |
+| Long Analyst | `research/macro/` | `research/long/` |
+| Short Analyst | `research/macro/` | `research/short/` |
+| Portfolio Manager | `research/long/`, `research/short/` | `portfolio-manager/` |
+| Bookkeeper | `portfolio-manager/` | `bookkeeping/` |
+| Risk Manager | `bookkeeping/` | `risk/` |
+| Investor Relations | `portfolio-manager/` | `investor-relations/` |
 
 ## File Naming
 
@@ -50,19 +64,3 @@ Examples:
 - `2026-02-27_aapl-long-thesis.md`
 - `2026-02-27_weekly-pnl-summary.md`
 - `2026-02-27_ic-meeting-minutes.md`
-
-## Cross-Team Communication
-
-When one role's work references or responds to another's:
-- Link to the original document by relative path.
-- Quote relevant sections using `>` blockquotes.
-- State the responding role explicitly at the top of the document.
-
-Example header:
-
-```
-# Response to Short Research: TSLA Bear Case
-Date: 2026-02-27 14:30 UTC
-From: Long Research
-To: Investment Committee, Traders
-```
