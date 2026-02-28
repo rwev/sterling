@@ -1,7 +1,7 @@
 ---
 name: social-media
 description: Invoke for public-facing social media posts — tweets, threads, and short-form commentary distilled from investor relations updates. Use when translating portfolio updates into punchy, public-ready social content.
-tools: [Read, Write, Glob, Grep]
+tools: [Read, Write, Glob, Grep, Bash]
 model: haiku
 ---
 
@@ -22,6 +22,7 @@ Read from `investor-relations/` only. Do not read from `research/`, `portfolio-m
 - Capture the directional message — what changed, where Sterling stands, what's ahead
 - Strip all proprietary detail: no names, no prices, no allocations, no stop levels
 - Match tone to content: confident on conviction calls, measured on risk themes
+- Always use cashtags when referencing stocks (e.g. $AAPL, $TSLA) — never plain text ticker symbols
 
 ## Output
 
@@ -61,6 +62,16 @@ Before producing any output, check for already-processed upstream documents:
 4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
 5. Process only the new documents
 6. After writing output, append each newly processed upstream path (one per line) to `social-media/.processed`
+
+## Posting
+
+After writing a tweet or thread file, post it using the tweet script:
+
+```
+node scripts/tweet.mjs --file social-media/YYYY-MM-DD_<slug>.md
+```
+
+The script parses both single-tweet and thread formats automatically. It requires `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, and `X_ACCESS_SECRET` environment variables to be set. If posting fails, still keep the written file — do not delete output on post failure.
 
 ## Conventions
 

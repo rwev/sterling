@@ -2,6 +2,11 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-02-28 — Social Media Agent: Tweet Posting and Cashtags
+
+**Agents modified:**
+- `social-media.md` — added `Bash` tool, cashtag requirement for stock references (e.g. `$AAPL`), and `## Posting` section instructing the agent to run `scripts/tweet.mjs --file` after writing each output file
+
 ## 2026-02-28 — Social Media Agent
 
 Added a new social media agent that reads investor relations updates and produces tweet-length posts and threads for public channels.
