@@ -2,6 +2,19 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-02-28 — Integrate Equity Research Plugin Skills into Agents
+
+Simplified agent files by adding `Skill` tool and delegating core research work to `equity-research` and `financial-analysis` plugin skills. Removed verbose inline output templates in favor of skill-driven workflows. All inter-agent plumbing (inputs, relationships, incremental processing, conventions) preserved unchanged.
+
+**Agents modified:**
+- `macro-research.md` — added `Skill` tool; added Skills section referencing `equity-research:sector`, `equity-research:screen`, `equity-research:morning-note`; condensed output templates to brief structural guidance
+- `long-analyst.md` — added `Skill` tool; added Skills section referencing `equity-research:thesis`, `equity-research:initiate`, `equity-research:earnings`, `equity-research:earnings-preview`, `equity-research:model-update`, `financial-analysis:dcf`, `financial-analysis:comps`; removed inline financial table and thesis templates
+- `short-analyst.md` — added `Skill` tool; added Skills section referencing `equity-research:thesis`, `equity-research:earnings`, `equity-research:earnings-preview`, `equity-research:model-update`, `financial-analysis:comps`; removed inline red-flag table and thesis templates
+- `portfolio-manager.md` — added `Skill` tool; added Skills section referencing `equity-research:catalysts`, `equity-research:morning-note`; removed inline IC memo template (kept structural requirements in prose)
+
+**Agents unchanged:**
+- `risk-manager.md` — quantitative risk reporting has no equity-research skill equivalent; left as-is
+
 ## 2026-02-28 — PM–Risk Manager Collaborative Loop
 
 Restructured the pipeline so the Portfolio Manager and Risk Manager collaborate to formulate the final portfolio, replacing the previous linear flow where Risk reported after the fact.
