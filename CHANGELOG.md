@@ -2,14 +2,23 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-02-28 — Align Skill References to Actual Plugin Names
+
+Updated all analyst agent skill references to match the actual installed plugin skill names. Added missing skills to short analyst for parity with long analyst.
+
+**Agents modified:**
+- `long-analyst.md` — renamed `equity-research:initiate` → `initiating-coverage`, `earnings` → `earnings-analysis`, `financial-analysis:dcf` → `dcf-model`, `comps` → `comps-analysis`; removed `model-update`; added `equity-research:screen`; reordered `thesis` below `initiating-coverage`
+- `short-analyst.md` — same renames as long analyst; added `equity-research:initiating-coverage`, `equity-research:screen`, and `financial-analysis:dcf-model` (previously missing)
+- `macro-research.md` — removed `equity-research:morning-note` (not an installed skill)
+
 ## 2026-02-28 — Integrate Equity Research Plugin Skills into Agents
 
 Simplified agent files by adding `Skill` tool and delegating core research work to `equity-research` and `financial-analysis` plugin skills. Removed verbose inline output templates in favor of skill-driven workflows. All inter-agent plumbing (inputs, relationships, incremental processing, conventions) preserved unchanged.
 
 **Agents modified:**
-- `macro-research.md` — added `Skill` tool; added Skills section referencing `equity-research:sector`, `equity-research:screen`, `equity-research:morning-note`; condensed output templates to brief structural guidance
-- `long-analyst.md` — added `Skill` tool; added Skills section referencing `equity-research:thesis`, `equity-research:initiate`, `equity-research:earnings`, `equity-research:earnings-preview`, `equity-research:model-update`, `financial-analysis:dcf`, `financial-analysis:comps`; removed inline financial table and thesis templates
-- `short-analyst.md` — added `Skill` tool; added Skills section referencing `equity-research:thesis`, `equity-research:earnings`, `equity-research:earnings-preview`, `equity-research:model-update`, `financial-analysis:comps`; removed inline red-flag table and thesis templates
+- `macro-research.md` — added `Skill` tool; added Skills section referencing `equity-research:sector`, `equity-research:screen`; condensed output templates to brief structural guidance
+- `long-analyst.md` — added `Skill` tool; added Skills section referencing `equity-research:initiating-coverage`, `equity-research:earnings-analysis`, `equity-research:earnings-preview`, `equity-research:thesis`, `equity-research:catalysts`, `equity-research:screen`, `financial-analysis:dcf-model`, `financial-analysis:comps-analysis`; removed inline financial table and thesis templates
+- `short-analyst.md` — added `Skill` tool; added Skills section referencing `equity-research:initiating-coverage`, `equity-research:earnings-analysis`, `equity-research:earnings-preview`, `equity-research:thesis`, `equity-research:catalysts`, `equity-research:screen`, `financial-analysis:dcf-model`, `financial-analysis:comps-analysis`; removed inline red-flag table and thesis templates
 - `portfolio-manager.md` — added `Skill` tool; added Skills section referencing `equity-research:catalysts`, `equity-research:morning-note`; removed inline IC memo template (kept structural requirements in prose)
 
 **Agents unchanged:**

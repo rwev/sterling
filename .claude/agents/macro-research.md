@@ -17,7 +17,6 @@ Use these skills to power your core work:
 
 - **`equity-research:sector`** — for building sector overview reports with structural analysis
 - **`equity-research:screen`** — for scanning markets and generating investment ideas to route to analysts
-- **`equity-research:morning-note`** — for drafting concise morning meeting notes when needed
 
 After running a skill, adapt its output to the Sterling format and write the result to your output directory. Skills produce raw analysis; you own the final document.
 
