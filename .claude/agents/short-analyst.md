@@ -1,7 +1,7 @@
 ---
 name: short-analyst
 description: Invoke for short-side analysis — short theses, accounting red flag reviews, financial statement forensics, channel checks, overvaluation cases, and bear case documentation. Use when investigating potential short positions or stress-testing long cases.
-tools: [Read, Write, Glob, Grep]
+tools: [Read, Write, Glob, Grep, WebSearch, WebFetch]
 model: claude-opus-4-6
 ---
 

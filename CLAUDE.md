@@ -28,6 +28,7 @@ sterling/
   bookkeeping/        # P&L summaries, NAV calculations, ledger entries
   risk/               # Risk reports, exposure analysis
   investor-relations/ # Portfolio updates for investors
+  social-media/       # Tweets and threads for public channels
 ```
 
 ## Team Roles and Responsibilities
@@ -41,6 +42,7 @@ sterling/
 | Bookkeeper | `bookkeeping/` | P&L, NAV, ledger |
 | Risk Manager | `risk/` | Risk reports, exposure analysis |
 | Investor Relations | `investor-relations/` | Portfolio updates for investors |
+| Social Media | `social-media/` | Tweets, threads |
 
 ## Agent Data Flow
 
@@ -55,6 +57,7 @@ Agents communicate through documents, not directly. Each agent reads from upstre
 | Bookkeeper | `portfolio-manager/` | `bookkeeping/` |
 | Risk Manager | `bookkeeping/` | `risk/` |
 | Investor Relations | `portfolio-manager/` | `investor-relations/` |
+| Social Media | `investor-relations/` | `social-media/` |
 
 ## File Naming
 

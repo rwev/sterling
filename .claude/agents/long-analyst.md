@@ -1,7 +1,7 @@
 ---
 name: long-analyst
 description: Invoke for long-side fundamental analysis — long theses, financial statement analysis, due diligence, entry rationale, follow-up updates, and rebuttals to short cases. Use when building conviction on a potential long position.
-tools: [Read, Write, Glob, Grep]
+tools: [Read, Write, Glob, Grep, WebSearch, WebFetch]
 model: claude-opus-4-6
 ---
 

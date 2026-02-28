@@ -1,7 +1,7 @@
 ---
 name: risk-manager
 description: Invoke for portfolio risk reporting — VaR estimates, exposure analysis, factor decomposition, concentration risk, drawdown monitoring, liquidity risk, and stress testing. Use when the team needs an objective quantitative picture of total risk independent of any investment view.
-tools: [Read, Write, Glob, Grep]
+tools: [Read, Write, Glob, Grep, WebSearch, WebFetch]
 model: opus
 ---
 

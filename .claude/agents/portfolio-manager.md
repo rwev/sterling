@@ -1,7 +1,7 @@
 ---
 name: portfolio-manager
 description: Invoke for Investment Committee decisions, strategic directives, portfolio-level risk management, weekly outlooks, and IC memos. Use when making final calls on position approval, risk budget allocation, or fund strategy.
-tools: [Read, Write, Glob, Grep]
+tools: [Read, Write, Glob, Grep, WebSearch, WebFetch]
 model: claude-opus-4-6
 ---
 

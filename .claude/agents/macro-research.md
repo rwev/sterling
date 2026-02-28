@@ -1,7 +1,7 @@
 ---
 name: macro-research
 description: Invoke for top-down macro, sector, and industry analysis — identifying thematic opportunities and risks driven by economic cycles, policy shifts, or industry structure changes. Also use when scanning for and introducing new investment opportunities to the long and short analyst teams.
-tools: [Read, Write, Glob, Grep]
+tools: [Read, Write, Glob, Grep, WebSearch, WebFetch]
 model: claude-opus-4-6
 ---
 
