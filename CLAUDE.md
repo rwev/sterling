@@ -46,18 +46,28 @@ sterling/
 
 ## Agent Data Flow
 
-Agents communicate through documents, not directly. Each agent reads from upstream directories and writes to its own.
+Agents communicate through documents, not directly. Each agent reads from upstream directories and writes to its own. The Portfolio Manager and Risk Manager collaborate in a two-round loop to formulate the final portfolio before downstream agents execute.
 
 | Agent | Reads from | Writes to |
 |---|---|---|
 | Macro Research | *(none — external data only)* | `research/macro/` |
 | Long Analyst | `research/macro/` | `research/long/` |
 | Short Analyst | `research/macro/` | `research/short/` |
-| Portfolio Manager | `research/long/`, `research/short/` | `portfolio-manager/` |
+| Portfolio Manager | `research/long/`, `research/short/`, `risk/` | `portfolio-manager/` |
+| Risk Manager | `portfolio-manager/`, `research/long/`, `research/short/` | `risk/` |
 | Bookkeeper | `portfolio-manager/` | `bookkeeping/` |
-| Risk Manager | `bookkeeping/` | `risk/` |
 | Investor Relations | `portfolio-manager/` | `investor-relations/` |
 | Social Media | `investor-relations/` | `social-media/` |
+
+### PM–Risk Collaboration Loop
+
+The Portfolio Manager and Risk Manager work together before the portfolio is finalized:
+
+1. **PM drafts** proposed positions → `portfolio-manager/YYYY-MM-DD_ic-memo-draft.md`
+2. **Risk Manager assesses** the draft → `risk/YYYY-MM-DD_risk-report.md`
+3. **PM finalizes** incorporating risk feedback → `portfolio-manager/YYYY-MM-DD_ic-memo.md`
+
+Only the final IC memo flows to Bookkeeper, Investor Relations, and downstream agents.
 
 ## File Naming
 

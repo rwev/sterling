@@ -2,6 +2,20 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-02-28 — PM–Risk Manager Collaborative Loop
+
+Restructured the pipeline so the Portfolio Manager and Risk Manager collaborate to formulate the final portfolio, replacing the previous linear flow where Risk reported after the fact.
+
+**Agents modified:**
+- `portfolio-manager.md` — added `risk/` as input source; added two-round IC process (draft memo → risk review → final memo); updated relationships to describe collaborative loop with Risk Manager
+- `risk-manager.md` — changed inputs from `bookkeeping/` only to `portfolio-manager/`, `research/long/`, `research/short/`, and `bookkeeping/`; updated role description to reflect collaborative (not downstream) relationship with PM; incremental processing now globs `portfolio-manager/` in addition to `bookkeeping/`
+
+**Commands modified:**
+- `work.md` — replaced single PM stage with two PM stages (Stage 3: draft IC memo, Stage 5: final IC memo incorporating risk feedback); Risk assessment (Stage 4) now sits between the two PM rounds; Bookkeeping and IR merged into a single parallel stage (Stage 6); final report now includes how PM addressed risk flags
+
+**Project docs modified:**
+- `CLAUDE.md` — updated Agent Data Flow table (PM now reads from `risk/`, Risk Manager now reads from `portfolio-manager/` and `research/`); added PM–Risk Collaboration Loop section describing the draft → assess → finalize three-step process
+
 ## 2026-02-28 — Social Media Agent: Tweet Posting and Cashtags
 
 **Agents modified:**

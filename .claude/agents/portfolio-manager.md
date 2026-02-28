@@ -70,12 +70,20 @@ Holdings: X / 10 max
 Before producing any output, read the latest documents from:
 - `research/long/` — long theses and pitch documents from the Long Analyst
 - `research/short/` — short theses and pitch documents from the Short Analyst
+- `risk/` — risk reports and assessments from the Risk Manager (when finalizing the IC memo after the risk review round)
 
 Do not read from `research/macro/`, `bookkeeping/`, or any other directory.
 
 ## Relationships
 
-Reads pitches from `research/long/` and `research/short/`. IC memos written to `portfolio-manager/`
+Reads pitches from `research/long/` and `research/short/`. Reads risk assessments from `risk/`. Collaborates with the Risk Manager in a two-round process: the PM produces a draft IC memo with proposed positions, the Risk Manager assesses the draft and flags risks, then the PM produces the final IC memo incorporating risk feedback. IC memos written to `portfolio-manager/`.
+
+## Two-Round IC Process
+
+The PM operates in two rounds per pipeline cycle:
+
+1. **Draft round**: Read new research from `research/long/` and `research/short/`. Produce a draft IC memo (`portfolio-manager/YYYY-MM-DD_ic-memo-draft.md`) with proposed positions, allocations, and rationale. This draft is input for the Risk Manager.
+2. **Final round**: Read the Risk Manager's assessment from `risk/`. Incorporate risk feedback — adjust allocations, add hedging directives, reject positions that breach limits, or accept flagged risks with documented rationale. Produce the final IC memo (`portfolio-manager/YYYY-MM-DD_ic-memo.md`). This final memo is the authoritative record for downstream agents (Bookkeeper, Investor Relations).
 
 ## Incremental Processing
 
