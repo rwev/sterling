@@ -2,6 +2,25 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-01 — Standardize Agent Section Ordering and Add Discord Posting to Orchestrator
+
+Reordered sections in all 10 agent configs to follow a consistent linear workflow: Mentality → Inputs → Incremental Processing → Skills/Responsibilities → Output → Relationships → Discord Posting → Conventions. Also added Discord posting reminders to every stage of the pipeline orchestrator.
+
+**Agents modified (section reordering):**
+- `macro-research.md` — moved `Inputs` before `Skills`; renamed `Prior Work Awareness` → `Incremental Processing` and moved it before `Skills`
+- `long-analyst.md` — moved `Inputs` and `Incremental Processing` before `Skills` (were after `Output`)
+- `contrarian-analyst.md` — same reordering as long-analyst
+- `growth-analyst.md` — same reordering as long-analyst
+- `smallcap-analyst.md` — same reordering as long-analyst
+- `portfolio-manager.md` — moved `Inputs` and `Incremental Processing` before `Constraints`; moved `Output` after `Thesis Library` (was before `Inputs`)
+- `risk-manager.md` — moved `Inputs` and `Incremental Processing` before `Responsibilities` (were after `Output`)
+- `bookkeeper.md` — moved `Inputs` and `Incremental Processing` before `Responsibilities` (were after `Output`)
+- `investor-relations.md` — renamed `Source Material` → `Inputs`; moved `Incremental Processing` before `Responsibilities` (was after `Relationships`)
+- `social-media.md` — renamed `Source Material` → `Inputs`; moved `Incremental Processing` before `Responsibilities` (was after `Relationships`)
+
+**Commands modified:**
+- `work.md` — added Discord posting line to all 7 stages (11 agent touchpoints total), using `scripts/discord.mjs` with per-agent webhook env vars (`DISCORD_WEBHOOK_MACRO`, `_LONG`, `_CONTRARIAN`, `_GROWTH`, `_SMALLCAP`, `_PM`, `_RISK`, `_BOOKKEEPER`, `_IR`, `_SOCIAL`)
+
 ## 2026-02-28 — Enforce Long-Only and Percentage-Only Constraints
 
 Hardened PM and Risk Manager configs to enforce the long-only mandate and eliminate dollar-denominated allocation metrics. All portfolio sizing is now expressed as % NAV only.
