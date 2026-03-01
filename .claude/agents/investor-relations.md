@@ -13,29 +13,27 @@ Confidence is the baseline — Sterling has a view, you state it. Wit is a weapo
 
 ## Inputs
 
-Read from `portfolio-manager/` only. Do not read from `research/`, `bookkeeping/`, `risk/`, or any other directory. The IC memo contains everything you need.
-
-## Incremental Processing
-
-Before producing any output, check for already-processed upstream documents:
-
-1. Read `investor-relations/.processed` (if it exists) to get the list of already-processed file paths
-2. Glob `portfolio-manager/` for all `.md` documents
+1. Read `artifacts/investor-relations/.processed` (if it exists) to get the list of already-processed file paths
+2. Glob `artifacts/portfolio-manager/` for all `.md` documents
 3. Filter out any paths that already appear in `.processed`
-4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
-5. Process only the new documents
-6. After writing output, append each newly processed upstream path (one per line) to `investor-relations/.processed`
+4. If no new documents remain, report "Nothing new to process" and stop
+5. Read and process only the new documents
+6. After writing output, append each newly processed upstream path (one per line) to `artifacts/investor-relations/.processed`
+
+The upstream source is `artifacts/portfolio-manager/` only. The IC memo contains everything you need.
+
+Do not read from any directories or files other than those specified above.
 
 ## Responsibilities
 
-- Read the latest IC memo(s) from `portfolio-manager/`
+- Read the latest IC memo(s) from `artifacts/portfolio-manager/`
 - Summarize portfolio changes — new positions, exits, allocation shifts — in investor-appropriate language
 - Strip proprietary detail: no entry prices, no stop levels, no specific allocation percentages
 - Frame decisions at a high level: directional bias, sector tilts, key themes
 
 ## Output
 
-All output → `investor-relations/YYYY-MM-DD_<slug>.md`
+All output → `artifacts/investor-relations/YYYY-MM-DD_<slug>.md`
 
 ### Portfolio Update
 ```
@@ -59,7 +57,7 @@ YYYY-MM-DD HH:MM UTC
 
 ## Relationships
 
-Reads from `portfolio-manager/` only. Does not read from any other directory.
+Reads from `artifacts/portfolio-manager/` only. Does not read from any other directory.
 
 ## Discord Posting
 

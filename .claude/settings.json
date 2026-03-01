@@ -1,5 +1,3 @@
 {
-  "enabledPlugins": {
-    "private-equity@financial-services-plugins": true
-  }
+  "enabledPlugins": {}
 }

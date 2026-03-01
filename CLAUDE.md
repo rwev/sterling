@@ -20,60 +20,62 @@ Work is sorted by team function:
 
 ```
 sterling/
-  research/
-    macro/            # Macro outlooks, idea briefs
-    long/             # Long-side thesis documents, due diligence
-    contrarian/       # Contrarian/value long thesis documents, due diligence
-    growth/           # Growth/momentum long thesis documents, due diligence
-    smallcap/         # Small-cap/discovery long thesis documents, due diligence
-  portfolio-manager/  # Investment committee memos, strategic decisions
-    theses/           # Accepted thesis library (active positions)
-      closed/         # Archived theses for exited positions
-  bookkeeping/        # P&L summaries, NAV calculations, ledger entries
-  risk/               # Risk reports, exposure analysis
-  investor-relations/ # Portfolio updates for investors
-  social-media/       # Tweets and threads for public channels
+  artifacts/
+    research/
+      macro/              # Macro outlooks, idea briefs
+    analysis/
+      long/               # Long-side thesis documents, due diligence
+      contrarian/         # Contrarian/value long thesis documents, due diligence
+      growth/             # Growth/momentum long thesis documents, due diligence
+      smallcap/           # Small-cap/discovery long thesis documents, due diligence
+    portfolio-manager/    # Investment committee memos, strategic decisions
+      theses/             # Accepted thesis library (active positions)
+        closed/           # Archived theses for exited positions
+    bookkeeping/          # P&L summaries, NAV calculations, ledger entries
+    risk/                 # Risk reports, exposure analysis
+    investor-relations/   # Portfolio updates for investors
+    social-media/         # Tweets and threads for public channels
 ```
 
 ## Team Roles and Responsibilities
 
-| Role               | Folder                 | Primary Output                          |
-| ------------------ | ---------------------- | --------------------------------------- |
-| Macro Research     | `research/macro/`      | Macro outlooks, idea briefs             |
-| Long Analyst       | `research/long/`       | Long thesis, entry rationale            |
-| Contrarian Analyst | `research/contrarian/` | Contrarian long thesis, entry rationale |
-| Growth Analyst     | `research/growth/`     | Growth long thesis, entry rationale     |
-| Small-Cap Analyst  | `research/smallcap/`   | Small-cap long thesis, entry rationale  |
-| Portfolio Manager  | `portfolio-manager/`   | IC memos, directives                    |
-| Bookkeeper         | `bookkeeping/`         | P&L, NAV, ledger                        |
-| Risk Manager       | `risk/`                | Risk reports, exposure analysis         |
-| Investor Relations | `investor-relations/`  | Portfolio updates for investors         |
-| Social Media       | `social-media/`        | Tweets, threads                         |
+| Role               | Folder                           | Primary Output                          |
+| ------------------ | -------------------------------- | --------------------------------------- |
+| Macro Research     | `artifacts/research/macro/`      | Macro outlooks, idea briefs             |
+| Long Analyst       | `artifacts/analysis/long/`       | Long thesis, entry rationale            |
+| Contrarian Analyst | `artifacts/analysis/contrarian/` | Contrarian long thesis, entry rationale |
+| Growth Analyst     | `artifacts/analysis/growth/`     | Growth long thesis, entry rationale     |
+| Small-Cap Analyst  | `artifacts/analysis/smallcap/`   | Small-cap long thesis, entry rationale  |
+| Portfolio Manager  | `artifacts/portfolio-manager/`   | IC memos, directives                    |
+| Bookkeeper         | `artifacts/bookkeeping/`         | P&L, NAV, ledger                        |
+| Risk Manager       | `artifacts/risk/`                | Risk reports, exposure analysis         |
+| Investor Relations | `artifacts/investor-relations/`  | Portfolio updates for investors         |
+| Social Media       | `artifacts/social-media/`        | Tweets, threads                         |
 
 ## Agent Data Flow
 
 Agents communicate through documents, not directly. Each agent reads from upstream directories and writes to its own. The Portfolio Manager and Risk Manager collaborate in a two-round loop to formulate the final portfolio before downstream agents execute.
 
-| Agent              | Reads from                                                                                               | Writes to              |
-| ------------------ | -------------------------------------------------------------------------------------------------------- | ---------------------- |
-| Macro Research     | *(none — external data only)*                                                                            | `research/macro/`      |
-| Long Analyst       | `research/macro/`                                                                                        | `research/long/`       |
-| Contrarian Analyst | `research/macro/`                                                                                        | `research/contrarian/` |
-| Growth Analyst     | `research/macro/`                                                                                        | `research/growth/`     |
-| Small-Cap Analyst  | `research/macro/`                                                                                        | `research/smallcap/`   |
-| Portfolio Manager  | `research/long/`, `research/contrarian/`, `research/growth/`, `research/smallcap/`, `risk/`              | `portfolio-manager/`   |
-| Risk Manager       | `portfolio-manager/`, `research/long/`, `research/contrarian/`, `research/growth/`, `research/smallcap/` | `risk/`                |
-| Bookkeeper         | `portfolio-manager/`                                                                                     | `bookkeeping/`         |
-| Investor Relations | `portfolio-manager/`                                                                                     | `investor-relations/`  |
-| Social Media       | `investor-relations/`                                                                                    | `social-media/`        |
+| Agent              | Reads from                                                                                                                                       | Writes to                        |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+| Macro Research     | *(none — external data only)*                                                                                                                    | `artifacts/research/macro/`      |
+| Long Analyst       | `artifacts/research/macro/`                                                                                                                      | `artifacts/analysis/long/`       |
+| Contrarian Analyst | `artifacts/research/macro/`                                                                                                                      | `artifacts/analysis/contrarian/` |
+| Growth Analyst     | `artifacts/research/macro/`                                                                                                                      | `artifacts/analysis/growth/`     |
+| Small-Cap Analyst  | `artifacts/research/macro/`                                                                                                                      | `artifacts/analysis/smallcap/`   |
+| Portfolio Manager  | `artifacts/analysis/long/`, `artifacts/analysis/contrarian/`, `artifacts/analysis/growth/`, `artifacts/analysis/smallcap/`, `artifacts/risk/`     | `artifacts/portfolio-manager/`   |
+| Risk Manager       | `artifacts/portfolio-manager/`                                                                                                                   | `artifacts/risk/`                |
+| Bookkeeper         | `artifacts/portfolio-manager/`                                                                                                                   | `artifacts/bookkeeping/`         |
+| Investor Relations | `artifacts/portfolio-manager/`                                                                                                                   | `artifacts/investor-relations/`  |
+| Social Media       | `artifacts/investor-relations/`                                                                                                                  | `artifacts/social-media/`        |
 
 ### PM–Risk Collaboration Loop
 
 The Portfolio Manager and Risk Manager work together before the portfolio is finalized:
 
-1. **PM drafts** proposed positions → `portfolio-manager/YYYY-MM-DD_ic-memo-draft.md`
-2. **Risk Manager assesses** the draft → `risk/YYYY-MM-DD_risk-report.md`
-3. **PM finalizes** incorporating risk feedback → `portfolio-manager/YYYY-MM-DD_ic-memo.md`
+1. **PM drafts** proposed positions → `artifacts/portfolio-manager/YYYY-MM-DD_ic-memo-draft.md`
+2. **Risk Manager assesses** the draft → `artifacts/risk/YYYY-MM-DD_risk-report.md`
+3. **PM finalizes** incorporating risk feedback → `artifacts/portfolio-manager/YYYY-MM-DD_ic-memo.md`
 
 Only the final IC memo flows to Bookkeeper, Investor Relations, and downstream agents.
 

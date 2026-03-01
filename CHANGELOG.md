@@ -2,6 +2,24 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-01 — Reorder Inputs: `.processed` Procedure First, Qualitative Guidance Second
+
+Restructured the `## Inputs` section in 9 agents so the numbered `.processed` dedup procedure is the first thing the agent sees — gating all downstream work — with qualitative guidance about upstream sources moved below as context for interpretation. Also fixed the Portfolio Manager's `.processed` glob to include `artifacts/risk/`, which was previously untracked.
+
+**Agents modified (Inputs reordering):**
+- `long-analyst.md` — moved `.processed` numbered steps above upstream source description and macro guidance
+- `contrarian-analyst.md` — same reordering as long-analyst
+- `growth-analyst.md` — same reordering as long-analyst
+- `smallcap-analyst.md` — same reordering as long-analyst
+- `risk-manager.md` — moved `.processed` numbered steps above upstream source description
+- `bookkeeper.md` — moved `.processed` numbered steps above upstream source description
+- `investor-relations.md` — moved `.processed` numbered steps above upstream source description
+- `social-media.md` — moved `.processed` numbered steps above upstream source description
+- `portfolio-manager.md` — moved `.processed` numbered steps above "Upstream sources" list and "Important" note; added `artifacts/risk/` to glob step so risk reports are tracked via `.processed` and not re-read on subsequent runs
+
+**Agents unchanged:**
+- `macro-research.md` — no `.processed` logic (no upstream agent inputs)
+
 ## 2026-03-01 — Standardize Agent Section Ordering and Add Discord Posting to Orchestrator
 
 Reordered sections in all 10 agent configs to follow a consistent linear workflow: Mentality → Inputs → Incremental Processing → Skills/Responsibilities → Output → Relationships → Discord Posting → Conventions. Also added Discord posting reminders to every stage of the pipeline orchestrator.

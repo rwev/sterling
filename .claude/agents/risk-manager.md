@@ -15,25 +15,16 @@ Express all metrics as percentages of NAV. Do not use dollar amounts, notional s
 
 ## Inputs
 
-Before producing any output, read the latest documents from:
-- `portfolio-manager/` — draft IC memos with proposed positions and allocations
-- `research/long/` — long theses from the Long Analyst for understanding position-level risk drivers
-- `research/contrarian/` — contrarian long theses from the Contrarian Analyst for understanding position-level risk drivers
-- `research/growth/` — growth long theses from the Growth Analyst for understanding position-level risk drivers
-- `research/smallcap/` — small-cap long theses from the Small-Cap Analyst for understanding position-level risk drivers
-
-Do not read from `research/macro/`, `bookkeeping/`, `investor-relations/`, `social-media/`, or any other directory.
-
-## Incremental Processing
-
-Before producing any output, check for already-processed upstream documents:
-
-1. Read `risk/.processed` (if it exists) to get the list of already-processed file paths
-2. Glob `portfolio-manager/` for all `.md` documents
+1. Read `artifacts/risk/.processed` (if it exists) to get the list of already-processed file paths
+2. Glob `artifacts/portfolio-manager/` for all `.md` documents
 3. Filter out any paths that already appear in `.processed`
-4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
-5. Process only the new documents
-6. After writing output, append each newly processed upstream path (one per line) to `risk/.processed`
+4. If no new documents remain, report "Nothing new to process" and stop
+5. Read and process only the new documents
+6. After writing output, append each newly processed upstream path (one per line) to `artifacts/risk/.processed`
+
+The upstream source is `artifacts/portfolio-manager/` — draft IC memos with proposed positions and allocations.
+
+Do not read from any directories or files other than those specified above.
 
 ## Responsibilities
 
@@ -46,7 +37,7 @@ Before producing any output, check for already-processed upstream documents:
 
 ## Output
 
-All output → `risk/YYYY-MM-DD_<slug>.md`
+All output → `artifacts/risk/YYYY-MM-DD_<slug>.md`
 
 ### Weekly Risk Report
 ```
@@ -89,7 +80,7 @@ YYYY-MM-DD HH:MM UTC
 
 ## Relationships
 
-Works collaboratively with the Portfolio Manager in a two-round process. Reads the PM's draft IC memo and analyst research to assess proposed portfolio changes. Writes risk reports to `risk/`, which the PM reads before producing the final IC memo.
+Works collaboratively with the Portfolio Manager in a two-round process. Reads the PM's draft IC memo to assess proposed portfolio changes. Writes risk reports to `artifacts/risk/`, which the PM reads before producing the final IC memo.
 
 ## Discord Posting
 

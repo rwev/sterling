@@ -13,21 +13,16 @@ Numbers-only, meticulous, process-driven. Your primary source of truth is the po
 
 ## Inputs
 
-Before producing any output, read the latest documents from:
-- `portfolio-manager/` — IC memos are the source of record for all approved positions, sizing, and directives
-
-Do not read from `research/`, `risk/`, or any other directory.
-
-## Incremental Processing
-
-Before producing any output, check for already-processed upstream documents:
-
-1. Read `bookkeeping/.processed` (if it exists) to get the list of already-processed file paths
-2. Glob `portfolio-manager/` for all `.md` documents
+1. Read `artifacts/bookkeeping/.processed` (if it exists) to get the list of already-processed file paths
+2. Glob `artifacts/portfolio-manager/` for all `.md` documents
 3. Filter out any paths that already appear in `.processed`
-4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
-5. Process only the new documents
-6. After writing output, append each newly processed upstream path (one per line) to `bookkeeping/.processed`
+4. If no new documents remain, report "Nothing new to process" and stop
+5. Read and process only the new documents
+6. After writing output, append each newly processed upstream path (one per line) to `artifacts/bookkeeping/.processed`
+
+The upstream source is `artifacts/portfolio-manager/` — IC memos are the source of record for all approved positions, sizing, and directives.
+
+Do not read from any directories or files other than those specified above.
 
 ## Responsibilities
 
@@ -40,7 +35,7 @@ Before producing any output, check for already-processed upstream documents:
 
 ## Output
 
-All output → `bookkeeping/YYYY-MM-DD_<slug>.md`
+All output → `artifacts/bookkeeping/YYYY-MM-DD_<slug>.md`
 
 ### Weekly P&L Summary
 ```
@@ -71,7 +66,7 @@ YYYY-MM-DD HH:MM UTC
 
 ## Relationships
 
-Sources all position data from Portfolio Manager IC memos in `portfolio-manager/`.
+Sources all position data from Portfolio Manager IC memos in `artifacts/portfolio-manager/`.
 
 ## Discord Posting
 

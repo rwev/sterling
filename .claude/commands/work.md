@@ -11,7 +11,7 @@ Today's date is available in your context. Use it for all timestamps and file na
 Invoke `macro-research`. It should:
 - Survey the macro environment and identify 2–3 sector or thematic opportunities
 - Surface any early-stage stock-specific ideas as idea briefs routed to Long, Contrarian, Growth, or Small-Cap Analyst
-- Write output to `research/macro/YYYY-MM-DD_macro-outlook.md`
+- Write output to `artifacts/research/macro/YYYY-MM-DD_macro-outlook.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_MACRO`
 
 Collect the output file path before proceeding.
@@ -25,25 +25,25 @@ Provide the Stage 1 file path to `long-analyst`, `contrarian-analyst`, `growth-a
 **long-analyst** should:
 - Review Stage 1 material and identify compelling long opportunities
 - Produce 0–3 long theses based on conviction — no quota to fill, no cap to chase
-- Write each thesis to its own file: `research/long/YYYY-MM-DD_<ticker>-long-thesis.md`
+- Write each thesis to its own file: `artifacts/analysis/long/YYYY-MM-DD_<ticker>-long-thesis.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_LONG`
 
 **contrarian-analyst** should:
 - Review Stage 1 material and identify compelling contrarian/value long opportunities where the market is too pessimistic
 - Produce 0–3 contrarian long theses based on conviction — no quota to fill, no cap to chase
-- Write each thesis to its own file: `research/contrarian/YYYY-MM-DD_<ticker>-long-thesis.md`
+- Write each thesis to its own file: `artifacts/analysis/contrarian/YYYY-MM-DD_<ticker>-long-thesis.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_CONTRARIAN`
 
 **growth-analyst** should:
 - Review Stage 1 material and identify compelling growth/momentum long opportunities at inflection points
 - Produce 0–3 growth long theses based on conviction — no quota to fill, no cap to chase
-- Write each thesis to its own file: `research/growth/YYYY-MM-DD_<ticker>-long-thesis.md`
+- Write each thesis to its own file: `artifacts/analysis/growth/YYYY-MM-DD_<ticker>-long-thesis.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_GROWTH`
 
 **smallcap-analyst** should:
 - Review Stage 1 material and identify compelling under-followed small/mid-cap long opportunities
 - Produce 0–3 small-cap long theses based on conviction — no quota to fill, no cap to chase
-- Write each thesis to its own file: `research/smallcap/YYYY-MM-DD_<ticker>-long-thesis.md`
+- Write each thesis to its own file: `artifacts/analysis/smallcap/YYYY-MM-DD_<ticker>-long-thesis.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_SMALLCAP`
 
 Wait for all four to complete. Collect all output file paths. If any analyst produces zero theses, note it and continue — downstream stages will simply have fewer pitches to review.
@@ -55,12 +55,12 @@ Wait for all four to complete. Collect all output file paths. If any analyst pro
 Provide all Stage 1 and Stage 2 file paths to `portfolio-manager`. Must read every document before writing.
 
 **portfolio-manager** should:
-- First, review all active positions in the thesis library: read `portfolio-manager/theses/.active`, read each active thesis, run WebSearch catalyst checks (current price vs. stop/target, catalyst status, material news), and make Hold/Resize/Close decisions for each existing position
-- For any positions decided as Close: copy the thesis to `portfolio-manager/theses/closed/` and update `.active`
+- First, review all active positions in the thesis library: read `artifacts/portfolio-manager/theses/.active`, read each active thesis, run WebSearch catalyst checks (current price vs. stop/target, catalyst status, material news), and make Hold/Resize/Close decisions for each existing position
+- For any positions decided as Close: copy the thesis to `artifacts/portfolio-manager/theses/closed/` and update `.active`
 - Then, review all new research produced in Stages 1 and 2
-- For any new positions approved: copy the original thesis to `portfolio-manager/theses/` and update `.active`
+- For any new positions approved: copy the original thesis to `artifacts/portfolio-manager/theses/` and update `.active`
 - Produce a **draft** IC memo covering: Existing Position Review (all active positions with Hold/Resize/Close decisions and catalyst updates), each new idea reviewed, proposed decision (approved / rejected), and proposed allocation weights
-- Write output to `portfolio-manager/YYYY-MM-DD_ic-memo-draft.md`
+- Write output to `artifacts/portfolio-manager/YYYY-MM-DD_ic-memo-draft.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_PM`
 
 Wait for completion. Collect the output file path.
@@ -69,13 +69,13 @@ Wait for completion. Collect the output file path.
 
 ## Stage 4 — Risk Assessment (sequential)
 
-Provide all Stage 2 and Stage 3 file paths to `risk-manager`. Must read the draft IC memo and all analyst research before writing.
+Provide the Stage 3 draft IC memo file path to `risk-manager`. Must read the draft IC memo before writing.
 
 **risk-manager** should:
 - Assess marginal risk contribution of each proposed position from the draft IC memo
 - Produce a portfolio risk report: updated gross/net exposure, factor impacts, concentration flags, VaR estimate, liquidity profile, stress test snapshot, and any limit warnings
 - Explicitly flag any positions or allocations that breach risk limits or raise concerns the PM should address
-- Write output to `risk/YYYY-MM-DD_risk-report.md`
+- Write output to `artifacts/risk/YYYY-MM-DD_risk-report.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_RISK`
 
 Wait for completion. Collect the output file path.
@@ -89,9 +89,9 @@ Provide the Stage 4 risk report file path (plus all prior file paths) to `portfo
 **portfolio-manager** should:
 - Read the Risk Manager's assessment
 - Incorporate risk feedback: adjust allocations, add hedging directives, reject positions that breach limits, or accept flagged risks with documented rationale
-- If risk feedback causes any position to be closed (or reverses a draft-round approval): copy the thesis to `portfolio-manager/theses/closed/` and remove it from `.active`
+- If risk feedback causes any position to be closed (or reverses a draft-round approval): copy the thesis to `artifacts/portfolio-manager/theses/closed/` and remove it from `.active`
 - Produce the **final** IC memo — this is the authoritative record for all downstream agents
-- Write output to `portfolio-manager/YYYY-MM-DD_ic-memo.md`
+- Write output to `artifacts/portfolio-manager/YYYY-MM-DD_ic-memo.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_PM`
 
 Wait for completion. Collect the output file path.
@@ -106,14 +106,14 @@ Provide the Stage 5 final IC memo file path to both `bookkeeper` and `investor-r
 - Read the final IC memo and book all approved position changes to the ledger
 - Produce a ledger entry summary and updated P&L snapshot reflecting the new positions
 - Flag any discrepancies or ambiguities in the IC memo to the Portfolio Manager before booking
-- Write output to `bookkeeping/YYYY-MM-DD_ledger-entry.md`
+- Write output to `artifacts/bookkeeping/YYYY-MM-DD_ledger-entry.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_BOOKKEEPER`
 
 **investor-relations** should read only the final IC memo — no other documents:
 - Translate approved portfolio changes into a polished, investor-facing portfolio update
 - Strip proprietary detail (no entry prices, stop levels, or specific allocation percentages)
 - Frame decisions directionally: sector tilts, thematic positioning, high-level bias
-- Write output to `investor-relations/YYYY-MM-DD_portfolio-update.md`
+- Write output to `artifacts/investor-relations/YYYY-MM-DD_portfolio-update.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_IR`
 
 Wait for both to complete. Collect the investor-relations output file path.
@@ -127,9 +127,9 @@ Provide the Stage 6 investor-relations file path to `social-media`.
 **social-media** should:
 - Read the investor relations update
 - Produce 1–2 tweet-length posts or a short thread capturing the directional message
-- Write output to `social-media/YYYY-MM-DD_<slug>.md`
+- Write output to `artifacts/social-media/YYYY-MM-DD_<slug>.md`
 - Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_SOCIAL`
-- Post each tweet file using: `set -a && source .env && set +a && node scripts/tweet.mjs --file social-media/YYYY-MM-DD_<slug>.md`
+- Post each tweet file using: `set -a && source .env && set +a && node scripts/tweet.mjs --file artifacts/social-media/YYYY-MM-DD_<slug>.md`
 
 Wait for completion.
 
