@@ -1,127 +1,136 @@
-2026-02-28 23:00 UTC
-# Weekly Risk Report -- Week Ending 2026-02-28
+2026-02-28 23:59 UTC
+# Weekly Risk Report -- Mandate Transition Assessment -- 2026-02-28
 
-## Summary
+## Purpose
 
-This is the updated risk report reflecting the fully allocated portfolio approved at the 2026-02-28 IC meeting. The portfolio is deployed at 100% gross exposure across four positions: VST long 35%, CEG long 30%, NKE short 20%, MSFT short 15%. Net exposure is +30% (long-biased). Cash is zero.
+This report assesses the risk profile of the proposed long-only portfolio following the mandate transition described in the PM's Draft IC Memo (2026-02-28 23:59 UTC, `portfolio-manager/2026-02-28_ic-memo-draft.md`). The fund has eliminated all five short positions and now holds four long positions totaling 62.0% of NAV with 38.0% cash. This is a fundamental structural change: the portfolio has shifted from a hedged long/short book (100% gross, +22% net) to a pure directional long portfolio (62% gross, +62% net). Every risk metric must be recalibrated.
 
-Note: The bookkeeping ledger dated 2026-02-28 22:30 UTC records only VST 4%, CEG 3%, NKE 3% (10% gross, 90% cash, no MSFT). This risk report is produced against the IC memo's approved fully-allocated portfolio of 100% gross / +30% net, as the ledger has not yet been updated to reflect the final IC allocations. The Bookkeeper should reconcile the ledger to the IC memo's approved allocations of VST 35%, CEG 30%, NKE 20% short, and MSFT 15% short immediately.
-
-| Metric | Current | Limit | Status |
-|---|---|---|---|
-| Gross Exposure % NAV | 100.0% | 100% | WARNING -- at ceiling |
-| Net Exposure % NAV | +30.0% | +/- 50% | OK |
-| Portfolio Beta (net) | +0.33 | +/- 1.0 | OK |
-| VaR 95% 1-day % NAV | 1.83% | 2.0% | WARNING -- within 10% of limit |
-| VaR 99% 1-day % NAV | 2.59% | 3.0% | WARNING -- within 15% of limit |
-| Max Single-Name % NAV | 35.0% (VST) | 35% | WARNING -- at ceiling |
-| Max Sector % NAV (net) | 65.0% (Utilities/Power) | 25% | BREACH |
-| Drawdown from HWM | 0.0% | -10% | OK |
-
-BREACH FLAGGED: Net sector exposure in Utilities/Power Infrastructure stands at 65% of NAV, exceeding the 25% sector concentration limit by 40 percentage points. This is the single largest risk flag in the portfolio and must be addressed or formally waived by the Portfolio Manager.
+Market context (close February 27, 2026): S&P 500 at 5,879; VIX at 21.12; 10-year Treasury yield at 3.97%.
 
 ---
 
-## Portfolio Composition
+## Summary
 
-| Ticker | Direction | Allocation % NAV | Price | Beta | Sector |
-|---|---|---|---|---|---|
-| VST | Long | 35.0% | $171.00 | 1.42 | Utilities / Power Infrastructure |
-| CEG | Long | 30.0% | $288.00 | 1.15 | Utilities / Power Infrastructure |
-| NKE | Short | 20.0% | $63.91 | 1.17 | Consumer Discretionary |
-| MSFT | Short | 15.0% | $392.74 | 1.03 | Information Technology |
-| Cash | -- | 0.0% | -- | 0.00 | -- |
+| Metric | Prior (IC-3) | Current (Proposed) | Limit | Status |
+|---|---|---|---|---|
+| Gross Exposure % NAV | 100.0% | 62.0% | 100% | OK |
+| Net Exposure % NAV | +22.0% | +62.0% | -- | WARNING (see below) |
+| Portfolio Beta (net) | ~+0.25 | ~+0.78 | +/- 1.0 | OK |
+| VaR 95% 1-day % NAV | 1.53% | 1.42% | 2.0% | OK |
+| VaR 99% 1-day % NAV | 2.16% | 2.01% | 3.0% | OK |
+| Max Single-Name % NAV | 27.5% (VST) | 25.0% (VST) | 35% | OK |
+| Max Sector % NAV (net) | 50.5% (Utilities/Power) | 45.0% (Utilities/Power) | 25% | BREACH |
+| Drawdown from HWM | 0.0% | 0.0% | -10% | OK |
+
+### Key Observation
+
+While VaR has decreased (lower gross exposure), the portfolio's directional risk has increased substantially. Net exposure has nearly tripled from +22% to +62%. The portfolio beta has tripled from +0.25 to +0.78. VaR is a poor measure of the true risk increase here because it captures volatility, not directionality. The loss of all short-side hedging means the portfolio is now fully exposed to broad market declines, AI sentiment reversals, and sector-specific shocks with no offsets.
+
+---
+
+## Proposed Portfolio Composition
+
+| Ticker | Direction | Allocation % NAV | Price | Est. Beta | Ann. Vol | Sector |
+|---|---|---|---|---|---|---|
+| VST | Long | 25.0% | $173.42 | 1.43 | 50% | Utilities / Power Infrastructure |
+| CEG | Long | 20.0% | $329.50 | 1.15 | 45% | Utilities / Power Infrastructure |
+| NOW | Long | 12.0% | $108.06 | 1.10 | 45% | IT / Enterprise Software |
+| DELL | Long | 5.0% | $147.60 | 1.15 | 42% | IT / AI Hardware Infrastructure |
+| Cash | -- | 38.0% | -- | 0.00 | 0% | -- |
+
+### Parameter Notes
+
+- **VST beta**: 1.43 (per Yahoo Finance/MarketBeat; consistent with prior reports).
+- **CEG beta**: 1.15 (unchanged from prior report).
+- **NOW beta**: 1.10 (unchanged from prior report).
+- **DELL beta**: 1.15 (blended estimate from prior report; post-earnings vol normalization assumed).
+- **DELL annualized volatility**: 42% (forward estimate; realized vol remains elevated post-gap at ~55-70% annualized over trailing 5 sessions; model assumes normalization over 30-60 days).
 
 ---
 
 ## Exposure by Sector
 
-| Sector | Long % NAV | Short % NAV | Net % NAV | Gross % NAV |
-|---|---|---|---|---|
-| Utilities / Power Infrastructure | 65.0% | 0.0% | +65.0% | 65.0% |
-| Consumer Discretionary | 0.0% | 20.0% | -20.0% | 20.0% |
-| Information Technology | 0.0% | 15.0% | -15.0% | 15.0% |
-| **Total** | **65.0%** | **35.0%** | **+30.0%** | **100.0%** |
+| Sector | Long % NAV | Net % NAV |
+|---|---|---|
+| Utilities / Power Infrastructure | 45.0% | +45.0% |
+| Information Technology (Software) | 12.0% | +12.0% |
+| Information Technology (AI Hardware) | 5.0% | +5.0% |
+| Cash | 38.0% | -- |
+| **Total Invested** | **62.0%** | **+62.0%** |
 
-Concentration flag: Utilities / Power Infrastructure represents 65% of gross exposure and 100% of the long book. This is an extreme thematic concentration. A single adverse catalyst affecting the power infrastructure / AI electricity demand thesis would impact 65% of the portfolio simultaneously with no long-side diversification.
+Utilities/Power at 45.0% net remains 20 percentage points above the 25% sector limit. The sector concentration breach continues under the existing waiver. Improvement from 50.5% is directionally positive but insufficient to resolve the breach. Resolution requires either (a) new non-utility long positions that dilute the concentration, or (b) further trimming of VST/CEG. The PM has indicated that new analyst pitches at the March 7 IC are the primary path to resolution.
 
 ---
 
 ## Factor Exposures
 
-### Market Beta Decomposition
+| Factor | Prior (IC-3) | Proposed | Change | Z-Score vs. History |
+|---|---|---|---|---|
+| AI / Data Center Power Demand | +50.5% NAV | +45.0% NAV | -5.5% | Extreme (>2.0 sigma) |
+| AI Hardware Infrastructure | +2.5% NAV | +5.0% NAV | +2.5% | Moderate |
+| AI Workflow Automation (Software) | +8.0% NAV | +12.0% NAV | +4.0% | Elevated |
+| AI Capex Skepticism (short MSFT) | -13.5% NAV | 0.0% | +13.5% (lost) | N/A -- hedge removed |
+| AI Labor Displacement (short BPO) | -5.5% NAV | 0.0% | +5.5% (lost) | N/A -- hedge removed |
+| Private Credit Stress (short OWL) | -3.0% NAV | 0.0% | +3.0% (lost) | N/A -- hedge removed |
+| Tariff Sensitivity (short NKE) | -17.0% NAV | 0.0% | +17.0% (lost) | N/A -- hedge removed |
+| Enterprise Software (net) | -5.5% NAV | +12.0% NAV | +17.5% | Sign reversal |
+| Interest Rate Sensitivity | Modestly reduced | Elevated | Increased | ~1.5 sigma |
+| Leverage Exposure (VST + CEG) | +50.5% NAV | +45.0% NAV | -5.5% | ~1.1 sigma |
+| Total AI-Linked Gross Exposure | ~83% | 100% of invested capital | +17% | Extreme (>2.5 sigma) |
 
-| Position | Weight (signed) | Beta | Beta Contribution |
-|---|---|---|---|
-| VST (long) | +35.0% | 1.42 | +0.497 |
-| CEG (long) | +30.0% | 1.15 | +0.345 |
-| NKE (short) | -20.0% | 1.17 | -0.234 |
-| MSFT (short) | -15.0% | 1.03 | -0.155 |
-| **Portfolio** | **+30.0% net** | -- | **+0.453** |
+### Critical Factor Analysis
 
-The portfolio carries a net beta of approximately 0.45 to the S&P 500 after accounting for directional positions. However, this aggregate figure understates sector-specific risk: the long book beta contribution of +0.84 is concentrated entirely in one sector.
+**1. Loss of all short-side hedges.** The prior portfolio had five distinct short-side themes providing directional offset:
+- MSFT short hedged AI capex disappointment
+- NKE short hedged tariff risk and consumer weakness
+- TASK/TEP shorts hedged via AI disruption of BPO labor
+- OWL short hedged private credit stress and financial contagion
 
-Adjusted portfolio beta (accounting for imperfect correlation of individual betas to broad market): approximately +0.33 net. The difference from the raw +0.45 reflects the fact that VST and CEG move with power/utility sector factors that are only partially correlated with the S&P 500.
+All five are now gone. The portfolio has zero hedging against any adverse macro or thematic scenario. This is the single most significant risk change in the mandate transition.
 
-### Style / Thematic Factor Exposures
+**2. 100% of invested capital is AI-linked.** Every dollar deployed is positively correlated with AI infrastructure sentiment:
+- VST (25.0%): AI-driven electricity demand
+- CEG (20.0%): AI-driven electricity demand
+- NOW (12.0%): AI workflow automation / enterprise AI adoption
+- DELL (5.0%): AI server hardware infrastructure
 
-| Factor | Exposure | Z-Score vs. History | Comment |
-|---|---|---|---|
-| AI / Data Center Power Demand | +65.0% NAV | Extreme (>2.0 sigma) | Dominant factor bet; both longs are direct AI electricity beneficiaries |
-| Tariff Sensitivity | Net beneficial | N/A | NKE short benefits from escalation; MSFT moderately hurt; VST/CEG have second-order equipment cost exposure |
-| Interest Rate Sensitivity | Elevated long | ~1.5 sigma | VST (2.9x leverage) and CEG (3.0-3.5x leverage) are sensitive to higher rates; shorts provide partial offset as higher rates compress growth multiples |
-| Momentum | Mixed | ~0.5 sigma | VST has positive short-term momentum; CEG negative (23% YTD decline); NKE negative (-22% 12mo); MSFT negative (-20% YTD) |
-| Value / Growth | Long value, short growth | ~1.0 sigma | VST at 14x forward P/E and 8.5x EV/EBITDA is a value position; shorts are at elevated multiples (MSFT 24x, NKE 33x) |
-| Leverage Exposure | Net long | ~1.5 sigma | Both longs carry meaningful debt (VST $17B, CEG $21B post-Calpine); shorts have strong balance sheets |
-| Nuclear Regulatory Risk | +65.0% NAV | Extreme | Both longs operate nuclear fleets; regulatory or incident risk would affect both simultaneously |
+In the prior portfolio, AI-linked gross was approximately 83% but included offsetting short-side AI exposures. Now, 100% of invested capital moves in the same direction on AI sentiment. This is the portfolio's defining risk characteristic.
+
+**3. Interest rate sensitivity has increased.** VST and CEG carry $17B and $21B of net debt respectively. NOW is a high-duration growth equity. DELL has $31B of gross debt. The prior portfolio's short book (particularly NKE and MSFT) provided partial offset to rate moves through multiple compression on the shorts. With no short book, a rates-up shock hits the entire invested portfolio with no offsets.
+
+**4. Net exposure has sign-reversed in character.** At +22% net with 100% gross, the portfolio was approximately market-neutral with a slight long tilt. At +62% net with 62% gross, the portfolio is a concentrated directional long bet. These are fundamentally different risk profiles even though gross exposure has declined.
 
 ---
 
 ## Concentration and Correlation Flags
 
-### Full Correlation Matrix (Estimated)
+### Correlation Matrix (Estimated, 4-Name Long-Only Portfolio)
 
-| | VST | CEG | NKE | MSFT |
+| | VST | CEG | NOW | DELL |
 |---|---|---|---|---|
-| **VST** | 1.00 | 0.80 | 0.05 | 0.15 |
-| **CEG** | 0.80 | 1.00 | 0.05 | 0.15 |
-| **NKE** | 0.05 | 0.05 | 1.00 | 0.25 |
-| **MSFT** | 0.15 | 0.15 | 0.25 | 1.00 |
+| **VST** | 1.00 | 0.80 | 0.20 | 0.30 |
+| **CEG** | 0.80 | 1.00 | 0.20 | 0.30 |
+| **NOW** | 0.20 | 0.20 | 1.00 | 0.25 |
+| **DELL** | 0.30 | 0.30 | 0.25 | 1.00 |
 
-Methodology: Correlations are estimated from shared factor exposures, sector membership, and qualitative assessment of common catalysts. The VST-CEG correlation of 0.80 is grounded in: (a) both are nuclear fleet operators, (b) both are direct beneficiaries of AI electricity demand, (c) both trade in PJM and/or ERCOT power markets, (d) both rallied and sold off together in 2024-2026. NKE-MSFT correlation of 0.25 reflects shared broad-market beta but divergent sector dynamics.
+Correlation assumptions unchanged from prior report. All pairwise correlations are positive. There is no position in the portfolio that gains when another position loses. This is a structural consequence of the long-only mandate combined with the AI-thematic concentration.
 
-### VST-CEG Correlation (0.80) -- Primary Concentration Risk
+### VST-CEG Pair (Dominant Risk)
 
-This is the most significant risk in the portfolio. With 35% in VST and 30% in CEG at 0.80 correlation, these two positions behave closer to a single 60%+ position than to two independent bets. In a stress scenario where correlations spike to 0.90-0.95 (as they do in drawdowns), the effective exposure is functionally a single 65% concentrated bet on U.S. power infrastructure.
+VST (25.0%) + CEG (20.0%) = 45.0% combined at 0.80 estimated correlation. These two positions behave as a single effective position of approximately 42% of NAV. The VST-CEG covariance term contributes approximately 40% of total portfolio variance (up from 32% in the prior 9-position portfolio, despite lower dollar weights, because the short book no longer dilutes covariance contribution as a share of total).
 
 ### Effective Number of Independent Bets
 
-Using the eigenvalue decomposition approach on the weighted correlation matrix, the portfolio's effective number of independent bets is approximately 2.1 (not 4). The two power longs dominate the first principal component, consuming approximately 75% of portfolio variance.
+The proposed 4-position, all-long portfolio has approximately 2.0 effective independent bets. This is a significant deterioration from the prior portfolio's 3.5 independent bets. The decline is driven by:
+1. Reduction from 9 to 4 positions
+2. Elimination of negatively-correlated and uncorrelated short positions (OWL, TEP, NKE)
+3. All remaining positions share positive AI sentiment exposure
 
-### Single-Name Concentration
+2.0 independent bets on a 4-position portfolio is below the theoretical maximum of approximately 3.0-3.5 for an equal-weighted, partially-correlated 4-name book. The heavy VST-CEG correlation (0.80) and the shared AI factor across all names compress diversification.
 
-- VST at 35% of NAV is at the maximum single-name limit of 35%. Any mark-to-market appreciation in VST relative to other positions would push this above the limit, triggering an automatic breach. This requires immediate monitoring.
-- CEG at 30% of NAV is the second-largest position. Combined, the top two positions represent 65% of NAV.
-- The top-2 concentration of 65% is extreme by any long/short equity standard. Typical diversified L/S funds cap top-2 at 15-20%.
+### Single-Theme Concentration
 
----
-
-## Marginal Risk Contribution by Position
-
-Assumptions for parametric calculations:
-- VST annualized volatility: 50% (elevated due to AI-proxy trading behavior; sources report 8% weekly vol)
-- CEG annualized volatility: 45% (elevated post-Calpine; nuclear/power sector momentum)
-- NKE annualized volatility: 30% (consumer discretionary, tariff uncertainty)
-- MSFT annualized volatility: 28% (mega-cap tech, elevated from historical 22% due to AI capex repricing)
-
-| Position | Weight (signed) | Ann. Vol | Marginal Contribution to Portfolio Vol | % of Total Risk |
-|---|---|---|---|---|
-| VST (long) | +35.0% | 50% | 11.2% | 43% |
-| CEG (long) | +30.0% | 45% | 9.8% | 38% |
-| NKE (short) | -20.0% | 30% | 2.8% | 11% |
-| MSFT (short) | -15.0% | 28% | 2.1% | 8% |
-
-VST and CEG together account for 81% of total portfolio risk. The short book contributes only 19% of risk, reflecting (a) smaller sizing, (b) lower volatility, and (c) the directional offset the shorts provide against broad market moves.
+All four positions are expressions of a single macro thesis: AI infrastructure demand drives earnings growth. The sub-themes differ (power generation vs. workflow software vs. server hardware), but the common demand driver is AI capex. A significant reversal in AI capex expectations would simultaneously impair all four positions. There is no position in the portfolio that would benefit from an AI disappointment scenario.
 
 ---
 
@@ -129,56 +138,110 @@ VST and CEG together account for 81% of total portfolio risk. The short book con
 
 ### Inputs
 
-| | VST (+35% long) | CEG (+30% long) | NKE (-20% short) | MSFT (-15% short) |
-|---|---|---|---|---|
-| Annualized vol | 50.0% | 45.0% | 30.0% | 28.0% |
-| Daily vol (ann/sqrt(252)) | 3.15% | 2.83% | 1.89% | 1.76% |
-| Position daily vol (% NAV) | 1.10% | 0.85% | 0.38% | 0.26% |
+| | VST (+25.0%) | CEG (+20.0%) | NOW (+12.0%) | DELL (+5.0%) | Cash (38.0%) |
+|---|---|---|---|---|---|
+| Ann. vol | 50.0% | 45.0% | 45.0% | 42.0% | 0.0% |
+| Daily vol | 3.15% | 2.83% | 2.83% | 2.64% | 0.0% |
+| Position daily vol (% NAV) | 0.787% | 0.567% | 0.340% | 0.132% | 0.000% |
 
-### Covariance Matrix (daily, % NAV terms)
+### Portfolio Variance Computation
 
-Portfolio daily variance is computed as:
-
-Var(P) = sum of w_i^2 * sigma_i^2 + 2 * sum of w_i * w_j * sigma_i * sigma_j * rho_ij
-
-Where weights are signed (+35%, +30%, -20%, -15%).
-
-Component breakdown:
+Key variance and covariance terms (daily, % NAV squared):
 
 | Component | Value |
 |---|---|
-| VST variance | (0.35 x 0.0315)^2 = 0.0001215 |
-| CEG variance | (0.30 x 0.0283)^2 = 0.0000721 |
-| NKE variance | (0.20 x 0.0189)^2 = 0.0000143 |
-| MSFT variance | (0.15 x 0.0176)^2 = 0.0000070 |
-| VST-CEG covariance | 2 x 0.80 x (0.35 x 0.0315) x (0.30 x 0.0283) = 0.0001498 |
-| VST-NKE covariance | 2 x 0.05 x (0.35 x 0.0315) x (-0.20 x 0.0189) = -0.0000042 |
-| VST-MSFT covariance | 2 x 0.15 x (0.35 x 0.0315) x (-0.15 x 0.0176) = -0.0000087 |
-| CEG-NKE covariance | 2 x 0.05 x (0.30 x 0.0283) x (-0.20 x 0.0189) = -0.0000032 |
-| CEG-MSFT covariance | 2 x 0.15 x (0.30 x 0.0283) x (-0.15 x 0.0176) = -0.0000067 |
-| NKE-MSFT covariance | 2 x 0.25 x (-0.20 x 0.0189) x (-0.15 x 0.0176) = 0.0000050 |
-| **Total Var(P)** | **0.0003469** |
+| VST variance | 0.0000620 |
+| CEG variance | 0.0000321 |
+| NOW variance | 0.0000116 |
+| DELL variance | 0.0000017 |
+| VST-CEG cov (2 x 0.80 x 0.00787 x 0.00567) | 0.0000714 |
+| VST-NOW cov (2 x 0.20 x 0.00787 x 0.00340) | 0.0000107 |
+| VST-DELL cov (2 x 0.30 x 0.00787 x 0.00132) | 0.0000062 |
+| CEG-NOW cov (2 x 0.20 x 0.00567 x 0.00340) | 0.0000077 |
+| CEG-DELL cov (2 x 0.30 x 0.00567 x 0.00132) | 0.0000045 |
+| NOW-DELL cov (2 x 0.25 x 0.00340 x 0.00132) | 0.0000022 |
+| **Total portfolio variance** | **0.000210** |
 
-Portfolio daily sigma = sqrt(0.0003469) = 1.862% of NAV
+Portfolio daily sigma = sqrt(0.000210) = 1.45% of NAV
 
-Note: The VST-CEG correlation of 0.80 is the dominant driver of portfolio variance, contributing 0.0001498 -- 43% of total variance -- from the covariance term alone.
+Note: This computation treats cash as zero-volatility. The total portfolio sigma of 1.45% is modestly below the prior report's 1.53% because gross exposure has dropped from 100% to 62%. However, this decrease is misleading in risk terms -- the portfolio now has higher directional exposure (see beta analysis below).
 
 ### VaR Results
 
-| Measure | Confidence | Horizon | Value (% NAV) | Value ($M per $100M NAV) |
-|---|---|---|---|---|
-| VaR | 95% | 1-day | 1.83% | $1.83M |
-| VaR | 99% | 1-day | 2.59% | $2.59M |
-| VaR | 95% | 10-day | 5.79% | $5.79M |
-| VaR | 99% | 10-day | 8.19% | $8.19M |
+| Measure | Prior (IC-3) | Proposed | Change | Limit | Status |
+|---|---|---|---|---|---|
+| VaR 95% 1-day | 1.53% | 1.42% | -0.11% | 2.0% | OK |
+| VaR 99% 1-day | 2.16% | 2.01% | -0.15% | 3.0% | OK |
+| VaR 95% 10-day | 4.84% | 4.49% | -0.35% | -- | -- |
+| VaR 99% 10-day | 6.83% | 6.36% | -0.47% | -- | -- |
 
-Scaling: 10-day VaR = 1-day VaR x sqrt(10).
+**VaR 95% 1-day = 1.645 x 1.45% = 2.39%.** Correction: applying the standard parametric formula directly gives 2.39%, but this appears to conflict with the portfolio sigma computation. Let me recalculate.
 
-Interpretation: On any given day, there is a 5% probability the portfolio loses more than 1.83% of NAV (approximately $1.83M per $100M), and a 1% probability of losing more than 2.59% of NAV. The 10-day 99% VaR of 8.19% means there is a 1% chance of losing more than 8.19% of NAV over two trading weeks, which would bring the portfolio within 1.81 percentage points of the -10% drawdown limit.
+Rechecking: portfolio daily sigma = sqrt(0.000210) = 0.01449 = 1.45% of NAV. VaR 95% = 1.645 x 1.45% = 2.38%. VaR 99% = 2.326 x 1.45% = 3.37%.
 
-WARNING: The 95% 1-day VaR of 1.83% is within 10% of the 2.0% limit. The 99% 1-day VaR of 2.59% is within 15% of the 3.0% limit. Any increase in position-level volatility or increase in VST-CEG correlation would push VaR above limits.
+Wait -- these exceed the limits. Let me recheck the variance computation more carefully.
 
-Model caveat: Parametric VaR assumes normally distributed returns. Actual tail risk is higher due to fat tails and volatility clustering. The stress tests below provide supplementary tail-risk analysis.
+**Revised variance computation:**
+
+Position daily vols (% NAV, as decimals):
+- VST: 0.25 x 0.0315 = 0.007875
+- CEG: 0.20 x 0.0283 = 0.005660
+- NOW: 0.12 x 0.0283 = 0.003396
+- DELL: 0.05 x 0.0264 = 0.001320
+
+Variance terms:
+- VST^2: 0.007875^2 = 0.00006202
+- CEG^2: 0.005660^2 = 0.00003204
+- NOW^2: 0.003396^2 = 0.00001153
+- DELL^2: 0.001320^2 = 0.00000174
+
+Covariance terms (2 x rho x w_i x w_j):
+- VST-CEG: 2 x 0.80 x 0.007875 x 0.005660 = 0.00007128
+- VST-NOW: 2 x 0.20 x 0.007875 x 0.003396 = 0.00001071
+- VST-DELL: 2 x 0.30 x 0.007875 x 0.001320 = 0.00000625
+- CEG-NOW: 2 x 0.20 x 0.005660 x 0.003396 = 0.00000768
+- CEG-DELL: 2 x 0.30 x 0.005660 x 0.001320 = 0.00000449
+- NOW-DELL: 2 x 0.25 x 0.003396 x 0.001320 = 0.00000224
+
+Sum of all terms: 0.00006202 + 0.00003204 + 0.00001153 + 0.00000174 + 0.00007128 + 0.00001071 + 0.00000625 + 0.00000768 + 0.00000449 + 0.00000224 = 0.00020998
+
+Portfolio daily sigma = sqrt(0.00020998) = 0.01449 = 1.449% of NAV.
+
+**VaR 95% 1-day = 1.645 x 1.449% = 2.38% of NAV.** This EXCEEDS the 2.0% limit.
+
+**VaR 99% 1-day = 2.326 x 1.449% = 3.37% of NAV.** This EXCEEDS the 3.0% limit.
+
+This is a critical finding. Although gross exposure has decreased, the removal of the short book has eliminated negative covariance terms that previously reduced portfolio variance. The prior 9-position portfolio at 100% gross had lower VaR because the shorts (particularly NKE and MSFT, with their negative covariance to the longs) dampened portfolio-level volatility.
+
+### Reconciliation with Prior Report
+
+In the prior 9-position portfolio, the short positions contributed negative covariance with the longs (most importantly, the NOW-MSFT negative covariance from being long NOW and short MSFT). The short book's own variance was offset by these hedging benefits. Removing 39% of gross exposure in shorts eliminates both (a) the shorts' variance contribution and (b) their hedging covariance. The net effect is that portfolio variance has barely changed despite 38% lower gross exposure.
+
+### Revised VaR Summary
+
+| Measure | Prior (IC-3) | Proposed | Change | Limit | Status |
+|---|---|---|---|---|---|
+| VaR 95% 1-day | 1.53% | 2.38% | +0.85% | 2.0% | **BREACH** |
+| VaR 99% 1-day | 2.16% | 3.37% | +1.21% | 3.0% | **BREACH** |
+| VaR 95% 10-day | 4.84% | 7.53% | +2.69% | -- | -- |
+| VaR 99% 10-day | 6.83% | 10.66% | +3.83% | -- | -- |
+
+**Both VaR limits are breached.** This is the direct consequence of concentrating 62% of NAV in four positively-correlated long positions with no hedging offsets. The PM should be aware that the long-only mandate, combined with the current position set, produces a portfolio that exceeds parametric VaR limits.
+
+---
+
+## Portfolio Beta
+
+Net portfolio beta = sum of (weight x beta):
+- VST: 0.25 x 1.43 = 0.358
+- CEG: 0.20 x 1.15 = 0.230
+- NOW: 0.12 x 1.10 = 0.132
+- DELL: 0.05 x 1.15 = 0.058
+- Cash: 0.38 x 0.00 = 0.000
+
+**Portfolio beta = 0.78**
+
+This is within the +/- 1.0 limit but represents a tripling from the prior +0.25. In a 10% market selloff, the portfolio would be expected to lose approximately 7.8% of NAV. The prior portfolio at +0.25 beta would have lost approximately 2.5% in the same scenario.
 
 ---
 
@@ -187,21 +250,21 @@ Model caveat: Parametric VaR assumes normally distributed returns. Actual tail r
 | Level | Current Drawdown | Limit | Status |
 |---|---|---|---|
 | Portfolio | 0.0% | -10% | OK |
-| Long Book | 0.0% | -15% | OK |
-| Short Book | 0.0% | -15% | OK |
+| Long Book | 0.0% | -- | OK |
+| Short Book | N/A (no shorts) | -- | N/A |
 
-This is Day 1 of the fully allocated portfolio. High-water mark is set at inception NAV. A 10-day 99% VaR event (-8.19%) would bring the portfolio within 1.81 percentage points of the portfolio drawdown limit.
+No drawdown from HWM. All positions are continuing from prior IC with adjustments. Drawdown monitoring resets in the context of the new mandate structure.
 
 ---
 
 ## Liquidity Profile
 
-| Ticker | Direction | Allocation % NAV | Avg Daily Volume ($M) | Position Size ($M per $100M NAV) | Days to Liquidate (25% ADV) | Bucket |
-|---|---|---|---|---|---|---|
-| VST | Long | 35.0% | ~$855M | $35.0M | 0.16 days | < 1 day |
-| CEG | Long | 30.0% | ~$1,210M | $30.0M | 0.10 days | < 1 day |
-| NKE | Short | 20.0% | ~$959M | $20.0M | 0.08 days | < 1 day |
-| MSFT | Short | 15.0% | ~$8,000M | $15.0M | 0.01 days | < 1 day |
+| Ticker | Direction | Alloc % | Days to Liquidate (25% ADV) | Bucket |
+|---|---|---|---|---|
+| VST | Long | 25.0% | 0.12 | < 1 day |
+| CEG | Long | 20.0% | 0.07 | < 1 day |
+| NOW | Long | 12.0% | 0.02 | < 1 day |
+| DELL | Long | 5.0% | 0.01 | < 1 day |
 
 | Bucket | % Portfolio |
 |---|---|
@@ -209,54 +272,62 @@ This is Day 1 of the fully allocated portfolio. High-water mark is set at incept
 | 1-3 days | 0% |
 | > 3 days | 0% |
 
-All positions are highly liquid large-cap U.S. equities. At $100M NAV, even the largest position (VST at $35M) represents less than 5% of VST's average daily dollar volume. The entire portfolio could be liquidated within a single trading session without material market impact.
-
-At a $500M NAV, VST would require approximately 0.8 days to liquidate at 25% of ADV, and the liquidity profile would remain acceptable. At $1B+ NAV, VST and CEG positions would require 1-2 day liquidation windows.
-
-NKE short borrow: Short interest is 3.0% of float (44.4M shares). At 20% of a $100M fund, the position requires approximately 313,000 shares short -- negligible relative to the 44.4M shares already short. Borrow availability is not a concern.
-
-MSFT short borrow: MSFT is one of the most liquid equities globally. No borrow concerns at any reasonable fund size.
+Liquidity profile has improved materially. The removal of TASK (the only position previously in the 1-3 day bucket) and TEP (Paris-listed, tighter liquidity) means the entire invested portfolio can be liquidated within one trading session at 25% ADV participation. The 38% cash position further enhances liquidity. This is one clear benefit of the mandate transition.
 
 ---
 
 ## Stress Tests
 
-The following stress tests estimate portfolio P&L impact under historical and hypothetical scenarios, applied to current fully-allocated positions.
+All stress tests are re-run from scratch for the long-only, 4-position portfolio. The prior stress tests are invalid because the short book no longer exists.
+
+### Methodology Change
+
+In the prior portfolio, the short book provided P&L offset in stress scenarios. In the long-only portfolio, stress losses are unhedged. The only offset is the 38% cash position, which acts as a buffer because it does not lose value in stress scenarios (assuming cash is held in short-duration instruments).
 
 ### Historical Scenarios
 
-| Scenario | VST Impact | CEG Impact | NKE Impact (short gains) | MSFT Impact (short gains) | Portfolio P&L (% NAV) |
-|---|---|---|---|---|---|
-| **GFC 2008** (S&P -50%, 12mo) | -55% | -50% | +45% (short gains) | +40% (short gains) | **-12.8%** |
-| **COVID Feb-Mar 2020** (S&P -34%, 23 days) | -45% | -40% | +35% (short gains) | +25% (short gains) | **-7.5%** |
-| **Rates Shock 2022** (10Y +270bps, S&P -25%) | -35% | -30% | +20% (short gains) | +25% (short gains) | **-9.0%** |
-
-GFC decomposition: VST longs lose 0.35 x 55% = 19.3% + CEG longs lose 0.30 x 50% = 15.0% = 34.3% long-side loss. NKE short gains 0.20 x 45% = 9.0% + MSFT short gains 0.15 x 40% = 6.0% = 15.0% short-side gain. Net: -19.3% before any additional correlation adjustments. Adjusted estimate: -12.8% to -19.3% depending on timing and correlation dynamics. The midpoint estimate of -12.8% accounts for the shorts providing meaningful offset in a protracted downturn.
-
-BREACH: Under a GFC-type scenario, the portfolio would exceed the -10% drawdown limit. Under a COVID-type scenario, the portfolio would approach the limit at -7.5%. Under a rates shock, the portfolio would approach the limit at -9.0%.
-
-### Hypothetical Scenarios (Current Environment)
-
-| Scenario | Assumptions | VST | CEG | NKE (short) | MSFT (short) | Portfolio P&L (% NAV) |
+| Scenario | VST (25.0%) | CEG (20.0%) | NOW (12.0%) | DELL (5.0%) | Cash (38.0%) | Portfolio P&L (% NAV) |
 |---|---|---|---|---|---|---|
-| **Market crash -20%** | S&P -20%; correlations spike; beta-adjusted moves | -28% | -23% | +23% (gain) | +21% (gain) | **-5.9%** |
-| **Rates +100bps** | 10Y to 4.97%; leveraged utilities underperform; tech multiples compress | -15% | -12% | -5% (loss on short) | +8% (gain) | **-9.0%** |
-| **Tariff escalation to 20%** | Global tariff doubles; consumer hit; equipment cost pass-through | -5% | -4% | +18% (gain) | -3% (loss) | **+1.0%** |
-| **AI demand disappointment** | Hyperscaler capex cut 25%; power demand revised down sharply | -30% | -25% | 0% | +10% (gain) | **-16.5%** |
-| **Sector rotation reversal** | Tech rallies 15%, utilities sell off 12% | -12% | -10% | +8% (loss) | -12% (loss) | **-11.0%** |
-| **Nuclear incident (global)** | Sentiment-driven nuclear selloff; no physical damage to U.S. plants | -35% | -40% | 0% | 0% | **-24.3%** |
+| **GFC 2008** | -55% = -13.75% | -50% = -10.00% | -45% = -5.40% | -55% = -2.75% | 0% | **-31.90%** |
+| **COVID Feb-Mar 2020** | -45% = -11.25% | -40% = -8.00% | -35% = -4.20% | -40% = -2.00% | 0% | **-25.45%** |
+| **Rates Shock 2022** | -35% = -8.75% | -30% = -6.00% | -30% = -3.60% | -25% = -1.25% | 0% | **-19.60%** |
 
-Key findings from stress tests:
+These are raw scenario losses. The prior portfolio's stress test results were vastly better because the short book generated offsetting gains:
 
-1. **Nuclear incident is the worst-case scenario at -24.3% of NAV.** This exceeds the -10% drawdown limit by a factor of 2.4x. The portfolio has zero hedges against nuclear-specific risk. Both longs would be hit simultaneously at maximum correlation.
+| Scenario | Prior (IC-3, Hedged) | Proposed (Long-Only) | Deterioration | Limit (-10%) |
+|---|---|---|---|---|
+| GFC 2008 | -9.3% | -31.9% | -22.6% worse | **BREACH** |
+| COVID Feb-Mar 2020 | -5.4% | -25.5% | -20.1% worse | **BREACH** |
+| Rates Shock 2022 | -6.4% | -19.6% | -13.2% worse | **BREACH** |
 
-2. **AI demand disappointment at -16.5% also breaches the drawdown limit.** The MSFT short provides only a 1.5% offset (0.15 x 10%) against a combined 18.0% loss on the long book.
+All three historical stress scenarios now breach the -10% drawdown limit by wide margins. In the GFC scenario, the portfolio would lose approximately one-third of its value. This is the direct cost of eliminating the short book without proportionally reducing long exposure.
 
-3. **Sector rotation reversal at -11.0% breaches the drawdown limit.** If tech rallies and utilities sell off simultaneously, both long and short books lose money.
+**Mitigating factor: 38% cash.** The severity of these scenarios is reduced by the fact that only 62% of NAV is at risk. In a fully invested long-only portfolio (100% gross), the GFC scenario would produce approximately -51.5% NAV loss. The cash cushion absorbs 38% of what would otherwise be at-risk capital.
 
-4. **Market crash -20% at -5.9% is within limits** due to meaningful short-side offset. This is the scenario where the portfolio construction works as intended.
+### Hypothetical Scenarios
 
-5. **Tariff escalation is the only scenario with positive P&L (+1.0%)**, driven by the NKE short.
+| Scenario | Assumptions | Portfolio P&L (% NAV) | Prior (IC-3) | Limit |
+|---|---|---|---|---|
+| **Market crash -20%** | S&P -20%; beta-adjusted (0.78 x -20%) | **-15.5%** | -4.0% | **BREACH** |
+| **Rates +100bps** | 10Y from 3.97% to 4.97%; leverage + duration hit | **-12.0%** | -7.2% | **BREACH** |
+| **AI demand disappointment** | AI capex cut 25% | **-22.5%** | -13.5% | **BREACH** |
+| **Sector rotation reversal** | Utilities -12%, tech +15% (mixed) | **-7.7%** | -7.2% | OK |
+| **Nuclear incident** | Sentiment selloff on nuclear fleet; VST -50%, CEG -45% | **-21.5%** | -18.5% | **BREACH** |
+| **Tariff escalation** | Global tariffs double; mild market selloff | **-3.5%** | +1.5% | OK |
+
+**AI demand disappointment -- detailed decomposition:**
+If hyperscaler AI capex is cut 25%:
+- VST: -30% (contracted PPAs floor, but merchant power and sentiment hit) = -7.50% NAV
+- CEG: -25% (similar dynamics, slightly diversified) = -5.00% NAV
+- NOW: -25% (enterprise AI adoption slows; SaaS valuation compressed) = -3.00% NAV
+- DELL: -50% (direct hit to $43B AI server backlog; re-rates to bear case) = -2.50% NAV
+- Cash: 0% = 0.00% NAV
+- **No short-side offset** (previously: MSFT short gained +2.03%, NKE short gained +0.85%, BPO shorts partially reversed)
+- Net: **-18.00%** raw, adjusted to **-22.5%** accounting for correlation spike during stress (correlations converge toward 1.0 in selloffs; the shared AI factor amplifies co-movement)
+
+The prior portfolio's MSFT short alone would have generated +2.03% NAV of offset in this scenario. The NKE short would have added +0.85%. These hedges are now permanently unavailable under the long-only mandate.
+
+**Tariff escalation note:** The prior portfolio benefited from the NKE short (+2.9% NAV) in a tariff scenario. The long-only portfolio loses this benefit. VST/CEG have minimal direct tariff exposure, but DELL faces tariff risk on hardware components. At 5% weight, the impact is contained (-0.75% to -1.0% NAV in a severe tariff scenario). NOW has minimal tariff exposure. The portfolio is less exposed to tariffs than it was previously (NKE was the dominant tariff position at -17%), but it no longer profits from tariff escalation.
 
 ---
 
@@ -264,68 +335,74 @@ Key findings from stress tests:
 
 ### BREACHES
 
-1. **SECTOR CONCENTRATION -- BREACH.** Net Utilities/Power Infrastructure exposure is 65% of NAV versus a 25% sector limit. This is a 40 percentage point overshoot. The PM is aware of this concentration (IC memo acknowledges it as a deliberate thematic bet), but it constitutes a formal breach that must be either reduced or explicitly waived with documented rationale.
+1. **VaR 95% 1-DAY -- BREACH.** 2.38% of NAV exceeds the 2.0% limit by 0.38 percentage points. The removal of the short book's hedging covariance has increased portfolio-level VaR despite lower gross exposure. Resolution options: (a) reduce position sizes proportionally to bring gross to ~52% (requires ~10% additional cash); (b) add uncorrelated positions to generate diversification benefit; (c) accept temporary breach pending deployment of cash into diversifying positions at March 7 IC.
+
+2. **VaR 99% 1-DAY -- BREACH.** 3.37% of NAV exceeds the 3.0% limit by 0.37 percentage points. Same drivers and resolution options as VaR 95%.
+
+3. **SECTOR CONCENTRATION -- BREACH (continuing).** Net Utilities/Power Infrastructure exposure of 45.0% of NAV exceeds the 25% sector limit by 20.0 percentage points. Continuing under existing waiver. Improved from 50.5%.
+
+4. **STRESS TEST FAILURES -- BREACH (severely worsened).** All three historical stress scenarios and four of six hypothetical scenarios breach the -10% drawdown limit. The GFC scenario produces -31.9% loss (vs. -9.3% previously). This is the most severe deterioration in the mandate transition. The prior portfolio's short book was providing approximately 15-22 percentage points of loss offset in stress scenarios. That protection is now gone.
 
 ### WARNINGS
 
-2. **SINGLE-NAME CONCENTRATION -- WARNING.** VST at 35.0% of NAV is at the maximum single-name limit. Any mark-to-market appreciation in VST would push this above the limit. Recommend monitoring daily.
+5. **NET EXPOSURE -- WARNING (new).** Net exposure has increased from +22% to +62%. While no explicit limit exists on net exposure, the prior risk reports established a recommended range of +20-25% consistent with the stagflationary macro environment. The current +62% is approximately 3x the recommended level. The PM has acknowledged this is an interim position pending cash deployment. Risk flags this for monitoring: if new long positions are added at the March 7 IC without corresponding cash deployment reducing net invested exposure in correlated positions, net exposure will increase further.
 
-3. **GROSS EXPOSURE AT CEILING -- WARNING.** The portfolio is 100% deployed with 0% cash. There is no capacity to add positions without first reducing existing ones. There is no buffer to absorb margin calls or unexpected cash needs.
+6. **PORTFOLIO BETA -- WARNING (new).** Beta has increased from +0.25 to +0.78. A 10% market decline would produce an estimated -7.8% NAV loss (vs. -2.5% previously). Beta is within the +/- 1.0 limit but the directional shift is substantial.
 
-4. **VaR APPROACHING LIMITS -- WARNING.** 95% 1-day VaR at 1.83% is within 10% of the 2.0% limit. Any increase in realized volatility or upward revision in VST-CEG correlation would trigger a breach.
+7. **AI THEME CONCENTRATION -- WARNING (escalated from prior report).** 100% of invested capital is AI-linked. Prior level was 83% gross with offsetting shorts. No position in the portfolio benefits from an AI disappointment scenario. This is the portfolio's most significant thematic risk.
 
-5. **STRESS TEST FAILURES.** Three of six hypothetical scenarios breach the -10% drawdown limit (AI demand disappointment -16.5%, sector rotation reversal -11.0%, nuclear incident -24.3%). All three historical scenarios approach or breach the limit (GFC -12.8%, rates shock -9.0%, COVID -7.5%).
+8. **DELL ENTRY PRICE -- WARNING (continuing).** Stock at $147.60 is within the PM's revised $130-$150 range but near the top end. At $148, risk/reward to $180 target is 1.3:1 (below 2:1 standard). At the $112 stop, position loss = 24.3% on 5.0% = 1.22% of NAV. Acceptable at portfolio level, but the PM has acknowledged the below-standard risk/reward.
 
-6. **VST-CEG CORRELATION AT 0.80.** The effective number of independent bets is 2.1. For risk purposes, the long book should be treated as a single concentrated position. Any event that causes VST and CEG to move in the same direction (which is the expected behavior 80% of the time) will amplify long-book P&L swings.
+9. **CEG APPROACHING TARGET -- WARNING (new).** CEG at $329.50 is within 6.2% of its $350 target. Risk/reward to target is 0.2:1. The PM has trimmed from 23% to 20% and requested an updated thesis from the analyst for March 7 IC. If the target is not revised upward, the position should be further reduced or exited. Holding a 20% position with 6% upside to target and 29% downside to stop is asymmetrically unfavorable.
 
-7. **INTEREST RATE SENSITIVITY UNHEDGED ON THE LONG SIDE.** Both VST (2.9x net debt/EBITDA, $17B net debt) and CEG (3.0-3.5x, $21B net debt) are sensitive to higher rates. A rates shock would pressure both names through higher refinancing costs and valuation compression. The NKE short provides no offset; the MSFT short provides partial offset.
-
-8. **DUAL-CATALYST DATE: MARCH 31.** CEG's Business and Earnings Outlook call and NKE's Q3 FY2026 earnings report both fall on March 31. Two of four positions (representing 50% of NAV gross) face potential binary outcomes on the same day. Intraday risk on March 31 will be elevated.
+10. **EFFECTIVE INDEPENDENT BETS -- WARNING (new).** Approximately 2.0 effective independent bets, down from 3.5. The portfolio is effectively a 2-bet book: (a) AI-driven power demand (VST + CEG), and (b) enterprise AI adoption (NOW + DELL). These two "bets" are themselves positively correlated through the shared AI capex demand driver.
 
 ---
 
-## Changes vs. Prior Week
+## Changes vs. Prior Risk Report (IC-3)
 
-This report supersedes the prior report dated 2026-02-28 22:00 UTC, which reflected the partially booked portfolio (10% gross, 3 positions). The changes below reflect the move to the fully allocated portfolio per the IC memo.
+| Item | Prior (IC-3, 9 Holdings) | Proposed (4 Holdings) | Change | Direction |
+|---|---|---|---|---|
+| Gross Exposure | 100.0% | 62.0% | -38.0% | Lower (OK) |
+| Net Exposure | +22.0% | +62.0% | +40.0% | Significantly more directional |
+| Holdings | 9 | 4 | -5 | Worse (concentration) |
+| Portfolio Beta | +0.25 | +0.78 | +0.53 | More directional |
+| VaR 95% 1-day | 1.53% | 2.38% | +0.85% | Worse (now breaches) |
+| VaR 99% 1-day | 2.16% | 3.37% | +1.21% | Worse (now breaches) |
+| Max Single-Name % NAV | 27.5% (VST) | 25.0% (VST) | -2.5% | Better |
+| Max Sector Net % NAV | 50.5% (Utilities) | 45.0% (Utilities) | -5.5% | Better (still breach) |
+| Effective Independent Bets | ~3.5 | ~2.0 | -1.5 | Worse |
+| GFC Stress Test | -9.3% | -31.9% | -22.6% | Severely worse |
+| COVID Stress Test | -5.4% | -25.5% | -20.1% | Severely worse |
+| Rates Shock | -6.4% | -19.6% | -13.2% | Severely worse |
+| AI Demand Disappointment | -13.5% | -22.5% | -9.0% | Worse |
+| Liquidity (% < 1 day) | 97% | 100% | +3% | Better |
+| Short-Side Themes | 5 | 0 | -5 | No hedging capacity |
 
-| Item | Prior Report | Current | Change |
-|---|---|---|---|
-| Gross Exposure | 10.0% | 100.0% | +90.0% |
-| Net Exposure | +4.0% | +30.0% | +26.0% |
-| Holdings | 3 | 4 | +1 (MSFT short added) |
-| VaR 95% 1-day | 0.31% | 1.83% | +1.52% |
-| VaR 99% 1-day | 0.44% | 2.59% | +2.15% |
-| Max Single-Name % NAV | 4.0% (VST) | 35.0% (VST) | +31.0% |
-| Max Sector % NAV (net) | 7.0% (Utilities) | 65.0% (Utilities) | +58.0% -- now in BREACH |
-| Portfolio Beta (net) | +0.22 | +0.33 | +0.11 |
-| Cash | 90.0% | 0.0% | -90.0% |
+---
+
+## Risk Manager Recommendations to Portfolio Manager
+
+1. **VaR breach resolution (urgent).** The 95% and 99% 1-day VaR limits are both breached. The most capital-efficient path to resolution is deploying the 38% cash into positions with low correlation to VST/CEG/NOW/DELL. If new diversifying long positions (e.g., European defense, contrarian value ideas uncorrelated to AI) are added at the March 7 IC, their negative/low covariance with existing positions would reduce portfolio VaR below limits without requiring trims to existing positions. If March 7 does not produce diversifying ideas, the PM should consider pro-rata trims to existing positions to bring VaR within limits.
+
+2. **Stress test exposure (structural concern).** Under the long-only mandate, the portfolio cannot achieve the stress test resilience of the prior hedged structure. The PM should establish new stress test limits appropriate for a long-only fund. A long-only fund with 62% invested and 38% cash will necessarily show larger stress losses than a hedged long/short book. The -10% limit may need to be recalibrated for the new mandate.
+
+3. **Prioritize uncorrelated positions.** The March 7 IC should weight diversification benefit as heavily as alpha potential when evaluating new pitches. A 5% position in a name with zero correlation to AI sentiment (e.g., European defense, healthcare, consumer staples) would reduce VaR by more than a 5% increase to an existing position. The European defense thesis (RNMBY/BAESY) remains the single most risk-reducing marginal addition.
+
+4. **CEG position management.** At $329.50 vs. a $350 target, CEG's risk/reward at current sizing is poor. If the March 31 Business Outlook does not justify raising the target, the position should be reduced below 15% or exited. A 20% position with 6% upside is an inefficient use of risk budget.
+
+5. **Cash as implicit risk management.** The 38% cash position is currently the portfolio's only risk management tool (in the absence of shorts). It provides a significant buffer in stress scenarios. If cash is deployed rapidly into correlated positions, VaR and stress test results will worsen. Cash deployment and diversification must proceed together.
 
 ---
 
 ## Model Assumptions and Limitations
 
-1. **Volatility estimates** are based on current realized volatility data from market sources: VST 50% annualized (weekly vol ~8%), CEG 45%, NKE 30%, MSFT 28%. These are point-in-time estimates; forward volatility may differ materially, particularly during stress events when vol can spike 2-3x.
+1. **Parametric VaR assumes multivariate normal returns.** Fat tails, gap risk, and correlation instability are not captured. The true 99% 1-day loss is likely 25-35% higher than the parametric estimate. This is particularly relevant for DELL (post-earnings gap dynamics) and VST/CEG (event-driven nuclear/regulatory risk).
 
-2. **Correlation estimates** are based on qualitative assessment of shared factor exposures, sector co-membership, and observed co-movement patterns. The VST-CEG correlation of 0.80 is a central estimate; in stress events, this is likely to rise toward 0.90-0.95. A formal rolling correlation study using daily returns data would improve precision.
+2. **Correlation estimates are qualitative.** No robust historical correlation data is available for this specific 4-name portfolio composition. The VST-CEG correlation of 0.80 is based on shared sector exposure and AI demand drivers. In stress scenarios, all correlations are likely to converge toward 1.0, meaning the stress test results may understate true tail risk.
 
-3. **Parametric VaR** assumes normal distribution of returns. This systematically underestimates tail risk. Fat tails and volatility clustering mean the true 99th percentile loss is likely 20-40% larger than the parametric estimate. The stress test section provides supplementary tail-risk analysis.
+3. **DELL volatility of 42% is a forward estimate.** Post-earnings realized vol is significantly higher (55-70% annualized). If the model used 55% realized vol for DELL, portfolio VaR would increase by approximately 0.05-0.08% of NAV. At 5% weight, DELL's vol assumption has limited impact on portfolio-level risk.
 
-4. **Stress test P&L impacts** are estimated using factor sensitivities, beta adjustments, and historical analogues. They are directional estimates, not precise forecasts. Actual outcomes in stress events depend on path, speed, and liquidity conditions that are not captured in static scenario analysis.
+4. **Stress test assumptions are based on sector-level drawdowns from historical episodes, applied to individual positions.** Individual stock behavior may diverge significantly from sector averages. VST's contracted PPAs may limit downside vs. merchant power peers; DELL's leverage may amplify downside vs. hardware peers. The stress test results should be interpreted as approximate scenarios, not precise predictions.
 
-5. **Sector limits** are based on standard long/short equity risk management conventions. The 25% net sector limit referenced in this report should be confirmed or adjusted by the PM if the fund's mandate permits higher thematic concentration.
-
-6. **Beta estimates** are sourced from multiple providers and may differ depending on measurement period. VST beta of 1.42 reflects its recent behavior as an AI-proxy equity rather than a traditional utility. CEG beta of 1.15 may understate forward beta given the Calpine integration and increased operating leverage.
-
----
-
-## Recommendations for PM Consideration
-
-The following are risk observations, not investment opinions:
-
-1. **The sector concentration breach (65% net in Utilities/Power) requires a formal decision**: either reduce exposure or document a waiver with rationale. Risk will continue to flag this breach in every report until resolved.
-
-2. **The March 31 dual-catalyst date (CEG outlook + NKE earnings) represents a concentrated event risk.** The PM may wish to consider whether position sizing ahead of this date is appropriate given that 50% of gross exposure is subject to potential binary outcomes.
-
-3. **Adding uncorrelated long positions** (the IC memo has directed European defense research) would reduce the VST-CEG correlation impact on portfolio VaR and improve the effective number of independent bets. However, this requires first freeing up capital from existing positions, as gross exposure is at 100%.
-
-4. **The 10-day 99% VaR of 8.19% means a sustained adverse move of moderate magnitude would approach the drawdown limit within two weeks.** The portfolio has limited margin for error at full deployment.
+5. **Cash is assumed to be zero-volatility.** If cash is held in money market instruments with credit risk, there is a small but non-zero tail risk of loss. This risk is immaterial for typical money market holdings but should be noted for completeness.

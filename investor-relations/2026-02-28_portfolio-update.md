@@ -1,32 +1,33 @@
-2026-02-28 22:15 UTC
+2026-02-28 23:59 UTC
 # Sterling — Portfolio Update
 
-The economy is decelerating late-cycle. Capital is rotating decisively out of mega-cap tech and into tangible assets. We have positioned the fund accordingly.
+The fund has transitioned to a long-only mandate effective immediately. All five short positions are closed. We have redeployed capital into higher-conviction long positions and preserved substantial dry powder for deployment into diversifying ideas over the next two weeks.
 
 ## What Changed
 
-We have deployed the portfolio to 100% of NAV across four positions: two concentrated longs in U.S. power infrastructure, and two uncorrelated shorts in consumer discretionary and mega-cap tech.
+**Shorts closed:** NKE, MSFT, TASK, OWL, and TEP (39% of NAV). These positions were variance dampeners in the prior hedged structure, but a long-only mandate has no need for hedges. We took their capital off the table cleanly.
 
-**Long positions** are now full. We added Vistra Corp (VST), the largest competitive power generator in America, with contracted revenue locked in through the mid-2040s via data center partnerships. We also added Constellation Energy (CEG), whose recent Calpine acquisition makes it the largest power producer in the nation — a nuclear-pure-play with structural demand from AI workloads requiring baseload power.
+**Long positions adjusted:** VST trimmed modestly (27.5% → 25%) and CEG trimmed (23% → 20%) to reduce our concentration in utilities and power infrastructure. NOW increased from 8% to 12% — it is mispriced as an AI victim when it is the orchestration layer. DELL increased to 5% for much-needed sector diversification (IT hardware vs. utilities).
 
-**Short positions** round out the portfolio. We shorted Nike (NKE) on tariff exposure, China deterioration, and valuation disconnect. We shorted Microsoft (MSFT) on deteriorating capex-to-revenue conversion and sector rotation headwinds.
-
-The book reflects a high-conviction thesis: AI-driven electricity demand is structural and locked in by binding contracts. The shorts hedge late-cycle deceleration risks and capture the rotation away from intangible assets into tangible infrastructure.
+**Cash raised:** 38% of NAV is now in cash. This is intentional dry powder, not defensive positioning. We will deploy it into non-AI, low-correlation ideas at our March 7 IC — European defense is highest priority — to cure our single largest structural risk: 100% of invested capital is tied to AI infrastructure demand.
 
 ## Where We Stand
 
-Sterling is **fully allocated** — no cash, no dry powder. We are running a 65% long, 35% short structure with net exposure at +30%. This reflects cautious optimism: we have meaningful conviction on power infrastructure, but we are hedged against broader macro and sector deterioration.
+Four positions, 62% invested, 38% cash.
 
-The long book is concentrated in a single theme: AI-driven power demand. Both companies have binding long-term contracts with hyperscalers, zero-carbon baseload assets, and exceptional cash generation. This concentration is deliberate and justified by the structural nature of the demand signal — not speculation.
+**VST (Vistra, 25%)** remains the highest-conviction position. FY2025 record EBITDA confirmed, FY2026 guidance pointing to 22% growth. Twenty-year PPAs with AWS and Meta lock in revenue visibility. The math is simple: contracted AI capex from the best operators, priced at a discount to the broader mega-cap AI capex complex.
 
-The short book is diversified: NKE faces tariff costs that cannot be offset or relocated; MSFT faces capital intensity with uncertain returns. These shorts are largely uncorrelated with each other, providing portfolio-level hedging.
+**CEG (Constellation, 20%)** is approaching its $350 target at $329. We are time-boxing this position to the March 31 Business Outlook call. If that catalyst justifies raising the target materially, we hold. If not, we reduce. Six percent upside with 29% downside risk is not compelling without a catalyst.
 
-Leverage in both long positions is material and monitored quarterly. We have sized positions to limit maximum drawdown at stop levels to within acceptable risk parameters.
+**NOW (ServiceNow, 12%)** is a SaaSpocalypse arbitrage. The market treats it as a victim of AI disintermediation; we see it as the platform that orchestrates AI workflows at scale. The valuation is the cheapest in years, and Now Assist ACV is tracking toward $1B. This is the best risk-reward in the existing book after VST.
+
+**DELL (5%)** is our AI hardware play and the sole position outside utilities/power. AI server backlog of $43B and $64B in AI orders for the year. At 11x forward P/E with 23% growth, it offers margin of safety that the broader AI complex lacks.
+
+Sector-wise, utilities and power infrastructure comprise 45% of the portfolio — well above our 25% limit, but improving and accepted under waiver. The portfolio beta is 0.78 (within limits), which is appropriate for a concentrated, high-conviction long book.
 
 ## Looking Ahead
 
-The next inflection points are marked: Nike reports Q3 earnings March 31; Microsoft reports Q3 in late April. Tariff policy remains a key variable across the portfolio. We expect to add diversifying long positions — likely European defense or weak-dollar beneficiaries — in the next investment cycle to reduce concentration in U.S. power infrastructure. The fundamental demand for baseload power is structural and growing. The valuation risk on the shorts is real but priced in our sizing. We are positioned for the regime we see: late-cycle deceleration with durable capital rotation toward tangible assets.
+The March 7 IC is a hard deadline for deploying cash into positions with zero or negative correlation to AI and power infrastructure. The VaR breach we are running — 2.38% against a 2.0% limit — resolves cleanly when we add a single diversifying position at 8–10% with low covariance to our existing holdings. European defense (RNMBY/BAESY) is the template. If March 7 produces at least one defensible non-AI thesis, we deploy. If not, we trim. Either way, VaR moves into compliance by March 7 and the portfolio's AI concentration falls below 80% of invested capital by mid-March. The long-only transition is not risk aversion — it is portfolio simplification with the flexibility to get smaller in AI if the macro picture deteriorates.
 
 ---
-
 *For existing Sterling investors and qualified prospects only. Past performance does not guarantee future results.*

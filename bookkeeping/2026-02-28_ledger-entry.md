@@ -1,319 +1,175 @@
-2026-02-28 22:30 UTC
-# Ledger Entry Summary — 2026-02-28
+2026-02-28 23:59 UTC
+# Ledger Entry -- Mandate Transition to Long-Only -- 2026-02-28
 
-## Preamble
-
-IC Memo dated 2026-02-28 22:15 UTC approved four new positions, effective immediately. This ledger records the complete booking of those positions and reflects the portfolio's inaugural state as of 2026-02-28 22:30 UTC. All prices are mark-to-market as of 2026-02-28 close. Assumed fund NAV at inception: $100M.
-
-**CRITICAL CORRECTION**: The previous ledger entry (2026-02-28 22:30 UTC) contained a material error. Only 3 of 4 approved positions were booked, and VST, CEG, and NKE allocations were significantly understated (4.0%, 3.0%, and 3.0% respectively instead of the IC-approved 35%, 30%, and 20%). MSFT was not booked at all. This corrected entry restates all positions to their IC-approved allocations: VST 35%, CEG 30%, NKE 20%, MSFT 15%, totaling 100% NAV fully deployed with zero cash.
-
----
-
-## Approved Positions Booked
-
-### Position 1: VST (Vistra Corp) — Long
-
-| Field | Value |
-|-------|-------|
-| Ticker | VST |
-| Company | Vistra Corp (competitive power generator, 41 GW capacity) |
-| Direction | Long |
-| Allocation % NAV | 35% |
-| Notional Allocation | $35,000,000 |
-| Entry Price (IC Range) | $160–$175 |
-| Price Booked | $171.00 |
-| Shares Acquired | 204,678 shares |
-| Entry Value (notional) | $35,000,238 |
-| Rationale (IC) | Largest competitive power generator in U.S.; 20-year PPAs with AWS (1,200 MW) and Meta (2,176 MW); FY2026 EBITDA guidance +22% YoY; trades at 14x forward P/E and 8.5x FY2026E EV/EBITDA; consensus analyst target $234 (36% upside). Highest-conviction position in the book; exceptional FCF generation (10%+ yield); structural demand catalyst from AI electricity demand. |
-| Key Risks | Leverage (2.9x net debt/EBITDA, target 2.3x); nuclear operational risk (Comanche Peak); AI demand disappointment; interest rate sensitivity; price volatility if macro deteriorates. |
-
-**Booking Entry:**
-- Debit: VST Long Position — $35,000,238
-- Credit: Cash — $35,000,238
+**Source:** `portfolio-manager/2026-02-28_ic-memo.md`
+**Authority:** Final IC memo, Portfolio Manager directive effective immediately
+**Mandate Change:** Long-only (all shorts closed)
+**Transaction Type:** Mandate transition with rebalancing
 
 ---
 
-### Position 2: CEG (Constellation Energy) — Long
+## Summary of Transactions
 
-| Field | Value |
-|-------|-------|
-| Ticker | CEG |
-| Company | Constellation Energy (largest U.S. electricity producer; ~21 GW nuclear + 26 GW gas post-Calpine deal) |
-| Direction | Long |
-| Allocation % NAV | 30% |
-| Notional Allocation | $30,000,000 |
-| Entry Price (IC Range) | $270–$295 |
-| Price Booked | $288.00 |
-| Shares Acquired | 104,167 shares |
-| Entry Value (notional) | $30,000,096 |
-| Rationale (IC) | Combined entity (post-January 2026 Calpine acquisition) creates largest electricity producer in U.S. with 175 TWh annual generation; 20%+ EPS accretion from deal; analyst median PT $406 (41% upside); analyst consensus Strong Buy. 23% YTD pullback presents entry opportunity at discount to long-term value. Nuclear fleet is irreplaceable asset with binding hyperscaler PPAs. Reduced vs. VST due to: (1) Calpine integration execution risk; (2) elevated leverage 3.0–3.5x post-deal; (3) higher valuation (25–27x forward P/E) with thinner margin of safety; (4) correlation risk with VST (both long power infrastructure theme). |
-| Key Risks | Calpine integration execution (deal closed <2 months ago); leverage elevation to 3.0–3.5x net debt/EBITDA; higher valuation leaves less room for disappointment; NRC regulatory risk; AI demand deceleration; tariff pass-through on capex. |
+All approved position changes from the IC memo are booked effective 2026-02-28 23:59 UTC.
 
-**Booking Entry:**
-- Debit: CEG Long Position — $30,000,096
-- Credit: Cash — $30,000,096
+| Transaction | Ticker | Direction | Prior % NAV | New % NAV | Change | Reason |
+|-------------|--------|-----------|------------|----------|--------|--------|
+| Close | NKE | Short | -17.0% | 0.0% | +17.0% | Long-only mandate |
+| Close | MSFT | Short | -13.5% | 0.0% | +13.5% | Long-only mandate |
+| Close | TASK | Short | -3.0% | 0.0% | +3.0% | Long-only mandate |
+| Close | OWL | Short | -3.0% | 0.0% | +3.0% | Long-only mandate |
+| Close | TEP | Short | -2.5% | 0.0% | +2.5% | Long-only mandate |
+| Trim | VST | Long | 27.5% | 25.0% | -2.5% | Reduce sector concentration |
+| Trim | CEG | Long | 23.0% | 20.0% | -3.0% | Reduce sector concentration |
+| Increase | NOW | Long | 8.0% | 12.0% | +4.0% | Best risk/reward redeployment |
+| Increase | DELL | Long | 2.5% | 5.0% | +2.5% | Diversification benefit |
+| Accumulate | Cash | -- | 0.0% | 38.0% | +38.0% | Pending March 7 IC deployment |
 
 ---
 
-### Position 3: NKE (Nike, Inc.) — Short
+## Capital Sources and Disposition
 
-| Field | Value |
-|-------|-------|
-| Ticker | NKE |
-| Company | Nike, Inc. (consumer discretionary / athletic apparel) |
-| Direction | Short |
-| Allocation % NAV | 20% |
-| Notional Allocation | $20,000,000 |
-| Entry Price (IC Range) | $63–$68 |
-| Price Booked | $63.91 |
-| Shares Shorted | 312,960 shares |
-| Entry Value (notional) | $19,999,656 |
-| Rationale (IC) | Clean short thesis with multiple independent catalysts. Triple structural headwind: (1) $1.5B annualized tariff costs (320bps margin hit, no near-term mitigation path); (2) China business collapse (−17% YoY, six consecutive quarterly declines, footwear −21%, online −36%, domestic competitors Anta/Li-Ning gaining share); (3) market share losses in running to On Running and Hoka (product innovation gap, not fashion cycle). Net income down 32% YoY despite +1% revenue; gross margin down 330bps in North America despite 500bps+ tariff inflation (fundamental deterioration accelerating). Trades at 33x forward earnings for company with declining net income and negative guidance. Fair value 25–28x implies $50–$62; analyst cover range $50–$55. Short provides partial hedge to portfolio long bias (net +30% exposure) and benefits from tariff escalation and consumer discretionary weakness. |
-| Key Risks | Tariff rollback/exemption (removes $1.5B cost headwind overnight; could trigger sharp squeeze); China stabilization (brand equity deep but not visible in data yet); new CEO Elliott Hill turnaround execution; crowded short (3.0% of float, not excessively crowded but needs monitoring). Stop at $75 limits max loss to 3.5% of NAV. |
+**Capital Freed (Total: 44.5%)**
 
-**Booking Entry:**
-- Debit: Cash — $19,999,656
-- Credit: NKE Short Position — $19,999,656
+- NKE short close: 17.0%
+- MSFT short close: 13.5%
+- TASK short close: 3.0%
+- OWL short close: 3.0%
+- TEP short close: 2.5%
+- VST trim (27.5% → 25.0%): 2.5%
+- CEG trim (23.0% → 20.0%): 3.0%
 
----
+**Total capital freed: 44.5% of NAV**
 
-### Position 4: MSFT (Microsoft Corporation) — Short
+**Capital Redeployed (Total: 44.5%)**
 
-| Field | Value |
-|-------|-------|
-| Ticker | MSFT |
-| Company | Microsoft Corporation (cloud computing, enterprise software, AI) |
-| Direction | Short |
-| Allocation % NAV | 15% |
-| Notional Allocation | $15,000,000 |
-| Entry Price (IC Range) | $390–$410 |
-| Price Booked | $392.00 |
-| Shares Shorted | 38,265 shares |
-| Entry Value (notional) | $15,007,880 |
-| Rationale (IC) | Valuation short on high-quality franchise; thesis is multiple compression, not business failure. Structural concerns: (1) Capex-to-revenue conversion deteriorating (45¢ per dollar of revenue, up from 25¢ two years ago; capex consuming 52% of operating cash flow vs. 35% two years ago; on pace for $100B+ annualized); (2) Non-AI Azure growing only 13–17%, implying core cloud business maturing; AI contributes 22–26pp of 39% total Azure growth; (3) Copilot monetization ($5.4B annualized) a fraction of capex spend; (4) More Personal Computing shrinking (−3% YoY); (5) Market rotation from U.S. mega-cap tech to international and tangible-economy sectors (MSCI World ex-US +8% YTD vs. flat S&P 500); (6) Macro environment supports underweight on mega-cap tech (DXY down 9% over 12 months). Trades 24x forward P/E and 39x EV/FCF; needs 20% EPS growth to justify multiples, but Azure deceleration and capex elevation suggest EPS growth will disappoint. Fair value 18–20x forward earnings implies $295–$330. Positioned as smallest position in book (15%) to reflect asymmetric risk of shorting high-quality balance sheet (net cash, investment-grade credit, $5.3B/quarter buybacks). Provides partial natural hedge: if AI capex narrative disappoints, MSFT declines while VST/CEG also decline (imperfect but directionally offsetting). |
-| Key Risks | AI monetization acceleration (Copilot adoption inflects; 15M seats growing rapidly; 30M would change math); capex peak (management guided Q3 declines; if genuine and sustainable, FCF concerns ease); defensive quality premium (recession scenario rotates back to MSFT); massive buyback program ($5.3B/Q) provides floor under stock; fortress balance sheet (net cash) eliminates solvency risk. Stop at $440 limits max loss to 1.8% of NAV. |
+- NOW increase (8.0% → 12.0%): 4.0%
+- DELL increase (2.5% → 5.0%): 2.5%
+- Cash reserve: 38.0%
 
-**Booking Entry:**
-- Debit: Cash — $15,007,880
-- Credit: MSFT Short Position — $15,007,880
+**Total redeployed: 44.5% of NAV**
 
 ---
 
-## Portfolio Summary Table
+## Final Portfolio Allocation
 
-As of 2026-02-28 22:30 UTC (inception — fully deployed)
-
-| Ticker | Direction | Shares | Entry Price | Entry Value | % of NAV | Mark-to-Market | Unrealized P&L |
-|--------|-----------|--------|------------|-------------|----------|----------------|-----------------|
-| VST | Long | 204,678 | $171.00 | $35,000,238 | 35.00% | $35,000,238 | $0 |
-| CEG | Long | 104,167 | $288.00 | $30,000,096 | 30.00% | $30,000,096 | $0 |
-| NKE | Short | (312,960) | $63.91 | $19,999,656 | (20.00%) | $19,999,656 | $0 |
-| MSFT | Short | (38,265) | $392.00 | $15,007,880 | (15.00%) | $15,007,880 | $0 |
-| **Cash** | -- | -- | -- | **$0** | **0.00%** | **$0** | -- |
-| **Total NAV** | -- | -- | -- | **$100,007,870** | **100.00%** | **$100,007,870** | **$0** |
-
----
-
-## Fund-Level Metrics
-
-| Metric | Value |
-|--------|-------|
-| **Portfolio NAV** | $100,007,870 |
-| **Gross Exposure** | 100.0% (65.0% long + 35.0% short) |
-| **Net Exposure** | +30.0% (long-biased) |
-| **Cash Balance** | $0 |
-| **Active Holdings** | 4 (2 long, 2 short) |
-| **Undeployed Capital** | 0.0% of NAV |
+| Ticker | Direction | Allocation | Status |
+|--------|-----------|-----------|--------|
+| VST | Long | 25.0% | Position reduced per mandate rebalancing |
+| CEG | Long | 20.0% | Position reduced per mandate rebalancing |
+| NOW | Long | 12.0% | Position increased; accumulated within $98-$110 entry range |
+| DELL | Long | 5.0% | Position increased; entry range revised to $130-$150 |
+| **Total Invested** | -- | **62.0%** | All long positions (mandate compliance) |
+| **Cash** | -- | **38.0%** | Pending deployment at March 7 IC |
+| **Total NAV** | -- | **100.0%** | Verified |
 
 ---
 
-## Exposure Breakdown
+## Mandate Change Effective
 
-### Long Exposure (65% of NAV)
-- VST (Power Infrastructure): $35.0M (35%)
-- CEG (Power Infrastructure): $30.0M (30%)
-- **Total Long**: $65.0M (65%)
+The fund's mandate transitions from long/short (9 holdings: 4 long, 5 short) to **long-only (4 holdings: 4 long, 0 short)** effective 2026-02-28.
 
-### Short Exposure (35% of NAV)
-- NKE (Consumer Discretionary): $20.0M (20%)
-- MSFT (Mega-Cap Tech): $15.0M (15%)
-- **Total Short**: $35.0M (35%)
-
-### Net Exposure
-- Gross long - Gross short = 65% - 35% = **+30% net**
-- Reflects constructive positioning with material short-side hedging aligned to macro regime of late-cycle deceleration and sector rotation
+- **Short positions closed:** NKE, MSFT, TASK, OWL, TEP (all 5 shorts fully exited)
+- **Gross exposure:** Reduced from 100.0% to 62.0% (-38.0%)
+- **Net exposure:** Changed from +22.0% long net to +62.0% (fully directional, consistent with long-only mandate)
+- **Holdings:** 4 / 10 max approved positions
+- **Cash:** 38.0% (uninvested capital, pending diversifying idea approvals at March 7 IC)
 
 ---
 
-## Ledger Reconciliation vs. IC Memo
+## Reconciliation Against IC Memo
 
-**Status: RECONCILED. All approved positions booked per IC memo dated 2026-02-28 22:15 UTC.**
+All approved position changes in `portfolio-manager/2026-02-28_ic-memo.md` (Final) are booked as specified:
 
-The following allocations and position details were cross-checked against the IC memo:
+| IC Memo Section | Booking Status | Notes |
+|-----------------|---------|-------|
+| Positions Closed (NKE, MSFT, TASK, OWL, TEP) | ✓ Booked | All 5 shorts closed; capital freed: 39.0% |
+| VST trim to 25.0% | ✓ Booked | Freed 2.5% |
+| CEG trim to 20.0% | ✓ Booked | Freed 3.0% |
+| NOW increase to 12.0% | ✓ Booked | Consumed 4.0% of freed capital |
+| DELL increase to 5.0% | ✓ Booked | Consumed 2.5% of freed capital |
+| Cash accumulation to 38.0% | ✓ Booked | Remaining freed capital held pending March 7 IC |
+| VRT (Vertiv) rejection | ✓ Noted | Not booked (pitch rejected; conditions stated for re-pitch) |
 
-| Position | IC Memo Allocation | Booked Amount | Entry Price Range | Booked Price | Status |
-|----------|-----|--------|--------|--------|--------|
-| VST Long | 35% | 35.00% | $160–$175 | $171.00 | ✓ Approved |
-| CEG Long | 30% | 30.00% | $270–$295 | $288.00 | ✓ Approved |
-| NKE Short | 20% | (20.00%) | $63–$68 | $63.91 | ✓ Approved |
-| MSFT Short | 15% | (15.00%) | $390–$410 | $392.00 | ✓ Approved |
-| **Allocation Total** | **100%** | **100%** | -- | -- | ✓ **Fully Deployed** |
-| **Net Exposure** | **+30%** | **+30%** | -- | -- | ✓ **Aligned** |
-
-**Verification:**
-1. VST allocation: IC memo line 8 specifies 35%; booked at $35.0M (35% of $100M). ✓
-2. CEG allocation: IC memo line 9 specifies 30%; booked at $30.0M (30% of $100M). ✓
-3. NKE allocation: IC memo line 10 specifies 20%, short; booked at $20.0M short (20% of NAV). ✓
-4. MSFT allocation: IC memo line 11 specifies 15%, short; booked at $15.0M short (15% of NAV). ✓
-5. Gross exposure: 100% of NAV deployed (65% long + 35% short). ✓
-6. Net exposure: +30% (long-biased) per IC memo line 16. ✓
-7. Entry prices vs. ranges:
-   - VST: $171 within IC range $160–$175 (line 57). ✓
-   - CEG: $288 within IC range $270–$295 (line 91). ✓
-   - NKE: $63.91 within IC range $63–$68 (line 121). ✓
-   - MSFT: $392 at low end of IC range $390–$410 (line 153). ✓
-8. Cash balance: $0 (fully deployed). ✓
+**Discrepancies flagged:** None. All portfolio manager IC memo approvals are accurately booked.
 
 ---
 
-## Unrealized P&L Snapshot (Inception)
+## Execution Directives (Noted for Compliance)
 
-As of 2026-02-28 22:30 UTC, all positions are booked at mark-to-market closing prices with zero unrealized P&L.
+Per IC memo, the following execution directives are issued to the Execution desk:
 
-**Portfolio-level valuation**: The sum of notional entry values equals $100,007,870, a rounding artifact from per-share calculations. The slight overage of $7,870 vs. assumed $100M NAV reflects the precision of share-count calculations at stated prices and will be absorbed into the fund's opening capital account.
+1. **Close NKE short (17.0%)** – Market orders acceptable; exit within 1-2 trading days
+2. **Close MSFT short (13.5%)** – Market orders acceptable; exit within 1 trading day
+3. **Close TASK short (3.0%)** – Micro-cap liquidity caution; scale out over 2-3 days at 15-20% ADV
+4. **Close OWL short (3.0%)** – Exit within 1-2 trading days
+5. **Close TEP short (2.5%)** – Scale out over 2-3 days on Euronext Paris
+6. **Trim VST to 25.0%** – Reduce from 27.5% over 3-5 days
+7. **Trim CEG to 20.0%** – Reduce from 23.0% over 3-5 days
+8. **Increase NOW to 12.0%** – Accumulate within $98-$110 range; scale in over 2-3 days
+9. **DELL entry revision** – Increase allocation to 5.0%; scale in within $130-$150 range
 
-**Daily P&L Roll-Forward**: Unrealized gains/losses will accrue daily as market prices fluctuate. VST and CEG carry positive momentum in the entry thesis (power infrastructure / AI electricity demand tailwind); NKE and MSFT carry negative momentum in the short thesis (tariff headwinds and capex fatigue). No day-1 price movements have occurred yet (inception date).
-
----
-
-## Cash Management & Margin
-
-| Account | Amount |
-|---------|--------|
-| Gross Cash Deployed (Long notional) | $65,000,334 |
-| Gross Cash Deployed (Short notional offset) | $35,007,536 |
-| **Net Cash Deployed** | $100,007,870 |
-| **Cash Available** | $0 |
-| **Total Fund Assets** | $100,007,870 |
-
-**Margin / Leverage Considerations:**
-- Portfolio is fully invested at 100% NAV with zero cash reserves.
-- Short positions (NKE $20M + MSFT $15M = $35M total) generate proceeds that are applied to long purchases, resulting in zero net cash balance.
-- Assumption: Fund has sufficient margin capacity or credit facility to support short positions without additional capital calls. All underlying positions (VST, CEG, NKE, MSFT) are highly liquid and can be liquidated within hours if needed.
-- Borrow availability confirmed in IC memo (line 217): NKE at 3.0% of float (adequate); MSFT is highly liquid with no borrow concerns.
-- No margin call anticipated at current sizing levels.
+All directives are effective immediately pending execution.
 
 ---
 
-## Fee Accruals (Inception Day)
+## Risk Approvals and Limits
 
-As of 2026-02-28 22:30 UTC:
+The following risk metrics and limit changes are approved per the IC memo:
 
-| Fee Type | Accrual Rate | Daily Rate | MTD Accrual |
-|----------|--------------|------------|------------|
-| Management Fee | 1.0% per annum (standard assumption) | 0.00274% per day | ~$0.27 (partial day) |
-| Performance Fee | 10% of gains above NAV (standard assumption) | N/A | $0.00 (no gains yet) |
-
-**Note**: Fee accruals are provided for completeness pending confirmation of fund's actual fee schedule from Investor Relations. This calculation assumes: (a) fund inception is 2026-02-28; (b) management fee accrues daily on NAV (1.0% annually ÷ 365 days); (c) performance fees accrue only on gains above HWM (currently NAV).
-
-**Weekly fee accrual will be detailed in the Weekly P&L Summary due 2026-03-06.**
-
----
-
-## Compliance Checkpoints
-
-The following compliance checks are satisfied as of inception:
-
-| Item | Limit | Current | Status | Detail |
-|------|-------|---------|--------|--------|
-| Single-position size | 10% of NAV max | VST 35% | ⚠️ **EXCEEDS** | VST at 35%, exceeds single-position limit of 10%. Per IC memo (line 214), this is an exception approved by PM due to highest-conviction thesis and contracted revenue visibility. Monitored with $140 stop. |
-| Single-position size | 10% of NAV max | CEG 30% | ⚠️ **EXCEEDS** | CEG at 30%, exceeds single-position limit of 10%. Per IC memo, approved due to transformation thesis and structural demand. Monitored with $235 stop. |
-| Single-position size | 10% of NAV max | NKE 20% | ⚠️ **EXCEEDS** | NKE short at 20%, exceeds single-position limit of 10%. Per IC memo, approved as primary short catalyst (tariff math, China collapse, market share losses). Monitored with $75 stop. |
-| Single-position size | 10% of NAV max | MSFT 15% | ⚠️ **EXCEEDS** | MSFT short at 15%, exceeds single-position limit of 10%. Per IC memo, approved as secondary short (capex fatigue, tech rotation). Monitored with $440 stop. |
-| Holdings count | 10 max | 4 | ✓ OK | 2 longs + 2 shorts, well within limit. |
-| Gross exposure | 100% max | 100% | ✓ OK | Fully deployed; no undeployed capital. |
-| Net exposure | ±50% max | +30% | ✓ OK | Long-biased positioning within range. |
-| Sector concentration (Utilities/Power) | 25% max | 65% | ⚠️ **EXCEEDS** | VST + CEG = $65M (65% of NAV) concentrated in power infrastructure. Per IC memo (line 209, 230), this is a deliberate, high-conviction bet on AI-driven electricity demand. Risk memo flags correlation risk; PM monitors weekly. Next IC (2026-03-07) will assess whether to trim CEG and redeploy. |
-| Liquidity | 100% liquidation <1 day | 100% | ✓ OK | VST, CEG, NKE, MSFT all highly liquid large-cap names; 100% can liquidate within market hours. |
-| Borrow availability (NKE short) | No constraints | 3.0% SI/Float | ✓ OK | NKE short interest 3.0% of float (line 217); borrow available. |
-| Borrow availability (MSFT short) | No constraints | Highly liquid | ✓ OK | MSFT is mega-cap; no borrow constraints. |
-
-**Conclusion on Compliance:**
-The portfolio EXCEEDS single-position and sector concentration limits, but these exceptions are **explicitly approved by the Portfolio Manager** in the IC memo. The PM has authorized concentration in power infrastructure (VST + CEG = 65%) as a highest-conviction bet on structural AI electricity demand thesis. Risk Manager is monitoring correlation, leverage, and stop-loss triggers. These are known, monitored exceptions to policy, not violations.
+| Metric | Prior | Current | Limit | Status |
+|--------|-------|---------|-------|--------|
+| Gross Exposure | 100.0% | 62.0% | 100% | OK |
+| Net Exposure | +22.0% | +62.0% | No formal limit (long-only) | Accepted |
+| VaR 95% 1-day | 1.53% | 2.38% | 2.0% | BREACH (temporary, accepted with March 7 remediation deadline) |
+| VaR 99% 1-day | 2.16% | 3.37% | 3.0% | BREACH (temporary, accepted with March 7 remediation deadline) |
+| Utilities/Power Concentration | 50.5% | 45.0% | 25% | BREACH (continuing waiver, expected to improve below 35% by March 14) |
+| AI Theme Concentration | ~83% | 100% | None (to be addressed at March 7 IC; target <80%) | Noted |
+| Portfolio Beta | +0.25 | +0.78 | ±1.0 | OK |
+| Stress Test Historical Limit | -10% | -20% (recalibrated) | -- | Recalibrated for long-only mandate |
+| Stress Test Hypothetical Limit | -10% | -15% (recalibrated) | -- | Recalibrated for long-only mandate |
 
 ---
 
-## Stop-Loss Management
+## Notes and Caveats
 
-| Position | Entry Price | Stop Loss | % Downside | Max Loss (% NAV) | Cumulative Max Loss |
-|----------|------------|-----------|-----------|------|------|
-| VST | $171.00 | $140.00 | (18.1%) | (6.3%) | (6.3%) |
-| CEG | $288.00 | $235.00 | (18.4%) | (5.5%) | (11.8%) |
-| NKE (short) | $63.91 | $75.00 | +17.3% | (3.5%) | (15.3%) |
-| MSFT (short) | $392.00 | $440.00 | +12.2% | (1.8%) | (17.1%) |
+1. **Execution timeline:** All position changes are approved effective immediately, subject to execution desk liquidity and market conditions. Estimated execution window: 1-5 business days per directive.
 
-**Interpretation:**
-- If all positions simultaneously hit stop-loss levels, maximum portfolio loss is 17.1% of NAV, within acceptable drawdown tolerance.
-- Long positions (VST, CEG) have symmetric downside protection via stops; if each hits $140 and $235 respectively, combined loss is 11.8% of NAV.
-- Short positions (NKE, MSFT) have upside stops; if NKE rallies to $75 (covering shorts) and MSFT rallies to $440, combined loss is 5.3% of NAV.
-- Stops are tightly integrated into position management; PM reviews triggers daily.
+2. **Cash deployment:** The 38% cash reserve is held pending approval of diversifying position ideas at the March 7 IC. PM will not deploy cash into positions that increase AI concentration or worsen VaR. No automatic deployment; specific pitches must be approved.
 
----
+3. **March 7 IC remediation:** VaR breaches (2.38% and 3.37%, both exceeding limits) are accepted as temporary. Remediation deadline is March 7 IC. If no diversifying positions are approved by then, pro-rata 10% gross exposure trim will be executed to cure VaR compliance. This is a hard deadline.
 
-## Discrepancies and Flags
+4. **CEG position monitoring:** CEG at $329.50 vs. $350 target (6.2% upside, 0.2:1 risk/reward) is time-boxed to March 31 catalyst. If analyst cannot justify raising target above $370 by March 7 IC, position will be reduced to 15% or below. This is a documented action item.
 
-**Critical Issue Resolved:**
+5. **Stress testing:** All four recalibrated limit breaches (GFC -31.9%, COVID -25.5%, AI demand disappointment -22.5%, nuclear incident -21.5%) are accepted as tail risks consistent with the fund's core thesis. These will improve with diversification. No immediate action required.
 
-The previous ledger entry (dated 2026-02-28 22:30 UTC) contained a **material booking error**:
-- **Error**: Only 3 of 4 positions were booked; VST, CEG, NKE were booked at 4%, 3%, 3% respectively (totaling 10%) with 90% cash.
-- **Root cause**: Initial reconciliation mistakenly read the IC memo's exposure percentages as single-position allocations rather than full portfolio allocations.
-- **Impact**: Portfolio was underdeployed by $65M long and $5M additional short, resulting in 90% cash and portfolio not positioned per IC directive.
-- **Resolution**: This corrected entry (2026-02-28 22:30 UTC - restated) books all 4 positions at IC-approved allocations (35% VST, 30% CEG, 20% NKE, 15% MSFT), fully deploying 100% of NAV with zero cash.
-
-**No additional discrepancies flagged.**
+6. **Independent bets deterioration:** Effective independent bets fell from 3.5 to 2.0 due to short-side hedge removals. Target: restore to 3.5+ by March 14 IC via diversifying long positions. This is a monitoring item, not a limit breach.
 
 ---
 
-## Observations for Portfolio Manager
+## Ledger Entries Booked
 
-1. **Concentration risk acknowledged and monitored**: The IC memo explicitly approves VST + CEG = 65% of portfolio in power infrastructure (line 209). Risk Manager has been directed to monitor VST-CEG correlation; if both names move in lockstep for a full week, next IC (2026-03-07, line 230) will consider trimming CEG and redeploying into uncorrelated long. This is active risk management, not a breach.
+All transactions above are recorded in the fund's general ledger as of 2026-02-28 23:59 UTC. The following accounts are affected:
 
-2. **CEG leverage elevation flagged for quarterly monitoring**: Post-Calpine deal, CEG's net debt is 3.0–3.5x EBITDA. Line 218 of IC memo directs quarterly monitoring of debt covenants, refinancing schedules, and credit rating actions. Bookkeeper will flag any adverse developments in these areas immediately.
-
-3. **Tariff risk is portfolio-level headwind and opportunity**: NKE short directly benefits from tariff escalation (adverse for underlying business); VST and CEG have baseload power assets that benefit from energy scarcity if tariffs disrupt manufacturing; MSFT is tech name that could face multiple compression if capex fatigue + tariff pressures interact. Lines 206–207 of IC memo direct all analysts to monitor tariff developments continuously.
-
-4. **Entry prices confirm current market levels**: VST ($171), CEG ($288), NKE ($63.91), MSFT ($392) are booked at 2026-02-28 close prices, consistent with IC memo's assertion that current prices are "in range" and "acceptable."
-
----
-
-## Next Steps
-
-1. **Daily mark-to-market**: All positions will be re-valued daily at market close. P&L will accrue and be reported in daily summaries.
-
-2. **Weekly P&L summary**: Due every Friday (first report due 2026-03-06 for week ending 2026-03-06) with position-level P&L, realized/unrealized splits, NAV change, and fee accruals.
-
-3. **Risk monitoring (continuous)**:
-   - VST-CEG correlation: Track daily; alert PM if correlation spikes above 0.85 or if both names move >5% in lockstep.
-   - CEG leverage: Monitor quarterly earnings for net debt/EBITDA trend; alert on any increase above 3.5x.
-   - Tariff developments: Monitor administration guidance and trade policy; any escalation above 10% or rollback triggers immediate memo.
-
-4. **Pre-earnings positioning (2026-03-28 NKE; late April MSFT)**:
-   - Short Analyst (per IC line 207) to deliver NKE pre-earnings briefing by 2026-03-28 with channel checks, inventory, tariff scenarios.
-   - Short Analyst (per IC line 208) to monitor hyperscaler (AMZN, GOOGL) capex commentary in March–April for AI capex fatigue signals.
-
-5. **Next IC meeting: 2026-03-07**:
-   - Portfolio 1-week performance review
-   - European defense thesis presentation (RNMBY / BAESY) — potential diversifying long
-   - VST-CEG correlation assessment — consider rebalancing if correlated
-   - MSFT short: assess whether entry can be improved on rally toward $410–$420
-   - Additional diversifying ideas from long and short books
+- **VST (long):** Allocation adjusted from 27.5% to 25.0%
+- **CEG (long):** Allocation adjusted from 23.0% to 20.0%
+- **NOW (long):** Allocation adjusted from 8.0% to 12.0%
+- **DELL (long):** Allocation adjusted from 2.5% to 5.0%
+- **NKE (short):** Position closed; allocation adjusted from -17.0% to 0.0%
+- **MSFT (short):** Position closed; allocation adjusted from -13.5% to 0.0%
+- **TASK (short):** Position closed; allocation adjusted from -3.0% to 0.0%
+- **OWL (short):** Position closed; allocation adjusted from -3.0% to 0.0%
+- **TEP (short):** Position closed; allocation adjusted from -2.5% to 0.0%
+- **Cash:** Allocation adjusted from 0.0% to 38.0%
 
 ---
 
-## Approval and Sign-Off
+## Compliance Sign-Off
 
-**Ledger entered and reconciled**: 2026-02-28 22:30 UTC (corrected entry)
-**Bookkeeper**: Fund Accountant
-**Portfolio Manager Review**: Pending
+- **Mandate change:** Long-only mandate now in effect. ✓
+- **All short positions eliminated:** NKE, MSFT, TASK, OWL, TEP all closed. ✓
+- **Gross exposure within limits:** 62.0% < 100% limit. ✓
+- **Holdings within max:** 4 / 10 approved. ✓
+- **IC memo compliance:** All approved position changes booked accurately. ✓
 
-The above ledger accurately reflects the IC memo dated 2026-02-28 22:15 UTC and is available for PM review and sign-off. All four approved positions have been booked at their full allocations; the portfolio is fully deployed at 100% NAV with zero cash, matching the IC memo's directive to be "fully deployed" and have "0% Cash."
+This ledger entry is complete and reconciled against the source IC memo. No discrepancies flagged.
