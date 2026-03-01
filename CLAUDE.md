@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Sterling is a simulated hedge fund knowledge base. All team members — analysts (long and short), bookkeepers, risk managers, and portfolio managers — produce and share documents in this repository.
+Sterling is a simulated long-only hedge fund knowledge base. All team members — analysts (long, contrarian, growth, and small-cap), bookkeepers, risk managers, and portfolio managers — produce and share documents in this repository.
 
 ## Document Conventions
 
@@ -23,8 +23,12 @@ sterling/
   research/
     macro/            # Macro outlooks, idea briefs
     long/             # Long-side thesis documents, due diligence
-    short/            # Short-side thesis documents, due diligence
+    contrarian/       # Contrarian/value long thesis documents, due diligence
+    growth/           # Growth/momentum long thesis documents, due diligence
+    smallcap/         # Small-cap/discovery long thesis documents, due diligence
   portfolio-manager/  # Investment committee memos, strategic decisions
+    theses/           # Accepted thesis library (active positions)
+      closed/         # Archived theses for exited positions
   bookkeeping/        # P&L summaries, NAV calculations, ledger entries
   risk/               # Risk reports, exposure analysis
   investor-relations/ # Portfolio updates for investors
@@ -37,7 +41,9 @@ sterling/
 |---|---|---|
 | Macro Research | `research/macro/` | Macro outlooks, idea briefs |
 | Long Analyst | `research/long/` | Long thesis, entry rationale |
-| Short Analyst | `research/short/` | Short thesis, entry rationale |
+| Contrarian Analyst | `research/contrarian/` | Contrarian long thesis, entry rationale |
+| Growth Analyst | `research/growth/` | Growth long thesis, entry rationale |
+| Small-Cap Analyst | `research/smallcap/` | Small-cap long thesis, entry rationale |
 | Portfolio Manager | `portfolio-manager/` | IC memos, directives |
 | Bookkeeper | `bookkeeping/` | P&L, NAV, ledger |
 | Risk Manager | `risk/` | Risk reports, exposure analysis |
@@ -52,9 +58,11 @@ Agents communicate through documents, not directly. Each agent reads from upstre
 |---|---|---|
 | Macro Research | *(none — external data only)* | `research/macro/` |
 | Long Analyst | `research/macro/` | `research/long/` |
-| Short Analyst | `research/macro/` | `research/short/` |
-| Portfolio Manager | `research/long/`, `research/short/`, `risk/` | `portfolio-manager/` |
-| Risk Manager | `portfolio-manager/`, `research/long/`, `research/short/` | `risk/` |
+| Contrarian Analyst | `research/macro/` | `research/contrarian/` |
+| Growth Analyst | `research/macro/` | `research/growth/` |
+| Small-Cap Analyst | `research/macro/` | `research/smallcap/` |
+| Portfolio Manager | `research/long/`, `research/contrarian/`, `research/growth/`, `research/smallcap/`, `risk/` | `portfolio-manager/` |
+| Risk Manager | `portfolio-manager/`, `research/long/`, `research/contrarian/`, `research/growth/`, `research/smallcap/` | `risk/` |
 | Bookkeeper | `portfolio-manager/` | `bookkeeping/` |
 | Investor Relations | `portfolio-manager/` | `investor-relations/` |
 | Social Media | `investor-relations/` | `social-media/` |

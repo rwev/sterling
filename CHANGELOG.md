@@ -2,6 +2,25 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-02-28 — Add Growth and Small-Cap Analyst Agents
+
+Expanded the analyst team from 2 (long, contrarian) to 4 by adding growth/momentum and small-cap/discovery perspectives. Updated all downstream agents and the pipeline orchestrator to consume research from the new directories.
+
+**Files created:**
+- `growth-analyst.md` — new agent; growth/momentum analyst focused on revenue acceleration, TAM expansion, and margin inflection points; writes to `research/growth/`; reads from `research/macro/`; includes `.processed` tracking
+- `smallcap-analyst.md` — new agent; small-cap/discovery analyst specializing in under-followed names under $5B market cap; writes to `research/smallcap/`; reads from `research/macro/`; every thesis must address liquidity and position-sizing constraints; includes `.processed` tracking
+
+**Agents modified:**
+- `macro-research.md` — replaced Short Analyst references with full 4-analyst roster (Long, Contrarian, Growth, Small-Cap) in outlook structure themes, idea brief audience, and relationships
+- `portfolio-manager.md` — added `research/growth/` and `research/smallcap/` to inputs, relationships, incremental processing glob, thesis library approval sources, draft round reads, and first-run backfill; replaced `research/short/` with `research/contrarian/`; added thesis library system with `.active` manifest, existing position review, and close/backfill operations; removed "long and short combined" constraint language
+- `risk-manager.md` — added `research/growth/` and `research/smallcap/` to inputs; replaced `research/short/` with `research/contrarian/`; updated drawdown monitoring from "long book and short book" to "by analyst source"; simplified exposure table to long-only format
+
+**Commands modified:**
+- `work.md` — added `growth-analyst` and `smallcap-analyst` to Stage 2 parallel block with per-agent instructions; updated macro routing to mention all 4 analyst types; changed "both" to "all four" in wait instruction; added thesis library operations to Stage 3 and Stage 5; added Stage 8 (Commit & Push)
+
+**Project docs modified:**
+- `CLAUDE.md` — added `research/growth/` and `research/smallcap/` to folder structure; added Growth Analyst and Small-Cap Analyst rows to team roles and data flow tables; updated PM and Risk Manager reads-from columns to include all 4 research directories; updated project overview to list all 4 analyst types
+
 ## 2026-02-28 — Add Social Media Stage to Pipeline
 
 Extended the work pipeline to include the social-media agent as the final stage, ensuring tweets are posted after every run.

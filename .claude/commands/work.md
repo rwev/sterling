@@ -10,7 +10,7 @@ Today's date is available in your context. Use it for all timestamps and file na
 
 Invoke `macro-research`. It should:
 - Survey the macro environment and identify 2–3 sector or thematic opportunities
-- Surface any early-stage stock-specific ideas as idea briefs routed to Long or Short Analyst
+- Surface any early-stage stock-specific ideas as idea briefs routed to Long, Contrarian, Growth, or Small-Cap Analyst
 - Write output to `research/macro/YYYY-MM-DD_macro-outlook.md`
 
 Collect the output file path before proceeding.
@@ -19,19 +19,29 @@ Collect the output file path before proceeding.
 
 ## Stage 2 — Research Analysis (run in parallel)
 
-Provide the Stage 1 file path to `long-analyst` and `short-analyst` simultaneously. Each must read it before writing.
+Provide the Stage 1 file path to `long-analyst`, `contrarian-analyst`, `growth-analyst`, and `smallcap-analyst` simultaneously. Each must read it before writing.
 
 **long-analyst** should:
 - Review Stage 1 material and identify compelling long opportunities
 - Produce 0–3 long theses based on conviction — no quota to fill, no cap to chase
 - Write each thesis to its own file: `research/long/YYYY-MM-DD_<ticker>-long-thesis.md`
 
-**short-analyst** should:
-- Review Stage 1 material and identify compelling short opportunities or bear cases
-- Produce 0–3 short theses based on conviction — no quota to fill, no cap to chase
-- Write each thesis to its own file: `research/short/YYYY-MM-DD_<ticker>-short-thesis.md`
+**contrarian-analyst** should:
+- Review Stage 1 material and identify compelling contrarian/value long opportunities where the market is too pessimistic
+- Produce 0–3 contrarian long theses based on conviction — no quota to fill, no cap to chase
+- Write each thesis to its own file: `research/contrarian/YYYY-MM-DD_<ticker>-long-thesis.md`
 
-Wait for both to complete. Collect all output file paths. If either analyst produces zero theses, note it and continue — downstream stages will simply have fewer pitches to review.
+**growth-analyst** should:
+- Review Stage 1 material and identify compelling growth/momentum long opportunities at inflection points
+- Produce 0–3 growth long theses based on conviction — no quota to fill, no cap to chase
+- Write each thesis to its own file: `research/growth/YYYY-MM-DD_<ticker>-long-thesis.md`
+
+**smallcap-analyst** should:
+- Review Stage 1 material and identify compelling under-followed small/mid-cap long opportunities
+- Produce 0–3 small-cap long theses based on conviction — no quota to fill, no cap to chase
+- Write each thesis to its own file: `research/smallcap/YYYY-MM-DD_<ticker>-long-thesis.md`
+
+Wait for all four to complete. Collect all output file paths. If any analyst produces zero theses, note it and continue — downstream stages will simply have fewer pitches to review.
 
 ---
 
@@ -40,8 +50,11 @@ Wait for both to complete. Collect all output file paths. If either analyst prod
 Provide all Stage 1 and Stage 2 file paths to `portfolio-manager`. Must read every document before writing.
 
 **portfolio-manager** should:
-- Review all research produced
-- Produce a **draft** IC memo covering: each idea reviewed, proposed decision (approved / rejected), and proposed allocation weights
+- First, review all active positions in the thesis library: read `portfolio-manager/theses/.active`, read each active thesis, run WebSearch catalyst checks (current price vs. stop/target, catalyst status, material news), and make Hold/Resize/Close decisions for each existing position
+- For any positions decided as Close: copy the thesis to `portfolio-manager/theses/closed/` and update `.active`
+- Then, review all new research produced in Stages 1 and 2
+- For any new positions approved: copy the original thesis to `portfolio-manager/theses/` and update `.active`
+- Produce a **draft** IC memo covering: Existing Position Review (all active positions with Hold/Resize/Close decisions and catalyst updates), each new idea reviewed, proposed decision (approved / rejected), and proposed allocation weights
 - Write output to `portfolio-manager/YYYY-MM-DD_ic-memo-draft.md`
 
 Wait for completion. Collect the output file path.
@@ -69,6 +82,7 @@ Provide the Stage 4 risk report file path (plus all prior file paths) to `portfo
 **portfolio-manager** should:
 - Read the Risk Manager's assessment
 - Incorporate risk feedback: adjust allocations, add hedging directives, reject positions that breach limits, or accept flagged risks with documented rationale
+- If risk feedback causes any position to be closed (or reverses a draft-round approval): copy the thesis to `portfolio-manager/theses/closed/` and remove it from `.active`
 - Produce the **final** IC memo — this is the authoritative record for all downstream agents
 - Write output to `portfolio-manager/YYYY-MM-DD_ic-memo.md`
 
@@ -110,6 +124,18 @@ Wait for completion.
 
 ---
 
+## Stage 8 — Commit & Push
+
+After all stages complete (or after the pipeline short-circuits with nothing new):
+
+1. Stage all new and modified files: `git add -A`
+2. Commit with message: `Add YYYY-MM-DD pipeline output and agent updates`
+3. Push to remote: `git push`
+
+If the commit or push fails, report the error but do not retry.
+
+---
+
 ## Pipeline Complete
 
 Report back to the user with:
@@ -120,3 +146,4 @@ Report back to the user with:
 4. Investor update summary highlights
 5. Tweets posted (or posting failures)
 6. Full file manifest grouped by stage with relative paths
+7. Git commit hash and push status

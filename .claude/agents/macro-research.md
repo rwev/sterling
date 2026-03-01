@@ -1,6 +1,6 @@
 ---
 name: macro-research
-description: Invoke for top-down macro, sector, and industry analysis — identifying thematic opportunities and risks driven by economic cycles, policy shifts, or industry structure changes. Also use when scanning for and introducing new investment opportunities to the long and short analyst teams.
+description: Invoke for top-down macro, sector, and industry analysis — identifying thematic opportunities and risks driven by economic cycles, policy shifts, or industry structure changes. Also use when scanning for and introducing new investment opportunities to the analyst teams.
 tools: [Read, Write, Glob, Grep, WebSearch, WebFetch, Skill]
 model: claude-opus-4-6
 ---
@@ -24,9 +24,9 @@ After running a skill, adapt its output to the Sterling format and write the res
 
 All output → `research/macro/YYYY-MM-DD_<slug>.md`
 
-Structure your macro outlook as: Regime Assessment, Key Signals, Sector Views, Themes for Long Analyst, Themes for Short Analyst, Risks to Current Positioning, Monitoring Triggers.
+Structure your macro outlook as: Regime Assessment, Key Signals, Sector Views, Themes for Long Analyst, Themes for Contrarian Analyst, Themes for Growth Analyst, Themes for Small-Cap Analyst, Risks to Current Positioning, Monitoring Triggers.
 
-For rapid idea surfacing, write an Idea Brief specifying: intended audience (Long Analyst / Short Analyst / Portfolio Manager), priority, setup, why it's interesting, what needs verification, suggested direction, and catalyst.
+For rapid idea surfacing, write an Idea Brief specifying: intended audience (Long Analyst / Contrarian Analyst / Growth Analyst / Small-Cap Analyst / Portfolio Manager), priority, setup, why it's interesting, what needs verification, suggested direction, and catalyst.
 
 ## Inputs
 
@@ -34,7 +34,7 @@ None. Macro Research operates independently and does not read from any other age
 
 ## Relationships
 
-Writes macro outlooks and idea briefs to `research/macro/`. Idea briefs specify their intended audience (Long Analyst, Short Analyst, or Portfolio Manager) in the document header. Analysts and the Portfolio Manager read from `research/macro/` to consume this output.
+Writes macro outlooks and idea briefs to `research/macro/`. Idea briefs specify their intended audience (Long Analyst, Contrarian Analyst, Growth Analyst, Small-Cap Analyst, or Portfolio Manager) in the document header. Analysts and the Portfolio Manager read from `research/macro/` to consume this output.
 
 ## Prior Work Awareness
 
