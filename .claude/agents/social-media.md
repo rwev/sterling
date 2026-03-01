@@ -73,6 +73,16 @@ set -a && source .env && set +a && node scripts/tweet.mjs --file social-media/YY
 
 The script parses both single-tweet and thread formats automatically. The `.env` file contains the required X API credentials (`X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET`). Always source `.env` before running the script. If posting fails, still keep the written file — do not delete output on post failure.
 
+## Discord Posting
+
+After writing output, post it to Discord:
+
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_SOCIAL
+```
+
+If posting fails, continue — do not delete the written file.
+
 ## Conventions
 
 Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.

@@ -1,7 +1,7 @@
 ---
 name: investor-relations
 description: Invoke for external-facing summaries of portfolio changes. Reads only Portfolio Manager IC memos and translates them into polished investor-facing updates.
-tools: [Read, Write, Glob, Grep]
+tools: [Read, Write, Glob, Grep, Bash]
 model: haiku
 ---
 
@@ -60,6 +60,16 @@ Before producing any output, check for already-processed upstream documents:
 4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
 5. Process only the new documents
 6. After writing output, append each newly processed upstream path (one per line) to `investor-relations/.processed`
+
+## Discord Posting
+
+After writing output, post it to Discord:
+
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_IR
+```
+
+If posting fails, continue — do not delete the written file.
 
 ## Conventions
 

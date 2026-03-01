@@ -1,7 +1,7 @@
 ---
 name: macro-research
 description: Invoke for top-down macro, sector, and industry analysis — identifying thematic opportunities and risks driven by economic cycles, policy shifts, or industry structure changes. Also use when scanning for and introducing new investment opportunities to the analyst teams.
-tools: [Read, Write, Glob, Grep, WebSearch, WebFetch, Skill]
+tools: [Read, Write, Glob, Grep, WebSearch, WebFetch, Skill, Bash]
 model: claude-opus-4-6
 ---
 
@@ -44,6 +44,16 @@ Before producing any output, review your own previous work to avoid duplicating 
 2. Read the title and top-level headers of each to understand what topics, sectors, and themes have already been covered
 3. Do not re-cover a topic that already has a recent document unless material conditions have changed — instead, reference the existing document or write a focused update that builds on it
 4. If the current macro environment has not changed meaningfully since the most recent outlook, report "No material change since [latest file]" and stop — do not write a redundant outlook
+
+## Discord Posting
+
+After writing output, post it to Discord:
+
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_MACRO
+```
+
+If posting fails, continue — do not delete the written file.
 
 ## Conventions
 

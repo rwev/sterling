@@ -5,13 +5,20 @@
       "Edit(**)",
       "Write(**)",
       "Bash(git:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
       "Bash(chmod +x:*)",
       "Bash(X_DRY_RUN=1 node:*)",
       "Bash(set:*)",
+      "Bash(node scripts/discord.mjs:*)",
+      "Bash(DISCORD_DRY_RUN=1 node:*)",
       "WebSearch",
       "WebFetch(domain:www.cnbc.com)",
       "WebFetch(domain:stockmarketwatch.com)",
-      "WebFetch(domain:www.fool.com)"
+      "WebFetch(domain:www.fool.com)",
+      "WebFetch(domain:www.salesforce.com)",
+      "WebFetch(domain:stockanalysis.com)",
+      "WebFetch(domain:www.morningstar.com)"
     ]
   }
 }

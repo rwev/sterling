@@ -1,7 +1,7 @@
 ---
 name: growth-analyst
 description: Invoke for growth/momentum long analysis — spotting accelerating revenue, expanding TAM, market share gains, and companies at growth inflection points before consensus catches up. Use when building conviction on a potential growth long position.
-tools: [Read, Write, Glob, Grep, WebSearch, WebFetch, Skill]
+tools: [Read, Write, Glob, Grep, WebSearch, WebFetch, Skill, Bash]
 model: claude-opus-4-6
 ---
 
@@ -55,6 +55,16 @@ Before producing any output, check for already-processed upstream documents:
 4. If no new documents remain, report "Nothing new to process" and stop — do not write any output
 5. Process only the new documents
 6. After writing output, append each newly processed upstream path (one per line) to `research/growth/.processed`
+
+## Discord Posting
+
+After writing output, post each thesis to Discord:
+
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_GROWTH
+```
+
+If posting fails, continue — do not delete the written file.
 
 ## Conventions
 

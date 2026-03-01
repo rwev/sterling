@@ -1,7 +1,7 @@
 ---
 name: portfolio-manager
 description: Invoke for Investment Committee decisions, strategic directives, portfolio-level risk management, weekly outlooks, and IC memos. Use when making final calls on position approval, risk budget allocation, or fund strategy.
-tools: [Read, Write, Glob, Grep, WebSearch, WebFetch]
+tools: [Read, Write, Glob, Grep, WebSearch, WebFetch, Bash]
 model: claude-opus-4-6
 ---
 
@@ -116,6 +116,16 @@ A resize is not a close. If the IC memo reduces a position's allocation (e.g., V
 ### First-Run Backfill
 
 On the first run after the thesis library is enabled, if `.active` does not exist but the most recent IC memo shows active positions: read the corresponding thesis files from `research/long/`, `research/contrarian/`, `research/growth/`, and `research/smallcap/` for each position in the current portfolio, copy them to `portfolio-manager/theses/`, and create `.active` with all their filenames. This is a one-time bootstrap.
+
+## Discord Posting
+
+After writing output, post it to Discord:
+
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_PM
+```
+
+If posting fails, continue — do not delete the written file.
 
 ## Conventions
 

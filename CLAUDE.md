@@ -37,35 +37,35 @@ sterling/
 
 ## Team Roles and Responsibilities
 
-| Role | Folder | Primary Output |
-|---|---|---|
-| Macro Research | `research/macro/` | Macro outlooks, idea briefs |
-| Long Analyst | `research/long/` | Long thesis, entry rationale |
+| Role               | Folder                 | Primary Output                          |
+| ------------------ | ---------------------- | --------------------------------------- |
+| Macro Research     | `research/macro/`      | Macro outlooks, idea briefs             |
+| Long Analyst       | `research/long/`       | Long thesis, entry rationale            |
 | Contrarian Analyst | `research/contrarian/` | Contrarian long thesis, entry rationale |
-| Growth Analyst | `research/growth/` | Growth long thesis, entry rationale |
-| Small-Cap Analyst | `research/smallcap/` | Small-cap long thesis, entry rationale |
-| Portfolio Manager | `portfolio-manager/` | IC memos, directives |
-| Bookkeeper | `bookkeeping/` | P&L, NAV, ledger |
-| Risk Manager | `risk/` | Risk reports, exposure analysis |
-| Investor Relations | `investor-relations/` | Portfolio updates for investors |
-| Social Media | `social-media/` | Tweets, threads |
+| Growth Analyst     | `research/growth/`     | Growth long thesis, entry rationale     |
+| Small-Cap Analyst  | `research/smallcap/`   | Small-cap long thesis, entry rationale  |
+| Portfolio Manager  | `portfolio-manager/`   | IC memos, directives                    |
+| Bookkeeper         | `bookkeeping/`         | P&L, NAV, ledger                        |
+| Risk Manager       | `risk/`                | Risk reports, exposure analysis         |
+| Investor Relations | `investor-relations/`  | Portfolio updates for investors         |
+| Social Media       | `social-media/`        | Tweets, threads                         |
 
 ## Agent Data Flow
 
 Agents communicate through documents, not directly. Each agent reads from upstream directories and writes to its own. The Portfolio Manager and Risk Manager collaborate in a two-round loop to formulate the final portfolio before downstream agents execute.
 
-| Agent | Reads from | Writes to |
-|---|---|---|
-| Macro Research | *(none — external data only)* | `research/macro/` |
-| Long Analyst | `research/macro/` | `research/long/` |
-| Contrarian Analyst | `research/macro/` | `research/contrarian/` |
-| Growth Analyst | `research/macro/` | `research/growth/` |
-| Small-Cap Analyst | `research/macro/` | `research/smallcap/` |
-| Portfolio Manager | `research/long/`, `research/contrarian/`, `research/growth/`, `research/smallcap/`, `risk/` | `portfolio-manager/` |
-| Risk Manager | `portfolio-manager/`, `research/long/`, `research/contrarian/`, `research/growth/`, `research/smallcap/` | `risk/` |
-| Bookkeeper | `portfolio-manager/` | `bookkeeping/` |
-| Investor Relations | `portfolio-manager/` | `investor-relations/` |
-| Social Media | `investor-relations/` | `social-media/` |
+| Agent              | Reads from                                                                                               | Writes to              |
+| ------------------ | -------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Macro Research     | *(none — external data only)*                                                                            | `research/macro/`      |
+| Long Analyst       | `research/macro/`                                                                                        | `research/long/`       |
+| Contrarian Analyst | `research/macro/`                                                                                        | `research/contrarian/` |
+| Growth Analyst     | `research/macro/`                                                                                        | `research/growth/`     |
+| Small-Cap Analyst  | `research/macro/`                                                                                        | `research/smallcap/`   |
+| Portfolio Manager  | `research/long/`, `research/contrarian/`, `research/growth/`, `research/smallcap/`, `risk/`              | `portfolio-manager/`   |
+| Risk Manager       | `portfolio-manager/`, `research/long/`, `research/contrarian/`, `research/growth/`, `research/smallcap/` | `risk/`                |
+| Bookkeeper         | `portfolio-manager/`                                                                                     | `bookkeeping/`         |
+| Investor Relations | `portfolio-manager/`                                                                                     | `investor-relations/`  |
+| Social Media       | `investor-relations/`                                                                                    | `social-media/`        |
 
 ### PM–Risk Collaboration Loop
 
