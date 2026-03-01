@@ -2,6 +2,14 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-02-28 — Enforce Long-Only and Percentage-Only Constraints
+
+Hardened PM and Risk Manager configs to enforce the long-only mandate and eliminate dollar-denominated allocation metrics. All portfolio sizing is now expressed as % NAV only.
+
+**Agents modified:**
+- `portfolio-manager.md` — added explicit long-only constraint ("no short positions, no short hedges, no pair trades with a short leg"); added percentage-only constraint ("do not reference dollar amounts or notional position sizes"); changed intro from "trade ideas" to "long ideas" with bold long-only mandate statement; replaced "gross exposure limits" with "100% of NAV"; removed "add hedging directives" from final-round process; removed "direction" from close-position documentation requirements
+- `risk-manager.md` — added bold long-only mandate statement to intro; added percentage-only instruction after mentality ("do not use dollar amounts, notional sizes, or $M figures"); changed "gross/net exposure" to "total exposure" in responsibilities; removed `Gross Exposure % NAV` row from summary template (kept `Total Exposure`); removed `Allocation $M` column from sector exposure table; merged stress test `Est. P&L Impact` and `% NAV` into single `Est. P&L Impact % NAV` column
+
 ## 2026-02-28 — Add Growth and Small-Cap Analyst Agents
 
 Expanded the analyst team from 2 (long, contrarian) to 4 by adding growth/momentum and small-cap/discovery perspectives. Updated all downstream agents and the pipeline orchestrator to consume research from the new directories.
