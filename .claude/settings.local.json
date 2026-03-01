@@ -18,7 +18,13 @@
       "WebFetch(domain:www.fool.com)",
       "WebFetch(domain:www.salesforce.com)",
       "WebFetch(domain:stockanalysis.com)",
-      "WebFetch(domain:www.morningstar.com)"
+      "WebFetch(domain:www.morningstar.com)",
+      "WebFetch(domain:www.biospace.com)",
+      "WebFetch(domain:www.fiercebiotech.com)",
+      "WebFetch(domain:markets.financialcontent.com)",
+      "WebFetch(domain:example.com)",
+      "WebFetch(domain:discord.com)",
+      "Bash(set:*\\\\)"
     ]
   }
 }
