@@ -92,7 +92,21 @@ Provide the Stage 5 final IC memo file path to both `bookkeeper` and `investor-r
 - Frame decisions directionally: sector tilts, thematic positioning, high-level bias
 - Write output to `investor-relations/YYYY-MM-DD_portfolio-update.md`
 
-Wait for both to complete.
+Wait for both to complete. Collect the investor-relations output file path.
+
+---
+
+## Stage 7 — Social Media (sequential)
+
+Provide the Stage 6 investor-relations file path to `social-media`.
+
+**social-media** should:
+- Read the investor relations update
+- Produce 1–2 tweet-length posts or a short thread capturing the directional message
+- Write output to `social-media/YYYY-MM-DD_<slug>.md`
+- Post each tweet file using: `set -a && source .env && set +a && node scripts/tweet.mjs --file social-media/YYYY-MM-DD_<slug>.md`
+
+Wait for completion.
 
 ---
 
@@ -104,4 +118,5 @@ Report back to the user with:
 2. Key risk flags from the Risk Manager and how the PM addressed them in the final memo
 3. Bookkeeping status and any discrepancies flagged
 4. Investor update summary highlights
-5. Full file manifest grouped by stage with relative paths
+5. Tweets posted (or posting failures)
+6. Full file manifest grouped by stage with relative paths

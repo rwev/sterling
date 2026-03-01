@@ -1,11 +1,17 @@
 {
   "permissions": {
     "allow": [
+      "Read(**)",
+      "Edit(**)",
+      "Write(**)",
       "Bash(git:*)",
       "Bash(chmod +x:*)",
       "Bash(X_DRY_RUN=1 node:*)",
       "Bash(set:*)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:www.cnbc.com)",
+      "WebFetch(domain:stockmarketwatch.com)",
+      "WebFetch(domain:www.fool.com)"
     ]
   }
 }

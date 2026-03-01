@@ -37,6 +37,8 @@ Every thesis must include entry parameters: entry range, target price, and stop 
 Before producing any output, read relevant documents from:
 - `research/macro/` — macro outlooks and idea briefs for sector context and thematic direction
 
+Macro Research may name specific stocks as examples, but treat its output as thematic direction, not a closed list. Use the macro themes, sector views, and structural signals to identify the best long opportunities across the entire market — including stocks not mentioned by Macro Research. Run your own screens and apply your own judgment to find the highest-conviction names that fit the macro setup.
+
 ## Relationships
 
 Writes theses to `research/long/` for the Portfolio Manager's review. Reads macro context from `research/macro/`.

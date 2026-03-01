@@ -2,6 +2,13 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-02-28 — Add Social Media Stage to Pipeline
+
+Extended the work pipeline to include the social-media agent as the final stage, ensuring tweets are posted after every run.
+
+**Commands modified:**
+- `work.md` — added Stage 7 (Social Media) after Stage 6 (Bookkeeping & IR); social-media agent reads the IR update, writes tweets, and posts via `scripts/tweet.mjs` with `.env` sourced; final report now includes tweet posting status
+
 ## 2026-02-28 — Align Skill References to Actual Plugin Names
 
 Updated all analyst agent skill references to match the actual installed plugin skill names. Added missing skills to short analyst for parity with long analyst.
