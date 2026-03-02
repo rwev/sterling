@@ -115,19 +115,27 @@ Reads pitches from `artifacts/analysis/long/`, `artifacts/analysis/contrarian/`,
 
 ## Discord Posting
 
-After writing each output file, post a structured summary to Discord — not the full document, but enough to convey the key IC decisions. Format the summary as markdown with sections. Example structure:
+Post to Discord only for the **final** IC memo (`*_ic-memo.md` or `*_ic-memo-final.md`). Do NOT post the draft IC memo (`*_ic-memo-draft*.md`) — the draft is an internal working document for the Risk Manager and should not be broadcast.
+
+Post a structured summary — not the full document, but enough to convey the key IC decisions. The summary MUST always include a full current holdings list showing every position in the portfolio, not just changes.
+
+IMPORTANT: Discord does NOT render markdown tables. Never use markdown table syntax (pipes and dashes) in Discord summaries. Use bullet lists or code blocks instead for structured data.
+
+Format the summary as markdown with sections. Example structure:
 
 ```
-**Existing Positions:**
-- [Ticker]: [Hold/Resize/Close] — [1-sentence rationale]
-
-**New Approvals:**
-- [Ticker] at [weight]%: [1-sentence thesis]
+**Changes This Cycle:**
+- [Ticker]: [Resize/Close/New] — [1-sentence rationale]
+- (or "No position changes this cycle" if all holds)
 
 **Rejections:**
 - [Ticker]: [1-sentence reason]
 
-**Portfolio Snapshot:** [total invested %, cash %, number of holdings]
+**Current Holdings:**
+- VST 20.0% @ $X → target $Y / stop $Z — HOLD
+- AVGO 13.0% (5% deployed) @ $X → target $Y / stop $Z — HOLD (phased)
+- [... every position ...]
+- Cash: 11.0% target / 23.0% deployed
 
 **Risk Items:** [bullet list of flagged items or limit considerations]
 
