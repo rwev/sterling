@@ -3,11 +3,10 @@
 // Post a markdown document (or summary) to a Discord channel via webhook.
 //
 // Usage:
-//   node scripts/discord.mjs --file research/macro/2026-02-28_outlook.md --webhook-env DISCORD_WEBHOOK_MACRO
 //   node scripts/discord.mjs --file research/macro/2026-02-28_outlook.md --webhook-env DISCORD_WEBHOOK_MACRO --summary "Brief summary text"
 //
-// When --summary is provided, the summary text is posted instead of the full
-// file contents. The file is still read to extract the title for the embed.
+// --summary is REQUIRED. The summary text is posted to Discord. The full file
+// is never posted — it is only read to extract the title for the embed.
 //
 // Environment variables:
 //   <webhook-env>      — Discord webhook URL (e.g. DISCORD_WEBHOOK_MACRO)
@@ -40,7 +39,14 @@ function parseArgs() {
 
   if (!file || !webhookEnv) {
     console.error(
-      "Usage: discord.mjs --file <path> --webhook-env <ENV_VAR_NAME> [--summary <text>]"
+      "Usage: discord.mjs --file <path> --webhook-env <ENV_VAR_NAME> --summary <text>"
+    );
+    process.exit(1);
+  }
+
+  if (!summary) {
+    console.error(
+      "Error: --summary is required. Never post full file contents to Discord."
     );
     process.exit(1);
   }
@@ -112,7 +118,7 @@ async function main() {
 
   const fileContent = fs.readFileSync(file, "utf-8");
   const title = extractTitle(fileContent);
-  const content = summary || fileContent;
+  const content = summary;
   const chunks = splitContent(content, EMBED_DESC_LIMIT);
 
   for (const [i, chunk] of chunks.entries()) {
