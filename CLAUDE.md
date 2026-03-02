@@ -79,6 +79,10 @@ The Portfolio Manager and Risk Manager work together before the portfolio is fin
 
 Only the final IC memo flows to Bookkeeper, Investor Relations, and downstream agents.
 
+## Commit Rules
+
+- **Agent/command changes require a changelog entry.** Before committing any changes to files under `.claude/agents/` or `.claude/commands/`, always run `/changelog` first. This is mandatory — never skip it, even if the agent change seems minor.
+
 ## File Naming
 
 Use the pattern: `YYYY-MM-DD_<brief-slug>.md`

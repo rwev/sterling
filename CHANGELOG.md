@@ -2,6 +2,13 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-02 — Theme-Agnostic Evaluation and Displacement Analysis for Portfolio Manager
+
+Addressed a bias where the PM rejected all pitches from the drones/defense pipeline cycle with blanket "no slot" and "no thematic fit" reasoning, without comparing new pitches against existing holdings on risk/reward. Two changes ensure every pitch gets a fair hearing regardless of sector.
+
+**Agents modified:**
+- `portfolio-manager.md` — added "Theme-agnostic evaluation" paragraph to Mentality section: pitches are evaluated on risk/reward merits, not thematic fit; thematic concentration is a risk factor to manage, not a selection criterion; non-correlated pitches get more consideration when the portfolio is concentrated. Added "No slot is never a standalone rejection reason" constraint: when portfolio is full (10/10), every pitch with R/R above 1.5:1 requires a Displacement Analysis comparing it head-to-head against the weakest existing holding; burden of proof flips to keeping the incumbent if the new pitch has superior R/R.
+
 ## 2026-03-01 — Reorder Inputs: `.processed` Procedure First, Qualitative Guidance Second
 
 Restructured the `## Inputs` section in 9 agents so the numbered `.processed` dedup procedure is the first thing the agent sees — gating all downstream work — with qualitative guidance about upstream sources moved below as context for interpretation. Also fixed the Portfolio Manager's `.processed` glob to include `artifacts/risk/`, which was previously untracked.
