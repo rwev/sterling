@@ -81,10 +81,26 @@ Writes theses to `artifacts/analysis/contrarian/` for the Portfolio Manager's re
 
 ## Discord Posting
 
-After writing output, post each thesis to Discord:
+After writing each thesis, post a structured summary to Discord — not the full document, but enough to convey the contrarian case. Format the summary as markdown with sections. Example structure:
 
 ```
-set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_CONTRARIAN
+**Why the Market Is Wrong:** [2-3 sentences on the mispricing]
+
+**Forensic Highlights:**
+- [Key financial finding 1]
+- [Key financial finding 2]
+- [Key financial finding 3]
+
+**Catalyst Path:** [bullet list of re-rating catalysts with dates]
+
+**Entry Parameters:** Entry $X–$Y | Target $Z | Stop $W | Margin of Safety N%
+
+**Key Risks:** [1-2 sentences on what could invalidate the thesis]
+```
+
+Post using:
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_CONTRARIAN --summary "<structured summary>"
 ```
 
 If posting fails, continue — do not delete the written file.

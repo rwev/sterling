@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 
-// Post a markdown document to a Discord channel via webhook.
+// Post a markdown document (or summary) to a Discord channel via webhook.
 //
 // Usage:
 //   node scripts/discord.mjs --file research/macro/2026-02-28_outlook.md --webhook-env DISCORD_WEBHOOK_MACRO
+//   node scripts/discord.mjs --file research/macro/2026-02-28_outlook.md --webhook-env DISCORD_WEBHOOK_MACRO --summary "Brief summary text"
+//
+// When --summary is provided, the summary text is posted instead of the full
+// file contents. The file is still read to extract the title for the embed.
 //
 // Environment variables:
 //   <webhook-env>      — Discord webhook URL (e.g. DISCORD_WEBHOOK_MACRO)
@@ -22,23 +26,26 @@ function parseArgs() {
   const args = process.argv.slice(2);
   let file = null;
   let webhookEnv = null;
+  let summary = null;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--file" && args[i + 1]) {
       file = args[++i];
     } else if (args[i] === "--webhook-env" && args[i + 1]) {
       webhookEnv = args[++i];
+    } else if (args[i] === "--summary" && args[i + 1]) {
+      summary = args[++i];
     }
   }
 
   if (!file || !webhookEnv) {
     console.error(
-      "Usage: discord.mjs --file <path> --webhook-env <ENV_VAR_NAME>"
+      "Usage: discord.mjs --file <path> --webhook-env <ENV_VAR_NAME> [--summary <text>]"
     );
     process.exit(1);
   }
 
-  return { file, webhookEnv };
+  return { file, webhookEnv, summary };
 }
 
 // --- markdown parsing ---
@@ -90,7 +97,7 @@ async function postToWebhook(webhookUrl, payload) {
 // --- main ---
 
 async function main() {
-  const { file, webhookEnv } = parseArgs();
+  const { file, webhookEnv, summary } = parseArgs();
 
   if (!fs.existsSync(file)) {
     console.error(`File not found: ${file}`);
@@ -103,8 +110,9 @@ async function main() {
     process.exit(1);
   }
 
-  const content = fs.readFileSync(file, "utf-8");
-  const title = extractTitle(content);
+  const fileContent = fs.readFileSync(file, "utf-8");
+  const title = extractTitle(fileContent);
+  const content = summary || fileContent;
   const chunks = splitContent(content, EMBED_DESC_LIMIT);
 
   for (const [i, chunk] of chunks.entries()) {

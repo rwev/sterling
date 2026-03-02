@@ -84,10 +84,28 @@ Works collaboratively with the Portfolio Manager in a two-round process. Reads t
 
 ## Discord Posting
 
-After writing output, post it to Discord:
+After writing each output file, post a structured summary to Discord — not the full document, but enough to convey the risk picture. Format the summary as markdown with sections. Example structure:
 
 ```
-set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_RISK
+**Key Metrics:**
+- Portfolio Beta: X (limit Y) — [OK/BREACH]
+- VaR 95% 1-day: X% (limit Y%) — [OK/BREACH]
+- VaR 99% 1-day: X%
+- Max single-name: X%
+- Max sector: X% (limit Y%) — [OK/BREACH]
+
+**Limit Breaches:** [bullet list of breaches with severity and recommended action]
+
+**Concentration & Correlation:** [2-3 sentences on effective diversification, pairwise correlations, factor crowding]
+
+**Stress Tests:** [bullet list of worst-case scenarios and estimated NAV impact]
+
+**Flags for PM:** [bullet list of specific positions or allocations requiring PM attention]
+```
+
+Post using:
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_RISK --summary "<structured summary>"
 ```
 
 If posting fails, continue — do not delete the written file.

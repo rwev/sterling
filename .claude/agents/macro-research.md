@@ -77,10 +77,22 @@ Writes macro outlooks and idea briefs to `artifacts/research/macro/`. Idea brief
 
 ## Discord Posting
 
-After writing output, post it to Discord:
+After writing each output file, post a structured summary to Discord — not the full document, but enough to convey the key findings. Format the summary as markdown with sections. Example structure:
 
 ```
-set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_MACRO
+**Regime:** [1-2 sentences on macro regime and key indicators]
+
+**Sector Views:** [bullet list of sector stances and rationale]
+
+**Ideas Routed:**
+- [Ticker] → [Analyst Team]: [1-sentence rationale]
+
+**Key Risks:** [1-2 sentences on top risks to monitor]
+```
+
+Post using:
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_MACRO --summary "<structured summary>"
 ```
 
 If posting fails, continue — do not delete the written file.

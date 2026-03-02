@@ -75,10 +75,26 @@ Writes theses to `artifacts/analysis/long/` for the Portfolio Manager's review. 
 
 ## Discord Posting
 
-After writing output, post each thesis to Discord:
+After writing each thesis, post a structured summary to Discord — not the full document, but enough to convey the investment case. Format the summary as markdown with sections. Example structure:
 
 ```
-set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_LONG
+**Thesis:** [1-2 sentences on core investment case]
+
+**Financial Highlights:**
+- [Key metric 1]
+- [Key metric 2]
+- [Key metric 3]
+
+**Catalysts:** [bullet list of upcoming catalysts with dates]
+
+**Entry Parameters:** Entry $X–$Y | Target $Z | Stop $W
+
+**Key Risks:** [1-2 sentences on primary risks]
+```
+
+Post using:
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_LONG --summary "<structured summary>"
 ```
 
 If posting fails, continue — do not delete the written file.

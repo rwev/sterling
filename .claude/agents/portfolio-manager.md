@@ -115,10 +115,28 @@ Reads pitches from `artifacts/analysis/long/`, `artifacts/analysis/contrarian/`,
 
 ## Discord Posting
 
-After writing output, post it to Discord:
+After writing each output file, post a structured summary to Discord — not the full document, but enough to convey the key IC decisions. Format the summary as markdown with sections. Example structure:
 
 ```
-set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_PM
+**Existing Positions:**
+- [Ticker]: [Hold/Resize/Close] — [1-sentence rationale]
+
+**New Approvals:**
+- [Ticker] at [weight]%: [1-sentence thesis]
+
+**Rejections:**
+- [Ticker]: [1-sentence reason]
+
+**Portfolio Snapshot:** [total invested %, cash %, number of holdings]
+
+**Risk Items:** [bullet list of flagged items or limit considerations]
+
+**Next IC:** [date and key agenda items]
+```
+
+Post using:
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_PM --summary "<structured summary>"
 ```
 
 If posting fails, continue — do not delete the written file.

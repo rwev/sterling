@@ -73,10 +73,21 @@ The script parses both single-tweet and thread formats automatically. The `.env`
 
 ## Discord Posting
 
-After writing output, post it to Discord:
+After writing each output file, post a structured summary to Discord — not the full document, but enough to convey what was posted. Format the summary as markdown with sections. Example structure:
 
 ```
-set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_SOCIAL
+**Posted:** [thread/single tweet] — [theme]
+
+**Tweets:**
+- 1/ [full tweet text]
+- 2/ [full tweet text]
+
+**Post Status:** [success/failure for X and Discord]
+```
+
+Post using:
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_SOCIAL --summary "<structured summary>"
 ```
 
 If posting fails, continue — do not delete the written file.

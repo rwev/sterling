@@ -90,10 +90,28 @@ Writes theses to `artifacts/analysis/smallcap/` for the Portfolio Manager's revi
 
 ## Discord Posting
 
-After writing output, post each thesis to Discord:
+After writing each thesis, post a structured summary to Discord — not the full document, but enough to convey the discovery case. Format the summary as markdown with sections. Example structure:
 
 ```
-set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_SMALLCAP
+**Discovery Edge:** [2-3 sentences on why this is under-followed and what the market is missing]
+
+**Financial Highlights:**
+- [Key metric 1]
+- [Key metric 2]
+- [Key metric 3]
+
+**Liquidity:** Mkt cap $X | Avg daily vol $Y | Max allocation Z%
+
+**Catalyst Path:** [bullet list of catalysts that close the discovery gap]
+
+**Entry Parameters:** Entry $X–$Y | Target $Z | Stop $W
+
+**Key Risks:** [1-2 sentences on primary risks]
+```
+
+Post using:
+```
+set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_SMALLCAP --summary "<structured summary>"
 ```
 
 If posting fails, continue — do not delete the written file.

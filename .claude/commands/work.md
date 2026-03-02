@@ -12,8 +12,6 @@ Invoke `macro-research`. It should:
 - Survey the macro environment and identify 2–3 sector or thematic opportunities
 - Surface any early-stage stock-specific ideas as idea briefs routed to Long, Contrarian, Growth, or Small-Cap Analyst
 - Write output to `artifacts/research/macro/YYYY-MM-DD_macro-outlook.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_MACRO`
-
 Collect the output file path before proceeding.
 
 ---
@@ -26,25 +24,21 @@ Provide the Stage 1 file path to `long-analyst`, `contrarian-analyst`, `growth-a
 - Review Stage 1 material and identify compelling long opportunities
 - Produce 0–3 long theses based on conviction — no quota to fill, no cap to chase
 - Write each thesis to its own file: `artifacts/analysis/long/YYYY-MM-DD_<ticker>-long-thesis.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_LONG`
 
 **contrarian-analyst** should:
 - Review Stage 1 material and identify compelling contrarian/value long opportunities where the market is too pessimistic
 - Produce 0–3 contrarian long theses based on conviction — no quota to fill, no cap to chase
 - Write each thesis to its own file: `artifacts/analysis/contrarian/YYYY-MM-DD_<ticker>-long-thesis.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_CONTRARIAN`
 
 **growth-analyst** should:
 - Review Stage 1 material and identify compelling growth/momentum long opportunities at inflection points
 - Produce 0–3 growth long theses based on conviction — no quota to fill, no cap to chase
 - Write each thesis to its own file: `artifacts/analysis/growth/YYYY-MM-DD_<ticker>-long-thesis.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_GROWTH`
 
 **smallcap-analyst** should:
 - Review Stage 1 material and identify compelling under-followed small/mid-cap long opportunities
 - Produce 0–3 small-cap long theses based on conviction — no quota to fill, no cap to chase
 - Write each thesis to its own file: `artifacts/analysis/smallcap/YYYY-MM-DD_<ticker>-long-thesis.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_SMALLCAP`
 
 Wait for all four to complete. Collect all output file paths. If any analyst produces zero theses, note it and continue — downstream stages will simply have fewer pitches to review.
 
@@ -61,7 +55,6 @@ Provide all Stage 1 and Stage 2 file paths to `portfolio-manager`. Must read eve
 - For any new positions approved: copy the original thesis to `artifacts/portfolio-manager/theses/` and update `.active`
 - Produce a **draft** IC memo covering: Existing Position Review (all active positions with Hold/Resize/Close decisions and catalyst updates), each new idea reviewed, proposed decision (approved / rejected), and proposed allocation weights
 - Write output to `artifacts/portfolio-manager/YYYY-MM-DD_ic-memo-draft.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_PM`
 
 Wait for completion. Collect the output file path.
 
@@ -76,7 +69,6 @@ Provide the Stage 3 draft IC memo file path to `risk-manager`. Must read the dra
 - Produce a portfolio risk report: updated gross/net exposure, factor impacts, concentration flags, VaR estimate, liquidity profile, stress test snapshot, and any limit warnings
 - Explicitly flag any positions or allocations that breach risk limits or raise concerns the PM should address
 - Write output to `artifacts/risk/YYYY-MM-DD_risk-report.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_RISK`
 
 Wait for completion. Collect the output file path.
 
@@ -92,7 +84,6 @@ Provide the Stage 4 risk report file path (plus all prior file paths) to `portfo
 - If risk feedback causes any position to be closed (or reverses a draft-round approval): copy the thesis to `artifacts/portfolio-manager/theses/closed/` and remove it from `.active`
 - Produce the **final** IC memo — this is the authoritative record for all downstream agents
 - Write output to `artifacts/portfolio-manager/YYYY-MM-DD_ic-memo.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_PM`
 
 Wait for completion. Collect the output file path.
 
@@ -107,14 +98,12 @@ Provide the Stage 5 final IC memo file path to both `bookkeeper` and `investor-r
 - Produce a ledger entry summary and updated P&L snapshot reflecting the new positions
 - Flag any discrepancies or ambiguities in the IC memo to the Portfolio Manager before booking
 - Write output to `artifacts/bookkeeping/YYYY-MM-DD_ledger-entry.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_BOOKKEEPER`
 
 **investor-relations** should read only the final IC memo — no other documents:
 - Translate approved portfolio changes into a polished, investor-facing portfolio update
 - Strip proprietary detail (no entry prices, stop levels, or specific allocation percentages)
 - Frame decisions directionally: sector tilts, thematic positioning, high-level bias
 - Write output to `artifacts/investor-relations/YYYY-MM-DD_portfolio-update.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_IR`
 
 Wait for both to complete. Collect the investor-relations output file path.
 
@@ -128,7 +117,6 @@ Provide the Stage 6 investor-relations file path to `social-media`.
 - Read the investor relations update
 - Produce 1–2 tweet-length posts or a short thread capturing the directional message
 - Write output to `artifacts/social-media/YYYY-MM-DD_<slug>.md`
-- Post each output file to Discord using: `set -a && source .env && set +a && node scripts/discord.mjs --file <output-path> --webhook-env DISCORD_WEBHOOK_SOCIAL`
 - Post each tweet file using: `set -a && source .env && set +a && node scripts/tweet.mjs --file artifacts/social-media/YYYY-MM-DD_<slug>.md`
 
 Wait for completion.
