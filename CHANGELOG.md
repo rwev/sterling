@@ -2,6 +2,14 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-02 — Aggressive Risk-Tolerant Mentality for PM and Risk Manager
+
+Rewrote the Mentality sections for both the Portfolio Manager and Risk Manager to favor calculated aggression and conviction-weighted sizing over conservative, limit-driven risk management.
+
+**Agents modified:**
+- `portfolio-manager.md` — replaced cautious Sharpe-ratio-minded mentality with calculated aggression philosophy: concentration over diversification, 7–8% minimum position sizing floor, 5–15% cash target, opportunity-cost-first framework, preference for 5 positions at 15–20% over 10 at 5–10%, decisive conviction-driven sizing on asymmetric setups
+- `risk-manager.md` — replaced rigid limit-enforcement mentality with risk-contextualization approach: no hardcoded limits (thresholds are reference points, not walls), three-tier severity system (Informational/Advisory/Critical) where only Critical flags recommend reducing, symmetric stress tests showing upside and expected-case alongside tail risk, philosophy that uncompensated risk is the enemy rather than risk itself
+
 ## 2026-03-02 — Rename Work Command to Exploration Pipeline
 
 Renamed the full pipeline command from `work` to `exploration-pipeline` for clarity.
