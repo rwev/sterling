@@ -1,24 +1,29 @@
-2026-03-03 15:30 UTC
-# Investment Committee Memo -- Draft (Standalone Portfolio Review)
+2026-03-03 22:15 UTC
+# Investment Committee Memo -- Draft (Standalone Portfolio Review II)
 
 ## Sterling Capital Management | Portfolio Manager
 
 ---
 
+## Purpose
+
+Second standalone portfolio review of 2026-03-03. The first review (15:30 UTC) found all holds with no changes. This second review incorporates end-of-day price action and updated data, with particular attention to VST's intraday decline below $166, SMR's post-earnings dynamics, and the pre-positioning ahead of AVGO earnings (March 4 after close) and CIEN earnings (March 5 before open).
+
+---
+
 ## Market Context
 
-- **S&P 500**: ~5,882 (flat; modest gains amid geopolitical uncertainty)
-- **VIX**: ~21.44 (elevated; up 8% on the day, reflecting Iran conflict and tariff concerns)
-- **10Y Treasury Yield**: ~4.04% (3-month low; flight-to-safety bid persists)
-- **Gold**: $5,408-5,417/oz (new record highs on Middle East escalation)
-- **Copper**: ~$6.02/lb (near historical highs; data center and electrification demand)
-- **Sector Performance**: XLE +2.0%, XLI +1.0%, XLK +0.6%, XLU -0.8% (energy/industrials leading, utilities lagging)
+- **S&P 500**: ~5,882 (flat to slightly positive; modest stability amid geopolitical and tariff uncertainty)
+- **VIX**: ~21.4 (elevated; Iran conflict and tariff concerns persist)
+- **10Y Treasury Yield**: ~4.02% (near 3-month low; flight-to-safety bid)
+- **Gold**: $5,408/oz (record highs; Middle East escalation continues to drive safe-haven flows)
+- **Sector Performance**: XLE and XLI leading; XLK modestly positive; XLU lagging. Energy and industrial leadership aligns with portfolio tilts.
 
 **Standing Policy**: ADR prohibition per directive dated 2026-03-02 remains in effect. All positions are direct US listings -- compliant.
 
 **Key Events This Week**:
-- AVGO (Broadcom) Q1 FY2026 earnings: March 4 after close -- BINARY EVENT
-- CIEN (Ciena) Q1 FY2026 earnings: March 5 -- conditional thesis catalyst
+- **AVGO Q1 FY2026 earnings: March 4 after close** -- portfolio's primary binary event
+- **CIEN Q1 FY2026 earnings: March 5 before open** -- conditional thesis catalyst
 - INTC Intel Vision event: March 31
 
 ---
@@ -29,11 +34,11 @@
 
 **Current Price**: ~$258 | **Entry**: $240-260 | **Target**: $310 | **Stop**: $210
 
-Price in mid-to-upper entry range, near the all-time high of $264.86 set Feb 25. Q4 2025 results confirmed: 252% organic order growth, $15B backlog, 2.9x book-to-bill, FY2026 revenue guidance of $13.25-13.75B (27-29% organic growth). Adjusted EPS guidance of $5.97-6.07 implies ~43% growth. Hyperscaler capex cycle of $690B for 2026 confirmed across MSFT, AMZN, GOOG, META. No new material developments since thesis. Next earnings April/May 2026.
+Price in the upper half of entry range. All-time high of $264.86 set Feb 25. No new developments since last review. Q4 2025 results confirmed: 252% organic order growth, $15B backlog, 2.9x book-to-bill. FY2026 revenue guidance of $13.25-13.75B (27-29% organic growth). Hyperscaler capex cycle of $690B for 2026 confirmed across all major cloud providers. Next earnings April/May 2026.
 
-R/R at current price: 20% upside to target vs. 19% to stop = 1.1:1. The R/R has compressed as the stock has appreciated toward the upper end of entry. However, the backlog visibility (18+ months) and order acceleration justify holding at current weight.
+R/R at current: $310 target = 20% upside vs. $210 stop = 19% downside. The R/R has compressed as the stock appreciates, but backlog visibility (18+ months) and the secular demand story are intact.
 
-**Decision: HOLD at 13%.** Highest-conviction AI infrastructure position. Order acceleration intact, backlog provides multi-year revenue visibility. No catalyst deterioration.
+**Decision: HOLD at 13%.** Highest-conviction AI infrastructure position. No thesis deterioration. Order acceleration and backlog visibility support the allocation.
 
 ---
 
@@ -41,9 +46,9 @@ R/R at current price: 20% upside to target vs. 19% to stop = 1.1:1. The R/R has 
 
 **Current Price**: ~$318 | **Entry**: $305-325 | **Target**: $420 | **Stop**: $270
 
-Price within entry range. **Q1 FY2026 earnings tomorrow (March 4) after close -- this is the portfolio's most important near-term event.** Consensus: $2.02 adj. EPS (+26% y/y), $19.1B revenue (+28% y/y), AI semiconductor revenue $8.2B (doubling y/y). AI backlog of $73B with 18-month recognition window. Bank of America named AVGO "Top Pick" with $500 PT. 28 Buy ratings vs. 2 Holds. Analyst consensus PT $452 (+42% upside).
+Price within entry range. **Q1 FY2026 earnings tomorrow (March 4) after close -- this remains the portfolio's most important near-term event.** Consensus: $2.02 adj. EPS (+26% y/y), $19.2B revenue (+29% y/y), AI semiconductor revenue ~$8.2B (doubling y/y). The company has beaten estimates in every quarter for the past nine reporting periods. Management guided Q1 gross margin to decline ~100bps sequentially due to higher AI revenue mix. Bank of America named AVGO "Top Pick" with $500 PT. 28 Buy ratings vs. 2 Holds. Analyst consensus PT ~$452 (+42% upside).
 
-The phased entry remains the correct structure. At 5% pre-earnings, our maximum downside to stop is 0.7% of NAV -- manageable for a binary event.
+At 5% pre-earnings, maximum downside to stop is 0.7% of NAV -- manageable for a binary event.
 
 **Decision: HOLD at 5% pre-earnings. Phase 2 to 8% contingent on March 4 earnings confirmation.** Criteria unchanged: AI revenue doubling y/y, revenue guidance maintained/raised, gross margin above 77%. If earnings disappoint materially, tighten stop to $285 and cancel Phase 2.
 
@@ -51,13 +56,15 @@ The phased entry remains the correct structure. At 5% pre-earnings, our maximum 
 
 ### 3. LHX (L3Harris Technologies) -- 12% Allocation
 
-**Current Price**: ~$375 | **Entry**: $365-380 | **Target**: $450 | **Stop**: $320
+**Current Price**: ~$375-378 | **Entry**: $365-380 | **Target**: $450 | **Stop**: $320
 
-Price within entry range, near all-time highs. Stock has rallied 77.6% over the past year. Defense spending tailwinds continue with Iran conflict driving autonomous warfare procurement. Missile Solutions IPO filing on track for H2 2026. $466M night vision contract on the books. Book-to-bill 1.3x. Insider sale of 5,528 shares by Jon Rambeau noted (routine, minor). Market cap ~$68B. P/E 42.6x. Next earnings April 2026.
+Price within entry range, near all-time highs. **New development**: L3Harris won a ~$400M THAAD contract (solid rocket boost motors and Liquid Divert and Attitude Control Systems) for the Missile Defense Agency. This is incremental to the existing order book and validates the defense spending thesis. Analyst upgrades: Citigroup raised PT to $418 (Buy), Bernstein raised PT to $435 (Outperform). DCF intrinsic value estimate of ~$461 implies 17.9% discount at current levels.
 
-No thesis deterioration. LHX remains the portfolio's strongest uncorrelated diversifier (0.10-0.25 correlation with AI/power names). Iran conflict validates the autonomous warfare thesis in real time.
+Dividend raised to $1.25/share quarterly (payable March 20, 2026). Book-to-bill 1.3x. 85% rally over the past year. Insider sale of 5,528 shares by Jon Rambeau (routine, minor).
 
-**Decision: HOLD at 12%.** Thesis intact with strong catalyst pipeline. Diversification value critical to portfolio construction.
+R/R at current: $450 target = 19% upside vs. $320 stop = 15% downside = 1.3:1.
+
+**Decision: HOLD at 12%.** Thesis strengthening. New THAAD contract and analyst upgrades reinforce the position. LHX remains the portfolio's strongest uncorrelated diversifier (0.10-0.25 correlation with AI/power names).
 
 ---
 
@@ -65,13 +72,13 @@ No thesis deterioration. LHX remains the portfolio's strongest uncorrelated dive
 
 **Current Price**: ~$45.50 | **Entry**: $40-47 | **Target**: $65 | **Stop**: $34
 
-Price within entry range. Panther Lake (Core Ultra Series 3) launched successfully at CES 2026 on 18A process node -- first AI PC platform built on 18A. 50% faster CPU and GPU performance vs. prior generation. Pre-orders began January 6, global availability January 27, with additional designs rolling out H1 2026. 18A yields at 60-65% with continued improvement. Intel Vision event March 31 is the next major catalyst. Q1 2026 earnings in April.
+Price within entry range. No new material developments since the earlier review today. Panther Lake launched successfully on 18A process node. New partnerships announced: SambaNova AI chip ecosystem deal, Ericsson 6G AI-native technology partnership (announced at MWC 2026). These are incremental positives for the Intel Foundry narrative.
 
-52-week range $17.67-$54.60 -- the stock has recovered significantly but remains a contrarian setup with consensus median target of ~$39-48 (below current price by some analysts, above by others). KeyBanc Overweight at $60.
+Consensus remains mixed: median PT $38.95-$41.03, but KeyBanc at $60 Overweight and the high estimate is $65 (matching our target). Intel Vision event March 31 is the next major catalyst. Q1 2026 earnings in April.
 
-R/R at current: 43% upside to $65 target vs. 25% to $34 stop = 1.7:1.
+R/R at current: 43% upside to $65 vs. 25% to $34 stop = 1.7:1.
 
-**Decision: HOLD at 8%.** 18A / Panther Lake launch is a significant thesis confirmation. March 31 Vision event and Q1 earnings are next catalysts. The contrarian thesis is playing out -- execution is occurring.
+**Decision: HOLD at 8%.** Thesis confirmation through Panther Lake launch, new partnerships. March 31 Vision event and Q1 earnings are the next catalysts. The contrarian setup persists.
 
 ---
 
@@ -79,13 +86,11 @@ R/R at current: 43% upside to $65 target vs. 25% to $34 stop = 1.7:1.
 
 **Current Price**: ~$44.46 | **Entry**: $44-50 | **Target**: $72 | **Stop**: $36
 
-Price at the low end of entry range, essentially flat since the last IC cycle. 52-week range $26.41-$93.85 -- the stock has been in a significant drawdown from its October 2025 highs. Only 2 analysts covering with $100 median target. FY2026 guidance of 35%+ growth intact.
+Price at the low end of entry range. Positive developments: Maxim analyst Allen Klee raised PT to $100 from $95, maintaining Buy. New Palantir partnership announced, positioning INOD for enhanced market presence. Three customers now projected to contribute nine figures each in FY2026 revenue -- this is a meaningful customer diversification milestone. 4 Buy ratings, 0 Holds/Sells. Median PT $92.50 (range $80-$110).
 
-R/R at current: 62% upside to $72 target vs. 19% to $36 stop = 3.3:1 -- still the best R/R ratio in the portfolio. The pullback from $92 to $44 has created an asymmetric setup that the thesis was designed to exploit.
+R/R at current: 62% upside to $72 vs. 19% to $36 = 3.3:1 -- remains the best R/R ratio in the portfolio. The pullback from $92 to $44 has created a deeply asymmetric entry that the thesis was designed to exploit.
 
-No material news since last cycle. Q1 2026 earnings expected ~May 2026 is the next validation point.
-
-**Decision: HOLD at 5%.** R/R remains the most asymmetric in the portfolio. Small-cap AI services thesis intact. Patience required -- the pullback is driven by broad small-cap AI sentiment, not fundamental deterioration.
+**Decision: HOLD at 5%.** R/R remains the most asymmetric in the portfolio. Palantir partnership and customer diversification milestones are thesis confirmations. Patience required.
 
 ---
 
@@ -93,13 +98,11 @@ No material news since last cycle. Q1 2026 earnings expected ~May 2026 is the ne
 
 **Current Price**: ~$252 | **Entry**: $235-250 | **Target**: $290 | **Stop**: $195
 
-Price at 52-week high of $252.78. Gold surging to new record of $5,408-5,417/oz on Middle East escalation. AEM margins extraordinary: AISC $1,339/oz vs. gold at $5,400+ = ~$4,060/oz margin (~75% margin per ounce). FY2025 record FCF of $4.4B. Balance sheet in net cash ($2.67B). Credit upgrade to A3 from Moody's. 15 Buy ratings vs. 1 Sell.
+Price at 52-week high of $252.78. Gold at $5,408/oz (record). J.P. Morgan projects gold to $6,300 by year-end 2026. AEM margins extraordinary: AISC $1,070/oz (2026 guidance) vs. gold at $5,400+ = ~$4,330/oz margin. FY2025 record FCF of $4.4B. Moody's upgrade to A3 credit rating. Management targeting 20-30% production increase over the next decade (4M+ oz/year by early 2030s). 15 Buy ratings vs. 1 Sell.
 
-The stock is now above the entry range upper bound ($250). However, gold's structural drivers (central bank buying, USD weakness, geopolitical risk) remain intact. The Iran conflict provides a near-term fear premium supporting gold.
+R/R at current: 15% upside to $290 target vs. 23% to $195 stop = 0.7:1. R/R has inverted as gold surges. However, if J.P. Morgan's $6,300 gold target materializes, AEM target should be revised upward to $340-360.
 
-R/R at current: 15% upside to $290 target vs. 23% to $195 stop = 0.7:1. R/R has inverted as the stock has rallied above entry. This is a position where the thesis is working but the R/R has deteriorated at current levels.
-
-**Decision: HOLD at 5%. Do NOT add.** Gold at record highs driven by geopolitical fear premium creates elevated reversal risk. AEM remains the portfolio's strongest negative-correlation diversifier. The position is performing its dual role (alpha + hedge) and does not need to be sized up at these levels. If gold corrects 5-10% on an Iran ceasefire, that would be a better scale-in window. Consider raising target to $320 if gold sustains above $5,500 for 2+ weeks.
+**Decision: HOLD at 5%. Do NOT add.** The position is performing its dual role as alpha generator and portfolio hedge. R/R is compressed at current levels, but gold's structural drivers (central bank buying, geopolitical risk, potential USD weakness) are intact. Consider raising the AEM target to $320-340 if gold sustains above $5,500 for 2+ weeks.
 
 ---
 
@@ -107,41 +110,45 @@ R/R at current: 15% upside to $290 target vs. 23% to $195 stop = 0.7:1. R/R has 
 
 **Current Price**: ~$133 | **Entry**: $120-135 | **Target**: $180 | **Stop**: $100
 
-Price within entry range. Stock up 128% over past year (from $48.59 52-week low). ISM Manufacturing at 52.4 supports industrial recovery thesis. Lockheed Martin CROSSBOW defense laser order validates defense franchise. Q4 2025 EPS of $0.46 beat consensus by 156%. Revenue of $274.5M up 17% y/y. Gross margin stabilized at 36-38%. Average analyst PT $144.75 (range $92.50-$180). $100M buyback authorization in effect.
+Price within entry range. Stock up 128% over past year. **Notable development**: Q1 2026 guidance is soft -- revenue $235-265M (consensus $243.5M, so within range), EPS $0.10-0.40 (consensus $0.27). The wide EPS range reflects tariff uncertainty -- management flagged ~150bps gross margin headwind from tariffs in Q1. Q4 book-to-bill above 1.0 confirms order strength. $100M buyback authorization active.
 
-Short interest data remains conflicting -- thesis claimed 27% of float, Nasdaq reports 5.18%. Analyst verification was requested but not yet received.
+Short interest discrepancy remains unresolved (thesis claimed 27% vs. Nasdaq reported 5.18%). Analyst PT average $144.75. Unified Patent Court disclosed new risk related to CROSSBOW defense laser program -- US regulatory and export control risks. This bears monitoring but is not thesis-breaking.
 
-R/R at current: 35% upside to $180 vs. 25% to $100 = 1.4:1. Adequate for a hold but not compelling enough for a size-up.
+R/R at current: 35% upside to $180 vs. 25% to $100 = 1.4:1.
 
-**Decision: HOLD at 7%.** All three catalysts progressing (ISM recovery, defense, margin normalization). Q1 2026 earnings (April/May) is next catalyst. Short interest discrepancy remains unresolved -- reiterate request for Contrarian Analyst verification.
+**Decision: HOLD at 7%.** The soft Q1 guidance is concerning but within consensus range. Tariff headwinds are temporary. Industrial recovery thesis (ISM at 52.4) and defense laser catalysts remain intact. The CROSSBOW export control risk is new and warrants monitoring. Reiterate request for Contrarian Analyst to verify short interest data.
 
 ---
 
 ### 8. CEG (Constellation Energy) -- 10% Allocation
 
-**Current Price**: ~$327 | **Entry**: $310-335 | **Target**: $410/$460 | **Stop**: $275
+**Current Price**: ~$327-330 | **Entry**: $310-335 | **Target**: $410/$460 | **Stop**: $275
 
-Price within entry range. Calpine acquisition closed January 7, 2026 -- combined company now 55 GW. Q4 2025 results: adjusted operating EPS guidance of $9.05-$9.45. Dividend raised 10%. DOE $1B loan guarantee for Crane Clean Energy Center confirmed. CyrusOne 380 MW data center PPA signed with Calpine LLC. 19 analysts Strong Buy, consensus target $399.
+Price within entry range. No new developments since the earlier review today. Calpine acquisition closed Jan 7 -- combined 55 GW fleet. Q4 2025 adjusted EPS guidance $9.05-$9.45 per share (full year). DOE $1B loan guarantee for Crane restart confirmed. CyrusOne 380 MW data center PPA. 19 analysts Strong Buy, consensus PT $399.
 
-The first quarter with partial Calpine consolidation (Q1 2026) will be the critical execution read. Crane restart progressing -- 80% staffed, ahead of 2027 target. NRC additional information submitted January 29.
+Stock down 7.4% YTD but up 30.6% over 52 weeks. First quarter with Calpine consolidation (Q1 2026) will be the execution read.
 
-R/R at current: 25% upside to $410 target vs. 16% to $275 stop = 1.6:1.
+R/R at current: 25% upside to $410 vs. 16% to $275 = 1.6:1.
 
-**Decision: HOLD at 10%.** Thesis progressing well. Calpine integration is the key near-term execution risk. Next catalyst: Q1 2026 earnings (first quarter with Calpine consolidation).
+**Decision: HOLD at 10%.** Thesis intact. Anchor power generation position. Calpine integration execution is the key near-term risk.
 
 ---
 
 ### 9. VST (Vistra Corp) -- 8% Allocation
 
-**Current Price**: ~$174 | **Entry**: $165-180 | **Target**: $235 | **Stop**: $145
+**Current Price**: ~$166 | **Entry**: $165-180 | **Target**: $235 | **Stop**: $145
 
-Price within entry range. Q4 2025 earnings confirmed: 2026 EBITDA guidance $6.8-7.6B (15-29% increase over 2025's $5.9B actual). Meta 20-year nuclear PPA for 2,609 MW confirmed. Cogentrix 5,500 MW acquisition expected to close H2 2026 -- management estimates $700-750M incremental contribution to 2027. Record 2025 financial results. Consensus PT $230 (median), range $97-$293. Next earnings May 13, 2026.
+**FLAG: Price at the absolute bottom of entry range.** VST declined 4.54% on March 2 (from $173.89 to $165.99), touching the lower bound of the $165-180 entry range. The stock is now 14.5% above the $145 stop-loss.
 
-Hard exit criterion remains in effect: fourth consecutive EPS miss + EBITDA guidance below $6.8B triggers automatic reduction to 4% or exit.
+Wells Fargo lowered PT to $234 (from $236) on Feb 27. Morgan Stanley lowered PT to $215 (from $227) on Feb 20. Consensus PT remains ~$230, implying ~39% upside from current levels. 12 analysts rate Buy.
 
-R/R at current: 35% upside to $235 vs. 17% to $145 = 2.1:1 -- most asymmetric among the power generation positions.
+The 2026 guidance of $6.8-7.6B EBITDA remains intact. Meta 20-year nuclear PPA confirmed. Cogentrix 5,500 MW acquisition on track for H2 2026 close. Dividend ex-date March 20. Next earnings May 13 -- this is the hard exit criterion date (fourth consecutive EPS miss + EBITDA guidance below $6.8B triggers automatic reduction).
 
-**Decision: HOLD at 8%.** Thesis intact. 2026 guidance confirmed. Meta PPA and Cogentrix provide 2027 catalysts. Q1 2026 earnings (May 13) is the critical validation -- first clean quarter post-outages.
+The decline appears driven by: (a) broad power generation sector weakness (XLU lagging), (b) continued sentiment overhang from Q3/Q4 2025 misses, (c) concern about Cogentrix integration costs. None of these invalidate the thesis -- but the price action demands vigilance.
+
+R/R at current: 42% upside to $235 vs. 14.5% to $145 = 2.9:1 -- the R/R has actually improved with the decline. This is the second-best R/R in the portfolio after INOD.
+
+**Decision: HOLD at 8%.** The thesis is intact and the R/R has improved at $166. The stop at $145 provides a clear exit with 14.5% buffer. However, this position is now on watch. If VST trades below $160 intraday for two consecutive sessions, I will consider a preemptive trim to 5% before the May 13 earnings event. The hard exit criterion from the Cycle III memo remains in force.
 
 ---
 
@@ -149,32 +156,38 @@ R/R at current: 35% upside to $235 vs. 17% to $145 = 2.1:1 -- most asymmetric am
 
 **Current Price**: ~$13.00 | **Entry**: $11.50-14.00 | **Target**: $21 | **Stop**: $9.50
 
-Price within entry range. Stock recently surged 15.1% on supportive US nuclear policies and Duke Energy interest, then pulled back. Romania FID confirmed (Feb 12) -- 462 MW six-module Doicesti project approved, implementation phase begun. ENTRA1/TVA 6 GW agreement progressing. 12 modules in production with Doosan. Cash position $1.3B (6+ years runway).
+**Q4 2025 Earnings Reported February 26**: Revenue of $1.81M (missed consensus by 74.77%), down from $31.5M full-year 2024 primarily due to reduced Romania technology license revenue recognition. EPS of -$0.08 per share (beat consensus of -$0.13 per Benzinga; however, Zacks reports -$0.80 vs. -$0.10 estimate -- the discrepancy appears to be GAAP vs. adjusted methodology). Full-year 2025 revenue of $31.5M vs. $37M in FY2024.
 
-**Material negative**: Class action lawsuit filed by Robbins Geller Rudman & Dowd on behalf of purchasers May 13 - Nov 6, 2025. Lead plaintiff deadline April 20, 2026. This is a securities fraud claim and must be monitored. However, securities litigation in the small-cap pre-revenue space is common and does not by itself invalidate the thesis. The $1.3B cash position is not at risk from the lawsuit (the claim period relates to stock price decline, not asset impairment).
+**Securities litigation update**: Multiple class action lawsuits filed (Robbins Geller, Kessler Topaz, Pomerantz, Kirby McInerney, BFA Law). The claims focus on the ENTRA1 partnership -- specifically, Q3 2025 G&A expenses surged to $519M due to a $495M payment to ENTRA1, and plaintiffs allege NuScale failed to disclose that ENTRA1 lacked experience building nuclear power projects. Lead plaintiff deadline April 20, 2026. The stock dropped from $57 to ~$17 between September and November 2025 and now trades at ~$13.
+
+**Mixed analyst signals**: Northland Securities upgraded to Outperform with $21 PT (matching our target). Citigroup cut PT to $11.50 with Sell rating (below our $9.50 stop). Goldman Sachs set $14 PT with Neutral. The analyst community is genuinely split.
+
+**Positive milestones intact**: Romania FID confirmed (Feb 12). 12 modules in production with Doosan. $1.3B cash providing 6+ years runway. Supportive US nuclear policy environment. Duke Energy interest noted.
 
 R/R at current: 62% upside to $21 vs. 27% to $9.50 = 2.3:1.
 
-**Decision: HOLD at 3%.** Speculative position remains appropriately sized. Romania FID is a positive milestone. Securities litigation noted but does not change the technology or commercial thesis. Maximum NAV impact to stop: 0.81%.
+**Assessment**: The Q4 revenue miss was expected for a pre-revenue company transitioning between license revenue phases. The ENTRA1 litigation is the real concern -- a $495M payment to a partner without nuclear construction experience is a legitimate red flag that warrants continued scrutiny. However, at 3% allocation, the maximum NAV impact to stop is 0.81%, and the position was sized specifically as a speculative option. The Northland upgrade to $21 validates our target. Citigroup's $11.50 Sell is noted but does not trigger action -- our stop is $9.50, not the analyst's PT.
+
+**Decision: HOLD at 3%.** Speculative position remains appropriately sized. The ENTRA1 litigation is the primary thesis risk -- if discovery reveals material misrepresentation or if the ENTRA1 partnership dissolves, the position should be closed regardless of price. Monitor April 20 lead plaintiff deadline. Maximum NAV exposure to stop: 0.81%.
 
 ---
 
 ## Existing Position Review Summary
 
-| # | Ticker | Allocation | Decision | Rationale |
-|---|--------|-----------|----------|-----------|
-| 1 | VRT | 13.0% | HOLD | Order acceleration intact, backlog visibility |
-| 2 | AVGO | 5.0% (8.0% phased) | HOLD | March 4 earnings binary event; phased entry correct |
-| 3 | LHX | 12.0% | HOLD | Defense thesis confirmed, diversification value |
-| 4 | INTC | 8.0% | HOLD | Panther Lake launch confirms 18A execution |
-| 5 | INOD | 5.0% | HOLD | Best R/R in portfolio (3.3:1), thesis intact |
-| 6 | AEM | 5.0% | HOLD | Gold at record; R/R compressed but hedge value high |
-| 7 | IPGP | 7.0% | HOLD | Industrial recovery + defense catalyst progressing |
-| 8 | CEG | 10.0% | HOLD | Calpine closed, Crane progressing, thesis intact |
-| 9 | VST | 8.0% | HOLD | 2026 guidance confirmed, Meta PPA, hard exit criterion active |
-| 10 | SMR | 3.0% | HOLD | Romania FID achieved, litigation noted but immaterial |
+| # | Ticker | Allocation | Current Price | vs. Entry | Decision | Key Development |
+|---|--------|-----------|---------------|-----------|----------|-----------------|
+| 1 | VRT | 13.0% | ~$258 | Mid-range | HOLD | No change; backlog intact |
+| 2 | AVGO | 5.0% (8.0% phased) | ~$318 | Mid-range | HOLD | Earnings March 4 -- binary event |
+| 3 | LHX | 12.0% | ~$375-378 | Mid-range | HOLD | New ~$400M THAAD contract; analyst upgrades |
+| 4 | INTC | 8.0% | ~$45.50 | Mid-range | HOLD | SambaNova and Ericsson partnerships |
+| 5 | INOD | 5.0% | ~$44.46 | Low end | HOLD | Palantir partnership; PT raised to $100 |
+| 6 | AEM | 5.0% | ~$252 | Above range | HOLD | Gold at $5,408 record; R/R inverted |
+| 7 | IPGP | 7.0% | ~$133 | Mid-range | HOLD | Soft Q1 guidance; tariff headwinds; CROSSBOW risk |
+| 8 | CEG | 10.0% | ~$327-330 | Mid-range | HOLD | No change; integration on track |
+| 9 | VST | 8.0% | ~$166 | BOTTOM of range | HOLD (WATCH) | 4.5% decline; at entry floor; R/R improved to 2.9:1 |
+| 10 | SMR | 3.0% | ~$13.00 | Mid-range | HOLD | Q4 earnings mixed; ENTRA1 litigation escalating |
 
-**No position changes in the Existing Position Review. All 10 positions HOLD at current allocations.**
+**No position changes in the Existing Position Review. All 10 positions HOLD at current allocations. VST is placed on enhanced monitoring.**
 
 ---
 
@@ -182,21 +195,23 @@ R/R at current: 62% upside to $21 vs. 27% to $9.50 = 2.3:1.
 
 ### 1. GEV (GE Vernova) -- HOLD (Conditional)
 
-**Current Price**: ~$879 | **Entry Trigger**: $800-850 | **Target**: $1,050 | **Stop**: $720
+**Current Price**: ~$883 | **Entry Trigger**: $800-850 | **Target**: $1,050 | **Stop**: $720
 
-Stock trading near all-time high of $879.73, still 3-10% above the conditional entry range of $800-850. Fundamentals remain outstanding ($150.2B record backlog, orders up 34% organically, FCF $3.7B in 2025 doubling y/y). 2026 guidance: $44-45B revenue, 11-13% EBITDA margin. Per the AI electrification chain ceiling policy, GEV promotion would require a corresponding reduction within the chain (currently at 36-39%).
+Stock at all-time highs (~$893 intraday high on March 2). Still 4-10% above conditional entry range. Fundamentals outstanding: $59B orders in 2025 (+34%), $150.2B backlog, Q4 EPS of $13.39 (316% beat), FCF doubled to $3.7B. 2026 guidance: $44-45B revenue, 11-13% EBITDA margin. Median analyst PT $842.50 -- notably below current price.
 
-**Decision: HOLD (Conditional).** Entry conditions not met. Stock remains above entry range. Ceiling policy constraint also applies. Wait for pullback to $800-850.
+Per the AI electrification chain ceiling policy, GEV promotion would require a corresponding reduction within the chain (currently at 36-39%).
+
+**Decision: HOLD (Conditional).** Entry conditions not met. Stock above entry range. Ceiling policy constraint also applies.
 
 ---
 
 ### 2. PWR (Quanta Services) -- HOLD (Conditional)
 
-**Current Price**: ~$563 | **Entry Trigger**: $510-540 | **Target**: $650 | **Stop**: $450
+**Current Price**: ~$573 | **Entry Trigger**: $510-540 | **Target**: $650 | **Stop**: $450
 
-Stock near all-time high of $568.21, 4-10% above the entry range. Record $44B backlog. Strong 2026 guidance ($33.25-33.75B revenue, $12.65-13.35 adj. EPS). Jefferies conference fireside chat today (March 3) -- monitor for commentary.
+Stock at new all-time highs (~$573, surpassing previous high of $568.21). 6-12% above entry range. Record $44B backlog. No new material developments beyond the Jefferies conference fireside chat (March 3).
 
-**Decision: HOLD (Conditional).** Entry conditions not met. Stock remains above entry range.
+**Decision: HOLD (Conditional).** Entry conditions not met. Stock continues to appreciate above entry range.
 
 ---
 
@@ -204,23 +219,25 @@ Stock near all-time high of $568.21, 4-10% above the entry range. Record $44B ba
 
 **Current Price**: ~$356 | **Entry Trigger**: $320-345 | **Target**: $420 | **Stop**: $280
 
-Stock 3-11% above entry range. **Q1 FY2026 earnings scheduled March 5** -- consensus $1.16 EPS, $1.40B revenue. In Q4 FY2025, CIEN beat with $0.91 EPS vs. $0.78 consensus (+16.6% surprise). Record $5B backlog, sold out in Q1. Vesta 200 6.4T CPX launched Feb 25. JPMorgan PT raised to $380.
+Stock 3-11% above entry range. 52-week high of $365.90. JPMorgan raised PT to $380 (from $250) with Overweight rating -- a significant upgrade.
 
-The March 5 earnings report is a critical catalyst. If the stock pulls back to $320-345 post-earnings (buy-the-rumor/sell-the-news), the entry would be attractive. However, the sold-out backlog makes a revenue miss unlikely.
+**Q1 FY2026 earnings scheduled March 5 before market open.** Consensus: $1.13 EPS (+77% y/y), $1.39B revenue (+30% y/y). $5B backlog ($3.8B hardware/software). Sold out in Q1. Vesta 200 6.4T CPX launched Feb 25. Large $6.3M put protection trade observed -- suggesting institutional hedging ahead of earnings.
 
-**Decision: HOLD (Conditional).** Wait for post-March 5 earnings price action. If CIEN pulls back to $320-345, promote for consideration (subject to portfolio slot availability and displacement analysis). If stock gaps up above $370 on a beat, entry range needs revision upward.
+The March 5 report is the critical catalyst for this conditional thesis. A beat-and-raise could push the stock above $370, requiring entry range revision. A sell-the-news reaction could create entry opportunity at $320-345.
+
+**Decision: HOLD (Conditional).** Wait for post-March 5 earnings price action. JPMorgan's PT raise to $380 is constructive. If CIEN pulls back to $320-345 post-earnings, promote consideration (subject to portfolio slot/displacement analysis). If stock gaps above $370, Growth Analyst should update entry parameters.
 
 ---
 
-### 4. LITE (Lumentum) -- HOLD (Conditional)
+### 4. LITE (Lumentum) -- HOLD (Conditional, Pending Updated Parameters)
 
 **Current Price**: ~$783 | **Entry Trigger**: $700-750 | **Target**: $950 | **Stop**: $600
 
-Stock has surged to ~$783, up from ~$700 pre-NVIDIA announcement. NVIDIA $2B strategic investment (March 2) plus multibillion-dollar purchase commitments fundamentally de-risk the demand outlook. Q2 FY2026 results were exceptional: revenue $665.5M (+65.5% y/y), non-GAAP operating margin 25.2% (up 1,730 bps y/y). Q3 FY2026 guidance $780-830M implying continued acceleration.
+Stock surged 11.75% on March 2 to $783.25 (new all-time high), up from $700.91. The NVIDIA $2B investment and multibillion-dollar purchase commitments fundamentally de-risk the demand outlook. Record Q2 revenue of $665.5M (+65.5% y/y). Q3 guidance of $780-830M implies continued acceleration.
 
-The NVIDIA investment changes the thesis materially -- demand visibility now extends years, not quarters. However, the stock at $783 is above the $700-750 entry range, and the 52-week range spans $45.65-$783.80 -- we would be buying at the all-time high. Analyst median PT $555, though this will be revised upward. The R/R is compressed at current levels.
+At $783, the stock is 4-12% above entry range and trading at the absolute all-time high. 900% rally over 12 months. Median analyst PT of $555 is massively stale -- high estimate of $900 is more relevant post-NVIDIA deal.
 
-**Decision: HOLD (Conditional, Pending Updated Parameters).** The NVIDIA investment strengthens the thesis materially, but entry at the all-time high is not consistent with disciplined risk management. Analyst consensus target revision is needed. Growth Analyst should update the conditional thesis with revised entry range, target, and R/R incorporating the NVIDIA partnership.
+**Decision: HOLD (Conditional, Pending Updated Parameters).** The NVIDIA investment strengthens the thesis materially, but entry at an all-time high after a 900% rally requires updated risk parameters. Growth Analyst must provide revised entry range, target, and R/R before promotion can be considered.
 
 ---
 
@@ -228,11 +245,11 @@ The NVIDIA investment changes the thesis materially -- demand visibility now ext
 
 **Current Price**: ~$299 | **Entry Trigger**: $260-285 | **Target**: $375 | **Stop**: $225
 
-Stock surged ~15% on March 2 following the NVIDIA $2B strategic investment ($256.80/share placement) and multibillion-dollar purchase commitments. At $299, the stock is above the conditional entry range of $260-285. Several tier-one banks have raised PTs to $300-320 range. Datacenter segment book-to-bill above 4x. Q2 FY2026 revenue $1.69B (+17.5% y/y).
+Stock at ~$299, up ~9% from NVIDIA $2B investment announcement on March 2 (private placement at $256.80/share for 7.79M shares). Multi-year non-exclusive strategic partnership for AI optics. Datacenter book-to-bill above 4x. Q2 FY2026 revenue $1.69B (+17.5% y/y). Most recent analyst PT $285 -- which the stock has already surpassed.
 
-The Growth Analyst was directed in the prior IC cycle to update the COHR thesis incorporating the NVIDIA investment. That updated thesis has not yet been received.
+The NVIDIA investment at $256.80 provides a valuation floor. The Growth Analyst was directed to update the thesis in the prior IC cycle -- that update has not yet been received.
 
-**Decision: HOLD (Conditional, Pending Updated Thesis).** Stock above current entry range. Await Growth Analyst updated thesis with revised parameters before promoting. The NVIDIA investment at $256.80 provides a meaningful valuation floor.
+**Decision: HOLD (Conditional, Pending Updated Thesis).** Stock above current entry range. NVIDIA floor at $256.80 is constructive. Await Growth Analyst updated thesis with revised parameters. Reiterate directive -- this is now outstanding for two cycles.
 
 ---
 
@@ -240,11 +257,9 @@ The Growth Analyst was directed in the prior IC cycle to update the COHR thesis 
 
 **Current Price**: ~$68 | **Entry Trigger**: $58-64 | **Target**: $86 | **Stop**: $48
 
-Stock near all-time high of $69.75, 6-17% above entry range. Copper at ~$6.02/lb, near historical highs. JP Morgan projects $12,500/mt (~$5.67/lb) for Q2 2026, suggesting near-term pricing may ease. Gold at $5,400+ supports the gold byproduct revenue. Grasberg Block Cave restart on track for Q2 2026.
+Stock near all-time high of $69.75 (set Feb 25). Copper at ~$6.02/lb. Up 61.5% over past 3 months. At $68, R/R to target: 26% upside vs. 29% to stop = 0.9:1 (inverted). Entry discipline critical.
 
-At $68, the R/R to target is 26% upside vs. 29% to stop = 0.9:1 (inverted). Entry discipline is critical here -- the commodity rally has priced in much of the thesis.
-
-**Decision: HOLD (Conditional).** Entry conditions not met. R/R unfavorable at current price. Wait for copper pullback or Grasberg restart confirmation dip.
+**Decision: HOLD (Conditional).** Entry conditions not met. R/R unfavorable at current price. Wait for copper pullback.
 
 ---
 
@@ -252,13 +267,11 @@ At $68, the R/R to target is 26% upside vs. 29% to stop = 0.9:1 (inverted). Entr
 
 **Current Price**: ~$377 | **Entry Trigger**: $355-370 | **Target**: $430/$470 | **Stop**: $320
 
-Stock at $377, just above the upper end of the conditional entry range ($370). All-time high was $408.45 on Feb 12, 2026. Fundamentals remain strong: record $13.2B Electrical Americas backlog (+31% y/y), data center orders up 200% in Q4 2025. Q1 2026 earnings in May. 21 of 29 analysts rate Strong Buy. Truist PT $474.
+Stock at $377, just above the upper end of conditional entry range ($370). All-time high was $408.45 on Feb 12. Record $13.2B Electrical Americas backlog (+31% y/y), data center orders up 200% in Q4. Median analyst PT $414.40 (Strong Buy consensus). 39 analysts covering.
 
-Per the AI electrification chain ceiling policy, ETN promotion would require a corresponding reduction within the chain (currently at 36-39%). Even if ETN reached the entry range, the ceiling constraint prevents promotion without a trade-off.
+Per AI electrification chain ceiling policy, ETN promotion requires a corresponding reduction within the chain (currently 36-39%).
 
-At current price, R/R: 14% upside to $430 vs. 15% to $320 = 0.9:1 (12-month). On the 18-month target of $470: 25% upside vs. 15% to stop = 1.6:1.
-
-**Decision: HOLD (Conditional).** Stock slightly above entry range. Even if it touched $360, the AI electrification chain ceiling policy would require a reduction in VRT, CEG, VST, or AVGO to create room. None of those positions currently warrant reduction. Revisit if a clear displacement opportunity emerges.
+**Decision: HOLD (Conditional).** Stock marginally above entry range. Ceiling policy prevents promotion without a trade-off within the AI electrification chain. None of the existing chain positions currently warrant reduction.
 
 ---
 
@@ -266,11 +279,11 @@ At current price, R/R: 14% upside to $430 vs. 15% to $320 = 0.9:1 (12-month). On
 
 | # | Ticker | Current Price | Entry Range | Decision | Key Factor |
 |---|--------|--------------|-------------|----------|------------|
-| 1 | GEV | ~$879 | $800-850 | HOLD (Conditional) | Above entry; ceiling policy |
-| 2 | PWR | ~$563 | $510-540 | HOLD (Conditional) | Above entry |
-| 3 | CIEN | ~$356 | $320-345 | HOLD (Conditional) | Earnings March 5; above entry |
-| 4 | LITE | ~$783 | $700-750 | HOLD (Conditional) | NVIDIA changes thesis; above entry; needs updated params |
-| 5 | COHR | ~$299 | $260-285 | HOLD (Conditional) | NVIDIA changes thesis; awaiting updated thesis |
+| 1 | GEV | ~$883 | $800-850 | HOLD (Conditional) | Above entry; ceiling policy |
+| 2 | PWR | ~$573 | $510-540 | HOLD (Conditional) | Above entry; new ATH |
+| 3 | CIEN | ~$356 | $320-345 | HOLD (Conditional) | Earnings March 5; above entry; JPM PT raise |
+| 4 | LITE | ~$783 | $700-750 | HOLD (Conditional) | NVIDIA deal; above entry; needs updated params |
+| 5 | COHR | ~$299 | $260-285 | HOLD (Conditional) | NVIDIA deal; above entry; awaiting updated thesis |
 | 6 | FCX | ~$68 | $58-64 | HOLD (Conditional) | R/R inverted at current price |
 | 7 | ETN | ~$377 | $355-370 | HOLD (Conditional) | Above entry; ceiling policy constraint |
 
@@ -283,9 +296,9 @@ At current price, R/R: 14% upside to $430 vs. 15% to $320 = 0.9:1 (12-month). On
 | # | Ticker | Allocation | Entry Range | Current Price | Target | Stop | Status |
 |---|--------|-----------|-------------|---------------|--------|------|--------|
 | 1 | VRT | 13.0% | $240-260 | ~$258 | $310 | $210 | HOLD |
-| 2 | LHX | 12.0% | $365-380 | ~$375 | $450 | $320 | HOLD |
-| 3 | CEG | 10.0% | $310-335 | ~$327 | $410/$460 | $275 | HOLD |
-| 4 | VST | 8.0% | $165-180 | ~$174 | $235 | $145 | HOLD |
+| 2 | LHX | 12.0% | $365-380 | ~$375-378 | $450 | $320 | HOLD |
+| 3 | CEG | 10.0% | $310-335 | ~$327-330 | $410/$460 | $275 | HOLD |
+| 4 | VST | 8.0% | $165-180 | ~$166 | $235 | $145 | HOLD (WATCH) |
 | 5 | INTC | 8.0% | $40-47 | ~$45.50 | $65 | $34 | HOLD |
 | 6 | IPGP | 7.0% | $120-135 | ~$133 | $180 | $100 | HOLD |
 | 7 | AVGO | 5.0-8.0% | $305-325 | ~$318 | $420 | $270 | HOLD (phased) |
@@ -326,14 +339,42 @@ At current price, R/R: 14% upside to $430 vs. 15% to $320 = 0.9:1 (12-month). On
 
 ---
 
+## Enhanced Monitoring Items
+
+### 1. VST Price Action -- WATCH
+
+VST closed at $165.99 on March 2, touching the lower bound of the $165-180 entry range. The stock has declined ~24% from its 52-week high of $219.81.
+
+**Monitoring criteria**:
+- If VST trades below $160 intraday for two consecutive sessions, consider preemptive trim to 5%
+- If VST breaks $155, tighten stop from $145 to $150
+- Hard exit criterion from Cycle III remains in force: fourth consecutive EPS miss + EBITDA guidance below $6.8B at May 13 earnings triggers automatic reduction
+
+**Context**: Despite the price decline, the fundamental thesis has not deteriorated. 2026 EBITDA guidance of $6.8-7.6B was reiterated, Meta PPA is confirmed, Cogentrix is on track. Multiple analysts maintain $215-$234 targets. The R/R at $166 is actually the most favorable it has been since entry: 2.9:1 to target vs. stop. The market is still punishing Q3/Q4 2025 operational misses that management has attributed to discrete, non-recurring events.
+
+### 2. SMR ENTRA1 Litigation -- MONITOR
+
+The class action lawsuits center on the ENTRA1 partnership, specifically a $495M payment to a partner allegedly lacking nuclear construction experience. April 20, 2026 is the lead plaintiff deadline. If discovery reveals material misrepresentation by NuScale management or if the ENTRA1 partnership structure dissolves, the thesis is broken regardless of stock price.
+
+### 3. AVGO Earnings -- BINARY EVENT (March 4)
+
+Phase 2 deployment of 3% additional capital (to 8% total) is contingent on earnings confirmation. Criteria: AI revenue doubling y/y, revenue guidance maintained/raised, gross margin above 77%.
+
+### 4. IPGP CROSSBOW Export Control Risk -- NEW
+
+The Unified Patent Court disclosed a new risk category related to US regulatory and export control risks for the CROSSBOW defense laser program. This could constrain the international defense franchise catalyst. Requires Contrarian Analyst assessment.
+
+---
+
 ## Directives Issued
 
-1. **Execution Desk**: AVGO Phase 2 decision remains pending March 4 earnings. Prepare 3% order for deployment if earnings confirm (AI revenue doubling, guidance maintained/raised, gross margin >77%).
-2. **Growth Analyst (LITE)**: Update conditional thesis with revised entry range, target, and R/R incorporating NVIDIA $2B strategic investment and multibillion-dollar purchase commitments. Current entry range of $700-750 is stale.
-3. **Growth Analyst (COHR)**: Reiterate directive from prior cycle -- update COHR conditional thesis incorporating NVIDIA $2B investment. Provide revised entry range, target, and R/R.
-4. **Contrarian Analyst (IPGP)**: Reiterate -- verify and clarify the short interest discrepancy (27% thesis figure vs. 5.18% Nasdaq reported). This has been outstanding for one cycle.
-5. **All Analysts**: Monitor AVGO earnings March 4 and CIEN earnings March 5. Reports and updated parameters due within 24 hours of each release.
-6. **Risk Manager**: Assess this draft memo. Note: no position changes are proposed. Key items for risk assessment: (a) AVGO binary event exposure at 5% pre-earnings, (b) SMR class action lawsuit risk, (c) VaR update with current market data, (d) portfolio performance since Cycle III inception.
+1. **Execution Desk**: AVGO Phase 2 decision remains pending March 4 earnings. Prepare 3% order for deployment if earnings confirm criteria.
+2. **Execution Desk**: Place VST on enhanced monitoring. Alert PM if VST trades below $160 intraday.
+3. **Growth Analyst (LITE)**: Update conditional thesis with revised entry range, target, and R/R incorporating NVIDIA $2B investment. Current parameters are stale. Priority: High.
+4. **Growth Analyst (COHR)**: Reiterate directive -- update COHR conditional thesis incorporating NVIDIA $2B investment. This is now outstanding for two cycles. Priority: High.
+5. **Contrarian Analyst (IPGP)**: (a) Verify short interest discrepancy (27% thesis vs. 5.18% Nasdaq). (b) Assess impact of CROSSBOW export control risk disclosed by Unified Patent Court. Both outstanding -- escalating priority.
+6. **All Analysts**: Monitor AVGO earnings March 4 (after close) and CIEN earnings March 5 (before open). Updated analysis due within 24 hours of each release.
+7. **Risk Manager**: Assess this draft memo. Key items for risk assessment: (a) VST at bottom of entry range -- stop-loss proximity analysis, (b) SMR ENTRA1 litigation risk, (c) AVGO binary event at 5% pre-earnings, (d) IPGP CROSSBOW export control risk, (e) VaR update with current market data.
 
 ---
 
@@ -341,14 +382,15 @@ At current price, R/R: 14% upside to $430 vs. 15% to $320 = 0.9:1 (12-month). On
 
 1. **ADR prohibition**: All positions are direct US listings. Compliant.
 2. **Maximum holdings**: Portfolio at 10/10. Future approvals require displacement or conditional status.
-3. **AI electrification chain**: 36-39% of NAV. Ceiling policy enacted per Cycle III final memo. No changes.
-4. **VaR exceedance**: VIX at 21.44 (slightly lower than 22.40 in Cycle III) suggests VaR 95% approximately 2.10-2.15%, still modestly above 2.0% guideline. Accepted with weekly monitoring.
+3. **AI electrification chain**: 36-39% of NAV. Ceiling policy in effect. No changes.
+4. **VaR exceedance**: VIX at ~21.4 (slightly lower than Cycle III's 22.40). Estimated VaR 95% approximately 2.10-2.15%, modestly above 2.0% guideline. Accepted with weekly monitoring.
 5. **VST hard exit criterion**: Active. Fourth consecutive EPS miss + EBITDA guidance below $6.8B triggers automatic reduction. Q1 2026 earnings May 13.
-6. **Nuclear concentration**: CEG + VST + SMR = 21% with nuclear exposure. Unchanged.
-7. **Speculative position**: SMR at 3% -- securities litigation noted as informational item. Does not change position sizing.
-8. **Earnings risk**: AVGO (March 4) is the primary near-term binary event. CIEN (March 5) affects conditional thesis only.
-9. **Gold at record highs**: AEM at 5% is performing well as a hedge. Do not add at these levels.
-10. **Geographic concentration**: 100% US-listed per ADR prohibition. No remediation available.
+6. **VST enhanced monitoring**: Price at bottom of entry range ($166 vs. $165 floor). 14.5% buffer to $145 stop. Preemptive trim criteria established.
+7. **SMR litigation**: Securities fraud class actions filed by five law firms. April 20 lead plaintiff deadline. ENTRA1 partnership integrity is the key thesis risk. Position at 3% -- maximum NAV impact to stop is 0.81%.
+8. **Nuclear concentration**: CEG + VST + SMR = 21% with nuclear exposure. Unchanged.
+9. **Earnings risk**: AVGO (March 4) is the primary near-term binary event. CIEN (March 5) affects conditional thesis only.
+10. **IPGP export control risk**: New risk factor for CROSSBOW defense laser program. Requires analyst assessment.
+11. **Geographic concentration**: 100% US-listed per ADR prohibition. No remediation available.
 
 ---
 
@@ -357,14 +399,15 @@ At current price, R/R: 14% upside to $430 vs. 15% to $320 = 0.9:1 (12-month). On
 **Agenda**:
 - AVGO Phase 2 decision (post-March 4 earnings)
 - CIEN conditional thesis post-earnings review
+- VST price action review and monitoring status
+- SMR ENTRA1 litigation update
 - Updated LITE and COHR conditional theses (pending analyst updates)
 - Weekly VaR tracking
-- SMR securities litigation status update
 - INTC Intel Vision event preview (March 31)
-- VST Q1 2026 earnings preview
+- IPGP CROSSBOW export control risk assessment
 
 ---
 
-*This is a DRAFT IC memo for the Standalone Portfolio Review. It is input for the Risk Manager's assessment. No position changes are proposed -- all 10 active positions HOLD at current allocations, and all 7 conditional theses remain in conditional status.*
+*This is a DRAFT IC memo for the second Standalone Portfolio Review of 2026-03-03. It is input for the Risk Manager's assessment. No position changes are proposed. All 10 active positions HOLD at current allocations. All 7 conditional theses remain in conditional status. Key new items: VST placed on enhanced monitoring (price at entry floor), SMR ENTRA1 litigation escalation, IPGP CROSSBOW export control risk.*
 
-*Market data sourced via web search on 2026-03-03. Prices: VRT ~$258, LHX ~$375, CEG ~$327, VST ~$174, INTC ~$45.50, IPGP ~$133, AVGO ~$318, AEM ~$252, INOD ~$44.46, SMR ~$13.00. Conditional: GEV ~$879, PWR ~$563, CIEN ~$356, LITE ~$783, COHR ~$299, FCX ~$68, ETN ~$377. S&P 500 ~5,882. VIX ~21.44. 10Y Treasury ~4.04%. Gold ~$5,417/oz. Copper ~$6.02/lb.*
+*Market data sourced via web search on 2026-03-03. Prices: VRT ~$258, LHX ~$375-378, CEG ~$327-330, VST ~$166, INTC ~$45.50, IPGP ~$133, AVGO ~$318, AEM ~$252, INOD ~$44.46, SMR ~$13.00. Conditional: GEV ~$883, PWR ~$573, CIEN ~$356, LITE ~$783, COHR ~$299, FCX ~$68, ETN ~$377. S&P 500 ~5,882. VIX ~21.4. 10Y Treasury ~4.02%. Gold ~$5,408/oz.*
