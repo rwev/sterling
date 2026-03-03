@@ -2,6 +2,17 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-02 — Remove Social Media Agent
+
+Removed the social-media agent and all references to it across the project.
+
+**Files deleted:**
+- `.claude/agents/social-media.md` — agent definition removed entirely
+
+**Files modified:**
+- `CLAUDE.md` — removed Social Media row from Team Roles table, removed `social-media/` from folder structure tree, removed Social Media row from Agent Data Flow table
+- `.claude/commands/work.md` — removed Stage 7 (Social Media), renumbered Stage 8 → Stage 7, updated short-circuit reference from Stages 3–7 to 3–6, removed tweet posting from Pipeline Complete report items
+
 ## 2026-03-02 — Reorder Sections by Execution Sequence & Remove Redundant Relationships
 
 Reordered sections in all agent files to match the actual sequence of steps each agent performs: identity → mentality → skills → inputs → current data → responsibilities → output → conventions → discord posting. Removed the Relationships section from all agents since read/write paths are already fully specified in Inputs and Output.

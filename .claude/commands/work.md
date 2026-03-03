@@ -2,7 +2,7 @@ You are orchestrating Sterling's full investment proposal pipeline. Work through
 
 Today's date is available in your context. Use it for all timestamps and file names.
 
-**Incremental runs**: This pipeline supports repeated execution. Each downstream agent maintains a `.processed` manifest in its output directory and will self-filter to only new upstream documents. If an agent reports "Nothing new to process", skip that stage's downstream handoff and note it in the final report. The pipeline should short-circuit gracefully — if Stage 2 agents find nothing new, Stages 3–7 can be skipped entirely.
+**Incremental runs**: This pipeline supports repeated execution. Each downstream agent maintains a `.processed` manifest in its output directory and will self-filter to only new upstream documents. If an agent reports "Nothing new to process", skip that stage's downstream handoff and note it in the final report. The pipeline should short-circuit gracefully — if Stage 2 agents find nothing new, Stages 3–6 can be skipped entirely.
 
 ---
 
@@ -105,25 +105,11 @@ Provide the Stage 5 final IC memo file path to both `bookkeeper` and `investor-r
 - Frame decisions directionally: sector tilts, thematic positioning, high-level bias
 - Write output to `artifacts/investor-relations/YYYY-MM-DD_portfolio-update.md`
 
-Wait for both to complete. Collect the investor-relations output file path.
+Wait for both to complete.
 
 ---
 
-## Stage 7 — Social Media (sequential)
-
-Provide the Stage 6 investor-relations file path to `social-media`.
-
-**social-media** should:
-- Read the investor relations update
-- Produce 1–2 tweet-length posts or a short thread capturing the directional message
-- Write output to `artifacts/social-media/YYYY-MM-DD_<slug>.md`
-- Post each tweet file using: `set -a && source .env && set +a && node scripts/tweet.mjs --file artifacts/social-media/YYYY-MM-DD_<slug>.md`
-
-Wait for completion.
-
----
-
-## Stage 8 — Commit & Push
+## Stage 7 — Commit & Push
 
 After all stages complete (or after the pipeline short-circuits with nothing new):
 
@@ -143,6 +129,5 @@ Report back to the user with:
 2. Key risk flags from the Risk Manager and how the PM addressed them in the final memo
 3. Bookkeeping status and any discrepancies flagged
 4. Investor update summary highlights
-5. Tweets posted (or posting failures)
-6. Full file manifest grouped by stage with relative paths
-7. Git commit hash and push status
+5. Full file manifest grouped by stage with relative paths
+6. Git commit hash and push status
