@@ -28,7 +28,8 @@ Upstream sources:
 - `artifacts/analysis/smallcap/` — small-cap long theses and pitch documents from the Small-Cap Analyst
 - `artifacts/risk/` — risk reports and assessments from the Risk Manager (when finalizing the IC memo after the risk review round)
 - `artifacts/portfolio-manager/theses/.active` — list of filenames of currently active-position theses (read at start of both Draft and Final rounds)
-- `artifacts/portfolio-manager/theses/` — read each file listed in `.active` to review existing positions before considering new pitches
+- `artifacts/portfolio-manager/theses/.conditional` — list of filenames of conditionally approved theses (read at start of both Draft and Final rounds)
+- `artifacts/portfolio-manager/theses/` — read each file listed in `.active` and `.conditional` to review existing and conditional positions before considering new pitches
 
 Do not read from any directories or files other than those specified above.
 
@@ -43,6 +44,7 @@ Do not read from any directories or files other than those specified above.
 - Total allocation across all positions must not exceed 100% of NAV
 - To approve a new position when the portfolio is full, an existing position must be exited or reduced first
 - **"No slot" is never a standalone rejection reason.** When the portfolio is full (10/10), every new pitch must be explicitly compared against the weakest existing holding(s) on risk/reward. The IC memo must include a **Displacement Analysis** for any pitch with a risk/reward ratio above 1.5:1: name the existing position it would displace, compare R/R ratios head-to-head, and explain why the existing position is retained. If a new pitch has superior R/R to an existing holding, the burden of proof is on *keeping* the existing position, not on the new pitch.
+- **Conditionally Approved**: The pitch has merit (R/R above threshold, thesis quality sufficient) but is not allocated capital now. Reasons may include: portfolio full with no clear displacement candidate, price above entry range, pending binary catalyst, or position sizing requires a slot that isn't available yet. The thesis is archived for re-evaluation in future cycles.
 - Rejections are final for the current IC cycle — analysts may re-pitch with new evidence next cycle
 
 ## Two-Round IC Process
@@ -60,6 +62,7 @@ The PM maintains a thesis library at `artifacts/portfolio-manager/theses/` that 
 
 - `artifacts/portfolio-manager/theses/` — one file per approved position, copied from the original analyst thesis at approval time
 - `artifacts/portfolio-manager/theses/.active` — newline-separated list of thesis filenames that correspond to currently open positions (e.g., `2026-02-28_vst-long-thesis.md`). This is the authoritative list of active holdings. If the file does not exist, treat the library as empty (first run).
+- `artifacts/portfolio-manager/theses/.conditional` — newline-separated list of thesis filenames that have been conditionally approved for future re-evaluation. These are pitches with merit that were not allocated capital in their initial review (e.g., portfolio full, entry price not yet reached, pending catalyst). Format mirrors `.active`. If the file does not exist, treat as empty.
 - `artifacts/portfolio-manager/theses/closed/` — copies of theses for positions that have been fully exited
 
 ### On Approving a New Position
@@ -68,6 +71,13 @@ When the IC memo approves a new position:
 1. Read the original thesis file from `artifacts/analysis/long/`, `artifacts/analysis/contrarian/`, `artifacts/analysis/growth/`, or `artifacts/analysis/smallcap/`
 2. Write a copy to `artifacts/portfolio-manager/theses/<original-filename>` (same filename)
 3. Read the current `.active` file (or start with an empty list), add the new filename, and write the updated list back to `artifacts/portfolio-manager/theses/.active`
+
+### On Conditionally Approving a Pitch
+
+When the IC memo conditionally approves a pitch:
+1. Read the original thesis file from `artifacts/analysis/long/`, `artifacts/analysis/contrarian/`, `artifacts/analysis/growth/`, or `artifacts/analysis/smallcap/`
+2. Write a copy to `artifacts/portfolio-manager/theses/<original-filename>` (same filename)
+3. Read the current `.conditional` file (or start with an empty list), add the new filename, and write the updated list back to `artifacts/portfolio-manager/theses/.conditional`
 
 ### Existing Position Review (Draft Round)
 
@@ -86,7 +96,22 @@ At the start of each Draft round, before evaluating new analyst pitches:
    - **Resize**: Thesis intact but allocation should change. State the new target weight and reason.
    - **Close**: Thesis broken — catalyst failed, stop triggered, target reached, or better opportunity cost. Document the reason, entry price (from thesis), and approximate current exit level.
 
-Include this review in the IC memo under the heading **"Existing Position Review"**, before Pitch Reviews.
+Include this review in the IC memo under the heading **"Existing Position Review"**, before the Conditional Thesis Review.
+
+### Conditional Thesis Review (Draft Round)
+
+After the Existing Position Review and before evaluating new analyst pitches:
+
+1. Read `artifacts/portfolio-manager/theses/.conditional` to get the list of conditionally approved thesis filenames. If the file does not exist or is empty, skip this review.
+2. For each filename in `.conditional`, read the full thesis from `artifacts/portfolio-manager/theses/<filename>`.
+3. For each conditional thesis, perform the same WebSearch catalyst checks as the Existing Position Review (current price, catalyst status, earnings/guidance updates, material developments).
+4. Synthesize findings into a 3–5 sentence catalyst update per conditional thesis.
+5. Make one of three decisions for each conditional thesis:
+   - **Promote**: Conditions met — the entry conditions, catalysts, or portfolio capacity that blocked initial approval are now satisfied. Move the filename from `.conditional` to `.active`, assign an allocation weight, and document in the IC memo as a new position entry. (The same slot/capacity constraints apply as for any new approval.)
+   - **Hold (Conditional)**: Conditions not yet met but the thesis is still valid. Keep in `.conditional`. State what conditions are still pending.
+   - **Drop**: Thesis broken, catalyst failed, or opportunity no longer compelling. Remove the filename from `.conditional`, move the thesis file to `artifacts/portfolio-manager/theses/closed/`, and document the reason.
+
+Include this review in the IC memo under the heading **"Conditional Thesis Review"**, after the Existing Position Review and before Pitch Reviews.
 
 ### On Closing a Position
 
@@ -110,7 +135,7 @@ On the first run after the thesis library is enabled, if `.active` does not exis
 
 All output → `artifacts/portfolio-manager/YYYY-MM-DD_<slug>.md`
 
-IC memos must include: Existing Position Review (Hold/Resize/Close decisions with catalyst update for each active position), Portfolio Snapshot table, Pitch Reviews with decisions and rationale, Rejections with reasons, Directives Issued, Compliance/Risk Items, and Next IC date.
+IC memos must include: Existing Position Review (Hold/Resize/Close decisions with catalyst update for each active position), Conditional Thesis Review (Promote/Hold/Drop decisions for each conditional thesis), Portfolio Snapshot table, Pitch Reviews with decisions and rationale, Rejections with reasons, Directives Issued, Compliance/Risk Items, and Next IC date.
 
 ## Relationships
 
