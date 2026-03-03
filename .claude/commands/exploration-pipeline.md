@@ -9,8 +9,8 @@ Today's date is available in your context. Use it for all timestamps and file na
 ## Stage 1 — Idea Generation
 
 Invoke `macro-research`. It should:
-- Survey the macro environment and identify 2–3 sector or thematic opportunities
-- Surface any early-stage stock-specific ideas as idea briefs routed to Long, Contrarian, Growth, or Small-Cap Analyst
+- Survey the macro environment and identify 3-5 sector or thematic opportunities
+- Suggest example stock-specific ideas to be routed to Long, Contrarian, Growth, or Small-Cap Analyst to be explored further
 - Write output to `artifacts/research/macro/YYYY-MM-DD_macro-outlook.md`
 Collect the output file path before proceeding.
 
