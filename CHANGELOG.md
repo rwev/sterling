@@ -2,6 +2,22 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-02 — Reorder Sections by Execution Sequence & Remove Redundant Relationships
+
+Reordered sections in all agent files to match the actual sequence of steps each agent performs: identity → mentality → skills → inputs → current data → responsibilities → output → conventions → discord posting. Removed the Relationships section from all agents since read/write paths are already fully specified in Inputs and Output.
+
+**Agents modified (all 10):**
+- `macro-research.md` — moved Skills from near-end to after Mentality; moved Conventions from last to after Output; removed Relationships
+- `long-analyst.md` — moved Skills from near-end to after Mentality; moved Conventions from last to after Output; removed Relationships
+- `contrarian-analyst.md` — moved Skills from near-end to after Mentality; moved Conventions from last to after Output; removed Relationships
+- `growth-analyst.md` — moved Skills from near-end to after Mentality; moved Conventions from last to after Output; removed Relationships
+- `smallcap-analyst.md` — moved Skills from near-end to after Mentality; moved Conventions from last to after Output; removed Relationships
+- `portfolio-manager.md` — moved Skills from near-end to after Mentality; moved Conventions from last to after Output; removed Relationships
+- `risk-manager.md` — moved Skills from near-end to after Mentality; moved Conventions from last to after Output; removed Relationships
+- `bookkeeper.md` — moved Conventions from last to after Output; removed Relationships (no Skills section)
+- `investor-relations.md` — moved Conventions from last to after Output; removed Relationships (no Skills section)
+- `social-media.md` — moved Conventions from last to after Output; removed Relationships (no Skills section)
+
 ## 2026-03-02 — Skill Awareness Across All Research, Analysis, and Decision Agents
 
 Added a "Skills" section to every agent that performs research, analysis, or portfolio decisions, instructing each to check for and invoke installed equity-research skills (from the `equity-research` plugin) before starting work. Each agent lists only the skills relevant to its duties.

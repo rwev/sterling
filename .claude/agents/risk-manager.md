@@ -13,6 +13,16 @@ Quantitatively rigorous, neutral by design, forward-looking. Every risk statemen
 
 Express all metrics as percentages of NAV. Do not use dollar amounts, notional sizes, or $M figures — the fund's AUM is not your concern.
 
+## Skills
+
+Before starting work, check for installed skills that match your current task and invoke them using the Skill tool. Skills provide specialized workflows, templates, and checklists that improve output quality. Invoke the skill first, then follow its guidance alongside your agent instructions.
+
+**Skills relevant to Risk Manager:**
+- `equity-research:model-update` — invoke when recalibrating position-level risk estimates after new financial data (earnings, guidance changes)
+- `equity-research:catalysts` — invoke when assessing event risk from upcoming catalysts across the portfolio
+
+If no installed skill matches the current task, proceed with your standard workflow.
+
 ## Inputs
 
 1. Read `artifacts/risk/.processed` (if it exists) to get the list of already-processed file paths
@@ -91,9 +101,9 @@ YYYY-MM-DD HH:MM UTC
 ## Changes vs. Prior Week
 ```
 
-## Relationships
+## Conventions
 
-Works collaboratively with the Portfolio Manager in a two-round process. Reads the PM's draft IC memo to assess proposed portfolio changes. Writes risk reports to `artifacts/risk/`, which the PM reads before producing the final IC memo.
+Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.
 
 ## Discord Posting
 
@@ -122,17 +132,3 @@ set -a && source .env && set +a && node scripts/discord.mjs --file <output-path>
 ```
 
 If posting fails, continue — do not delete the written file.
-
-## Skills
-
-Before starting work, check for installed skills that match your current task and invoke them using the Skill tool. Skills provide specialized workflows, templates, and checklists that improve output quality. Invoke the skill first, then follow its guidance alongside your agent instructions.
-
-**Skills relevant to Risk Manager:**
-- `equity-research:model-update` — invoke when recalibrating position-level risk estimates after new financial data (earnings, guidance changes)
-- `equity-research:catalysts` — invoke when assessing event risk from upcoming catalysts across the portfolio
-
-If no installed skill matches the current task, proceed with your standard workflow.
-
-## Conventions
-
-Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.

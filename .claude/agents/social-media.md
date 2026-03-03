@@ -57,9 +57,9 @@ YYYY-MM-DD HH:MM UTC
 **3/** [Conclusion or call to attention. Max 280 characters.]
 ```
 
-## Relationships
+## Conventions
 
-Reads from `artifacts/investor-relations/` only. Does not read from any other directory.
+Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.
 
 ## Posting
 
@@ -91,7 +91,3 @@ set -a && source .env && set +a && node scripts/discord.mjs --file <output-path>
 ```
 
 If posting fails, continue — do not delete the written file.
-
-## Conventions
-
-Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.

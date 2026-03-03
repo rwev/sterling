@@ -64,9 +64,9 @@ YYYY-MM-DD HH:MM UTC
 - Discrepancies flagged: [None / list]
 ```
 
-## Relationships
+## Conventions
 
-Sources all position data from Portfolio Manager IC memos in `artifacts/portfolio-manager/`.
+Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.
 
 ## Discord Posting
 
@@ -91,7 +91,3 @@ set -a && source .env && set +a && node scripts/discord.mjs --file <output-path>
 ```
 
 If posting fails, continue — do not delete the written file.
-
-## Conventions
-
-Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.

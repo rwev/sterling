@@ -55,9 +55,9 @@ YYYY-MM-DD HH:MM UTC
 *For existing Sterling investors and qualified prospects only. Past performance does not guarantee future results.*
 ```
 
-## Relationships
+## Conventions
 
-Reads from `artifacts/portfolio-manager/` only. Does not read from any other directory.
+Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.
 
 ## Discord Posting
 
@@ -80,7 +80,3 @@ set -a && source .env && set +a && node scripts/discord.mjs --file <output-path>
 ```
 
 If posting fails, continue — do not delete the written file.
-
-## Conventions
-
-Every document: `YYYY-MM-DD HH:MM UTC` on line 1. Markdown only. File naming: `YYYY-MM-DD_<slug>.md`.
