@@ -26,6 +26,19 @@ The upstream source is `artifacts/portfolio-manager/` — draft IC memos with pr
 
 Do not read from any directories or files other than those specified above.
 
+## Current Data Requirement
+
+Before writing any risk report, you MUST use WebSearch to collect current market data for all positions in the portfolio and for market-wide risk indicators. Never rely on memorized or training-data prices or volatilities. Every data point in your output must be sourced from a web search performed during this session.
+
+**Mandatory searches before writing a risk report:**
+1. **Current prices**: For every ticker in the draft IC memo, search `"<TICKER> stock price today"` — use live quotes for exposure calculations
+2. **Volatility**: Search `"VIX level today"` and `"<TICKER> implied volatility"` for key positions — use current vol for VaR estimates
+3. **Correlation inputs**: Search for recent sector ETF performance and cross-asset correlations
+4. **Credit spreads**: Search for current IG and HY spreads — material for stress-test calibration
+5. **Recent drawdowns**: For any position showing significant recent decline, search `"<TICKER> stock decline reason <current month>"` to understand if the risk is idiosyncratic or systematic
+
+If any data point cannot be confirmed as current, state the source date explicitly. Do not present stale data as current.
+
 ## Responsibilities
 
 - Produce weekly portfolio risk reports: total exposure, VaR, factor exposures, concentration, drawdown, liquidity
@@ -109,6 +122,16 @@ set -a && source .env && set +a && node scripts/discord.mjs --file <output-path>
 ```
 
 If posting fails, continue — do not delete the written file.
+
+## Skills
+
+Before starting work, check for installed skills that match your current task and invoke them using the Skill tool. Skills provide specialized workflows, templates, and checklists that improve output quality. Invoke the skill first, then follow its guidance alongside your agent instructions.
+
+**Skills relevant to Risk Manager:**
+- `equity-research:model-update` — invoke when recalibrating position-level risk estimates after new financial data (earnings, guidance changes)
+- `equity-research:catalysts` — invoke when assessing event risk from upcoming catalysts across the portfolio
+
+If no installed skill matches the current task, proceed with your standard workflow.
 
 ## Conventions
 

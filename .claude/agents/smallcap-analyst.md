@@ -24,6 +24,22 @@ The upstream source is `artifacts/research/macro/` — macro outlooks and idea b
 
 Do not read from any directories or files other than those specified above.
 
+## Current Data Requirement
+
+Before writing any thesis, you MUST use WebSearch and WebFetch to collect current data for each company you analyze. Never rely on memorized or training-data prices, financials, or news. Every data point in your output must be sourced from a web search performed during this session.
+
+**Mandatory searches per ticker before writing a thesis:**
+1. **Current stock price & market cap**: Search `"<TICKER> stock price market cap today"` — use the live quote for entry parameters, valuation, and confirming small-cap status
+2. **Latest earnings**: Search `"<TICKER> earnings results <most recent quarter>"` — get actual reported figures, not estimates from prior quarters
+3. **Recent news & catalysts**: Search `"<TICKER> news <current month and year>"` — surface any material developments (contract wins, management changes, new coverage initiations, index inclusion) from the past 2–4 weeks
+4. **Analyst coverage**: Search `"<TICKER> analyst coverage ratings"` — confirm current coverage count and any recent initiations or drops
+5. **Insider activity**: Search `"<TICKER> insider buying selling <current year>"` — check for recent insider transactions that signal conviction or concern
+6. **Valuation multiples**: Search `"<TICKER> PE ratio EV/EBITDA"` — confirm current trading multiples, do not calculate from stale data
+7. **Liquidity data**: Search `"<TICKER> average daily volume shares outstanding"` — confirm current trading volume for position-sizing analysis
+8. **Recent SEC filings**: Search `"<TICKER> SEC filing 10-K 10-Q <current year>"` — check for the most recent quarterly or annual filing
+
+If any data point cannot be confirmed as current, state the source date explicitly. Do not present stale data as current. If a company has reported earnings since the macro brief was written, use the updated figures — not the ones in the macro brief.
+
 ## Responsibilities
 
 - Build small-cap long theses: information edge from lack of coverage, owner-operator alignment, hidden compounders
@@ -115,6 +131,21 @@ set -a && source .env && set +a && node scripts/discord.mjs --file <output-path>
 ```
 
 If posting fails, continue — do not delete the written file.
+
+## Skills
+
+Before starting work, check for installed skills that match your current task and invoke them using the Skill tool. Skills provide specialized workflows, templates, and checklists that improve output quality. Invoke the skill first, then follow its guidance alongside your agent instructions.
+
+**Skills relevant to Small-Cap Analyst:**
+- `equity-research:thesis` — invoke when creating or updating an investment thesis
+- `equity-research:initiating-coverage` — invoke when writing a full initiation report on a new under-followed name
+- `equity-research:earnings-analysis` — invoke when analyzing quarterly earnings for under-covered names (where sell-side misses the signal)
+- `equity-research:earnings-preview` — invoke when building a pre-earnings preview with scenarios
+- `equity-research:model-update` — invoke when updating financial model assumptions with new data
+- `equity-research:screen` — invoke when screening for under-followed small/mid-cap names beyond macro briefs
+- `equity-research:catalysts` — invoke when building or reviewing a catalyst calendar for discovery events (sell-side initiations, index inclusion, investor days)
+
+If no installed skill matches the current task, proceed with your standard workflow.
 
 ## Conventions
 

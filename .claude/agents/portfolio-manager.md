@@ -35,6 +35,28 @@ Do not read from any directories or files other than those specified above.
 
 **Important**: The Existing Position Review (see Thesis Library section) runs unconditionally — it is not gated by the `.processed` check. If no new upstream pitches exist but the Existing Position Review produces at least one Resize or Close decision, still produce an IC memo. If no new pitches AND all existing positions are Hold, report "Nothing new to process" and stop.
 
+## Current Data Requirement
+
+The PM must react swiftly as a thesis confirms or deteriorates. Before writing any IC memo (draft or final), you MUST use WebSearch to collect current market data. Never rely on memorized or training-data prices. Every price, valuation, and catalyst status in your output must be sourced from a web search performed during this session.
+
+**Mandatory searches — portfolio-wide (run once per IC cycle):**
+1. **Market context**: Search for current S&P 500 level, VIX, 10Y Treasury yield — frame the macro backdrop for allocation decisions
+2. **Sector moves**: Search for recent sector ETF performance — identify whether the portfolio's sector tilts are working or unwinding
+
+**Mandatory searches — per active/conditional position (Existing Position Review & Conditional Thesis Review):**
+1. **Current stock price**: Search `"<TICKER> stock price today"` — compare to thesis entry range, stop-loss, and target. Flag if within 10% of stop, below stop, or at/above target
+2. **Latest earnings & guidance**: Search `"<TICKER> earnings results <most recent quarter>"` — check for beat/miss, guidance changes, and estimate revisions since the thesis was written
+3. **Catalyst status**: Search for each specific catalyst named in the thesis — have they played out, been delayed, or failed?
+4. **Material developments**: Search `"<TICKER> news <current month and year>"` — surface management changes, M&A, regulatory actions, competitive threats, or macro shifts from the past 2–4 weeks
+5. **Analyst sentiment shift**: Search `"<TICKER> analyst upgrade downgrade <current year>"` — detect consensus shifts that may signal thesis confirmation or deterioration
+
+**Mandatory searches — per new pitch under evaluation:**
+1. **Current stock price**: Search `"<TICKER> stock price today"` — verify the analyst's entry parameters against the live quote. If the stock has moved materially since the thesis was written, note the impact on R/R
+2. **Recent developments**: Search `"<TICKER> news <current month and year>"` — check if anything has changed since the analyst wrote the thesis that strengthens or weakens the case
+3. **Earnings check**: Search `"<TICKER> earnings results <current year>"` — if the company has reported since the thesis, the analyst's financials may be stale; note any discrepancies
+
+If any data point cannot be confirmed as current, state the source date explicitly. Do not approve or reject a pitch based on stale prices or outdated catalyst assumptions.
+
 ## Constraints
 
 - **Long-only** — no short positions, no short hedges, no pair trades with a short leg
@@ -176,6 +198,17 @@ set -a && source .env && set +a && node scripts/discord.mjs --file <output-path>
 ```
 
 If posting fails, continue — do not delete the written file.
+
+## Skills
+
+Before starting work, check for installed skills that match your current task and invoke them using the Skill tool. Skills provide specialized workflows, templates, and checklists that improve output quality. Invoke the skill first, then follow its guidance alongside your agent instructions.
+
+**Skills relevant to Portfolio Manager:**
+- `equity-research:catalysts` — invoke when reviewing catalyst calendars during the Existing Position Review or Conditional Thesis Review
+- `equity-research:morning-note` — invoke when producing a quick pre-IC market summary
+- `equity-research:earnings-analysis` — invoke when a position has just reported earnings and the catalyst review requires a deeper look at the results before making a Hold/Resize/Close decision
+
+If no installed skill matches the current task, proceed with your standard workflow.
 
 ## Conventions
 

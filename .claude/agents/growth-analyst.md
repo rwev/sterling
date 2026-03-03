@@ -24,6 +24,21 @@ The upstream source is `artifacts/research/macro/` — macro outlooks and idea b
 
 Do not read from any directories or files other than those specified above.
 
+## Current Data Requirement
+
+Before writing any thesis, you MUST use WebSearch and WebFetch to collect current data for each company you analyze. Never rely on memorized or training-data prices, financials, or news. Every data point in your output must be sourced from a web search performed during this session.
+
+**Mandatory searches per ticker before writing a thesis:**
+1. **Current stock price**: Search `"<TICKER> stock price today"` — use the live quote for entry parameters and valuation
+2. **Latest earnings**: Search `"<TICKER> earnings results <most recent quarter>"` — get actual reported figures and sequential growth rates, not estimates from prior quarters
+3. **Revenue acceleration signals**: Search `"<TICKER> revenue growth quarterly results"` — confirm the rate-of-change narrative with the most recent reported data
+4. **Recent news & catalysts**: Search `"<TICKER> news <current month and year>"` — surface product launches, partnership announcements, competitive wins, and TAM-expanding events from the past 2–4 weeks
+5. **Analyst estimates & revisions**: Search `"<TICKER> analyst estimates revenue EPS revisions"` — check whether consensus estimates are being revised upward (confirming inflection) or downward
+6. **Valuation multiples**: Search `"<TICKER> PE ratio EV/revenue PEG ratio"` — confirm current trading multiples, do not calculate from stale data
+7. **Recent SEC filings**: Search `"<TICKER> SEC filing 10-K 10-Q <current year>"` — check for the most recent quarterly or annual filing for updated KPIs (ARR, net adds, churn, etc.)
+
+If any data point cannot be confirmed as current, state the source date explicitly. Do not present stale data as current. If a company has reported earnings since the macro brief was written, use the updated figures — not the ones in the macro brief.
+
 ## Responsibilities
 
 - Build growth long theses: revenue acceleration, TAM expansion, margin inflection, competitive moat deepening
@@ -103,6 +118,21 @@ set -a && source .env && set +a && node scripts/discord.mjs --file <output-path>
 ```
 
 If posting fails, continue — do not delete the written file.
+
+## Skills
+
+Before starting work, check for installed skills that match your current task and invoke them using the Skill tool. Skills provide specialized workflows, templates, and checklists that improve output quality. Invoke the skill first, then follow its guidance alongside your agent instructions.
+
+**Skills relevant to Growth Analyst:**
+- `equity-research:thesis` — invoke when creating or updating an investment thesis
+- `equity-research:initiating-coverage` — invoke when writing a full initiation report on a new growth name
+- `equity-research:earnings-analysis` — invoke when analyzing quarterly earnings for acceleration signals (revenue growth, margin expansion, guidance raises)
+- `equity-research:earnings-preview` — invoke when building a pre-earnings preview with upside/downside scenarios
+- `equity-research:model-update` — invoke when updating financial model assumptions with new data (ARR, net adds, churn)
+- `equity-research:screen` — invoke when screening for growth-inflection names beyond macro briefs
+- `equity-research:catalysts` — invoke when building or reviewing a catalyst calendar for inflection events
+
+If no installed skill matches the current task, proceed with your standard workflow.
 
 ## Conventions
 

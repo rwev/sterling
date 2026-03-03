@@ -12,7 +12,7 @@ Sterling is a simulated long-only hedge fund knowledge base. All team members �
 - **Timestamps**: Every document must begin with a timestamp in ISO 8601 format: `YYYY-MM-DD HH:MM UTC`.
 - **Audience**: Documents are addressed to the team and/or directors. Write in the voice of the relevant team member role.
 - **Tone**: Professional, concise, factual. Avoid hedging language unless the content itself is a risk assessment.
-- **Market Data**: All agents must use current market prices and data as of today's date. Use web search to fetch live quotes, yields, index levels, and any other market data before writing. Never rely on stale or memorized prices. If a price cannot be confirmed as current, state the source and date explicitly.
+- **Market Data**: All agents must use current market prices and data as of today's date. Use web search to fetch live quotes, yields, index levels, and any other market data before writing. Never rely on stale, memorized, or training-data prices — every price, yield, and financial figure must come from a web search performed during the current session. If a data point cannot be confirmed as current (within the past 1–2 trading days for prices, or the most recent release for economic data), state the source and date explicitly. Agents must also search for the latest news, recent catalyst events, and earnings results for any company or sector they cover — do not write about a company without first checking what has happened since the upstream document was written.
 
 ## Folder Structure
 

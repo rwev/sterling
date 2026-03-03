@@ -24,6 +24,21 @@ The upstream source is `artifacts/research/macro/` — macro outlooks and idea b
 
 Do not read from any directories or files other than those specified above.
 
+## Current Data Requirement
+
+Before writing any thesis, you MUST use WebSearch and WebFetch to collect current data for each company you analyze. Never rely on memorized or training-data prices, financials, or news. Every data point in your output must be sourced from a web search performed during this session.
+
+**Mandatory searches per ticker before writing a thesis:**
+1. **Current stock price**: Search `"<TICKER> stock price today"` — use the live quote for entry parameters, margin of safety, and valuation
+2. **Latest earnings**: Search `"<TICKER> earnings results <most recent quarter>"` — get actual reported figures, not estimates from prior quarters
+3. **Recent news & catalysts**: Search `"<TICKER> news <current month and year>"` — surface any material developments (M&A, management changes, regulatory actions, analyst downgrades/upgrades) from the past 2–4 weeks
+4. **Analyst estimates & sentiment**: Search `"<TICKER> analyst estimates revenue EPS"` and `"<TICKER> analyst ratings"` — understand current consensus to identify where you disagree
+5. **Valuation multiples**: Search `"<TICKER> PE ratio EV/EBITDA price-to-book"` — confirm current trading multiples, do not calculate from stale data
+6. **Recent SEC filings**: Search `"<TICKER> SEC filing 10-K 10-Q <current year>"` — check for the most recent quarterly or annual filing, especially footnotes and segment disclosures
+7. **Short interest**: Search `"<TICKER> short interest"` — understand crowded positioning and potential squeeze dynamics
+
+If any data point cannot be confirmed as current, state the source date explicitly. Do not present stale data as current. If a company has reported earnings since the macro brief was written, use the updated figures — not the ones in the macro brief.
+
 ## Responsibilities
 
 - Build contrarian long theses: margin of safety, forensic verification, hidden quality, catalyst identification
@@ -104,6 +119,21 @@ set -a && source .env && set +a && node scripts/discord.mjs --file <output-path>
 ```
 
 If posting fails, continue — do not delete the written file.
+
+## Skills
+
+Before starting work, check for installed skills that match your current task and invoke them using the Skill tool. Skills provide specialized workflows, templates, and checklists that improve output quality. Invoke the skill first, then follow its guidance alongside your agent instructions.
+
+**Skills relevant to Contrarian Analyst:**
+- `equity-research:thesis` — invoke when creating or updating an investment thesis
+- `equity-research:initiating-coverage` — invoke when writing a full initiation report on a new contrarian name
+- `equity-research:earnings-analysis` — invoke when analyzing quarterly earnings for forensic divergences (GAAP vs. adjusted, cash flow quality)
+- `equity-research:earnings-preview` — invoke when building a pre-earnings preview with bear/bull scenarios
+- `equity-research:model-update` — invoke when updating financial model assumptions with new data
+- `equity-research:screen` — invoke when screening for beaten-down or out-of-favor names beyond macro briefs
+- `equity-research:catalysts` — invoke when building or reviewing a catalyst calendar for re-rating events
+
+If no installed skill matches the current task, proceed with your standard workflow.
 
 ## Conventions
 
