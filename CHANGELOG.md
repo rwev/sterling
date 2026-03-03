@@ -2,6 +2,20 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-02 — Rename Work Command to Exploration Pipeline
+
+Renamed the full pipeline command from `work` to `exploration-pipeline` for clarity.
+
+**Files renamed:**
+- `.claude/commands/work.md` → `.claude/commands/exploration-pipeline.md` — no content changes, filename only
+
+## 2026-03-02 — Add Portfolio Review Command
+
+Added a standalone portfolio review command that evaluates current holdings and conditional theses without requiring new analyst research, using the PM–Risk collaboration loop.
+
+**Files added:**
+- `.claude/commands/portfolio-review.md` — new command that runs a 3-stage pipeline: (1) PM drafts an IC memo with Existing Position Review and Conditional Thesis Review only (no new pitches), (2) Risk Manager assesses the draft, (3) PM incorporates risk feedback into a final IC memo. Short-circuits if all positions are Hold with no changes. Includes commit & push and a summary report.
+
 ## 2026-03-02 — Remove Social Media Agent
 
 Removed the social-media agent and all references to it across the project.
