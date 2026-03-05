@@ -60,23 +60,42 @@ Do not read from any directories or files other than those specified above.
 
 ## Current Data Requirement
 
-The PM must react swiftly as a thesis confirms or deteriorates. Before writing any IC memo (draft or final), you MUST use WebSearch to collect current market data. Never rely on memorized or training-data prices. Every price, valuation, and catalyst status in your output must be sourced from a web search performed during this session.
+The PM must react swiftly as a thesis confirms or deteriorates. Before writing any IC memo (draft or final), you MUST use WebFetch and WebSearch to collect current market data. Never rely on memorized or training-data prices. Every price, valuation, and catalyst status in your output must be sourced from a fetch or search performed during this session.
 
 **Mandatory searches — portfolio-wide (run once per IC cycle):**
-1. **Market context**: Search for current S&P 500 level, VIX, 10Y Treasury yield — frame the macro backdrop for allocation decisions
-2. **Sector moves**: Search for recent sector ETF performance — identify whether the portfolio's sector tilts are working or unwinding
 
-**Mandatory searches — per active/conditional position (Existing Position Review & Conditional Thesis Review):**
-1. **Current stock price**: Search `"<TICKER> stock price today"` — compare to thesis entry range, stop-loss, and target. Flag if within 10% of stop, below stop, or at/above target
-2. **Latest earnings & guidance**: Search `"<TICKER> earnings results <most recent quarter>"` — check for beat/miss, guidance changes, and estimate revisions since the thesis was written
-3. **Catalyst status**: Search for each specific catalyst named in the thesis — have they played out, been delayed, or failed?
-4. **Material developments**: Search `"<TICKER> news <current month and year>"` — surface management changes, M&A, regulatory actions, competitive threats, or macro shifts from the past 2–4 weeks
-5. **Analyst sentiment shift**: Search `"<TICKER> analyst upgrade downgrade <current year>"` — detect consensus shifts that may signal thesis confirmation or deterioration
+1. **Market context**:
+   - WebFetch `https://finance.yahoo.com/quote/%5EGSPC/` (S&P 500)
+   - WebFetch `https://www.barchart.com/stocks/quotes/$VIX/overview` (VIX — **primary VIX source**, do NOT use a generic "VIX today" search)
+   - WebFetch `https://stockanalysis.com/quote/cboe/VIX` (VIX cross-reference)
+   - WebFetch `https://fred.stlouisfed.org/series/DGS10` (10Y Treasury yield)
+   - WebFetch `https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html` (Fed rate expectations — informs risk appetite assessment)
 
-**Mandatory searches — per new pitch under evaluation:**
-1. **Current stock price**: Search `"<TICKER> stock price today"` — verify the analyst's entry parameters against the live quote. If the stock has moved materially since the thesis was written, note the impact on R/R
-2. **Recent developments**: Search `"<TICKER> news <current month and year>"` — check if anything has changed since the analyst wrote the thesis that strengthens or weakens the case
-3. **Earnings check**: Search `"<TICKER> earnings results <current year>"` — if the company has reported since the thesis, the analyst's financials may be stale; note any discrepancies
+2. **Sector moves**:
+   - WebFetch `https://www.barchart.com/stocks/sectors/performance` (sector rotation data)
+   - WebFetch `https://finviz.com/map.ashx` (visual heatmap — quick read on what's working)
+
+3. **Market sentiment**:
+   - WebFetch `https://www.cnn.com/markets/fear-and-greed` (Fear & Greed Index)
+   - WebFetch `https://x.com/search?q=from%3ALizAnnSonders&src=typed_query&f=live` — Liz Ann Sonders for market-level commentary
+   - WebFetch `https://x.com/search?q=from%3ANickTimiraos&src=typed_query&f=live` — Nick Timiraos for any breaking Fed developments
+
+**Mandatory data collection — per active/conditional position (Existing Position Review & Conditional Thesis Review):**
+
+1. **Current stock price**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/` — compare to thesis entry range, stop-loss, and target. Flag if within 10% of stop, below stop, or at/above target.
+2. **Quick snapshot**: WebFetch `https://finviz.com/quote.ashx?t={TICKER}` — multiples, target, performance at a glance.
+3. **Latest earnings & guidance**: WebSearch `"{TICKER} earnings results {most recent quarter}"` — check for beat/miss, guidance changes, and estimate revisions since the thesis was written. Also WebFetch `https://seekingalpha.com/symbol/{TICKER}/earnings` for earnings transcript highlights.
+4. **Catalyst status**: WebSearch for each specific catalyst named in the thesis — have they played out, been delayed, or failed?
+5. **Material developments**: WebSearch `"{TICKER} news {current month and year}"` — surface management changes, M&A, regulatory actions, competitive threats, or macro shifts from the past 2–4 weeks.
+6. **Analyst sentiment shift**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/analysis/` — check estimate revision direction. Cross-check with WebFetch `https://www.tipranks.com/stocks/{ticker}/forecast` for consensus shifts.
+7. **x.com real-time pulse**: WebFetch `https://x.com/search?q=%24{TICKER}&src=typed_query&f=live` — for any position where a catalyst is imminent or where the existing position review reveals a significant development, check x.com cashtag for breaking color.
+
+**Mandatory data collection — per new pitch under evaluation:**
+
+1. **Current stock price**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/` — verify the analyst's entry parameters against the live quote. If the stock has moved materially since the thesis was written, note the impact on R/R.
+2. **Recent developments**: WebSearch `"{TICKER} news {current month and year}"` — check if anything has changed since the analyst wrote the thesis.
+3. **Earnings check**: WebSearch `"{TICKER} earnings results {current year}"` — if the company has reported since the thesis, the analyst's financials may be stale; note any discrepancies.
+4. **x.com sentiment check**: WebFetch `https://x.com/search?q=%24{TICKER}&src=typed_query&f=live` — for pitches in volatile or event-driven names, check x.com for real-time sentiment before making allocation decisions.
 
 If any data point cannot be confirmed as current, state the source date explicitly. Do not approve or reject a pitch based on stale prices or outdated catalyst assumptions.
 
@@ -130,11 +149,7 @@ At the start of each Draft round, before evaluating new analyst pitches:
 
 1. Read `artifacts/portfolio-manager/theses/.active` to get the list of active thesis filenames. If the file does not exist or is empty, skip this review (note "No active positions — first IC cycle" in the memo).
 2. For each filename in `.active`, read the full thesis from `artifacts/portfolio-manager/theses/<filename>`.
-3. For each active position, perform a current catalyst review using WebSearch:
-   - **Current price**: Search `"<TICKER> stock price"` — compare to the thesis entry range, stop-loss, and target price. Flag if price is within 10% of stop or has reached target.
-   - **Catalyst status**: Search for each specific catalyst named in the thesis (e.g., PPAs, earnings guidance, regulatory rulings) — have they played out, been delayed, or failed?
-   - **Earnings/guidance updates**: Search `"<TICKER> earnings results <current quarter>"` — has the company reported since the thesis was written? Beat/miss/guidance change?
-   - **Material developments**: Search `"<TICKER> news <current year>"` — surface management changes, M&A, regulatory actions, or macro shifts affecting the thesis.
+3. For each active position, perform a current catalyst review using the per-position data collection steps defined in the **Current Data Requirement** section above (items 1–7 under "per active/conditional position").
 4. Synthesize findings into a 3–5 sentence catalyst update per position.
 5. Make one of three decisions for each existing position:
    - **Hold**: Thesis intact, catalysts on track, and risk/reward remains competitive relative to available alternatives.
@@ -149,7 +164,7 @@ After the Existing Position Review and before evaluating new analyst pitches:
 
 1. Read `artifacts/portfolio-manager/theses/.conditional` to get the list of conditionally approved thesis filenames. If the file does not exist or is empty, skip this review.
 2. For each filename in `.conditional`, read the full thesis from `artifacts/portfolio-manager/theses/<filename>`.
-3. For each conditional thesis, perform the same WebSearch catalyst checks as the Existing Position Review (current price, catalyst status, earnings/guidance updates, material developments).
+3. For each conditional thesis, perform the same per-position data collection as the Existing Position Review (using the steps defined in the **Current Data Requirement** section above).
 4. Synthesize findings into a 3–5 sentence catalyst update per conditional thesis.
 5. Make one of three decisions for each conditional thesis:
    - **Promote**: Conditions met — the entry conditions, catalysts, or portfolio capacity that blocked initial approval are now satisfied. Move the filename from `.conditional` to `.active`, assign an allocation weight, and document in the IC memo as a new position entry. (The same slot/capacity constraints apply as for any new approval.)

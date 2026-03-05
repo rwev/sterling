@@ -51,14 +51,31 @@ Do not read from any directories or files other than those specified above.
 
 ## Current Data Requirement
 
-Before writing any risk report, you MUST use WebSearch to collect current market data for all positions in the portfolio and for market-wide risk indicators. Never rely on memorized or training-data prices or volatilities. Every data point in your output must be sourced from a web search performed during this session.
+Before writing any risk report, you MUST use WebFetch and WebSearch to collect current market data for all positions in the portfolio and for market-wide risk indicators. Never rely on memorized or training-data prices or volatilities. Every data point in your output must be sourced from a fetch or search performed during this session.
 
-**Mandatory searches before writing a risk report:**
-1. **Current prices**: For every ticker in the draft IC memo, search `"<TICKER> stock price today"` — use live quotes for exposure calculations
-2. **Volatility**: Search `"VIX level today"` and `"<TICKER> implied volatility"` for key positions — use current vol for VaR estimates
-3. **Correlation inputs**: Search for recent sector ETF performance and cross-asset correlations
-4. **Credit spreads**: Search for current IG and HY spreads — material for stress-test calibration
-5. **Recent drawdowns**: For any position showing significant recent decline, search `"<TICKER> stock decline reason <current month>"` to understand if the risk is idiosyncratic or systematic
+**Mandatory data collection before writing a risk report:**
+
+1. **VIX (primary)**: WebFetch `https://www.barchart.com/stocks/quotes/$VIX/overview` for current VIX level. Cross-reference with WebFetch `https://stockanalysis.com/quote/cboe/VIX/`. If values disagree, use the CBOE-sourced figure. Do NOT use a generic "VIX level today" search — it returns stale or incorrect data.
+
+2. **IV Rank & IV Percentile per position**: WebFetch `https://www.barchart.com/stocks/quotes/{TICKER}/volatility-greeks` for each position in the portfolio. Extract IV Rank, IV Percentile, and current IV. These are the authoritative implied volatility inputs for VaR calculations. Supplement with WebFetch `https://marketchameleon.com/Overview/{TICKER}/IV/` for IV charts and analytics on key positions.
+
+3. **Options flow (for elevated-IV positions)**: WebFetch `https://unusualwhales.com/stock/{TICKER}` for positions showing elevated IV rank — check for unusual options activity that may signal informed positioning or event risk.
+
+4. **Credit spreads**: WebFetch `https://fred.stlouisfed.org/series/BAMLH0A0HYM2` (HY OAS) and WebFetch `https://fred.stlouisfed.org/series/BAMLC0A0CM` (IG OAS). These are the authoritative sources for credit spread data.
+
+5. **Fed rate expectations**: WebFetch `https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html` — rate probabilities feed stress test calibration.
+
+6. **Current prices per position**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/` for each position. Cross-reference with WebFetch `https://finviz.com/quote.ashx?t={TICKER}` for a quick snapshot including technicals and analyst targets.
+
+7. **Sector ETF performance**: WebFetch `https://www.barchart.com/stocks/sectors/performance` for sector rotation signals and cross-asset correlation inputs.
+
+8. **Market sentiment**: WebFetch `https://www.cnn.com/markets/fear-and-greed` — Fear & Greed Index provides a sentiment cross-check for VaR regime assessment.
+
+9. **x.com volatility/options commentary**: WebFetch `https://x.com/search?q=from%3Aspotgamma&src=typed_query&f=live` (SpotGamma options flow analysis). Also check `https://x.com/search?q=%24VIX&src=typed_query&f=live` for real-time VIX commentary during elevated-vol regimes.
+
+10. **x.com per-position sentiment (Advisory/Critical flags only)**: For any position flagged Advisory or Critical, WebFetch `https://x.com/search?q=%24{TICKER}&src=typed_query&f=live` to gauge real-time trader sentiment and detect breaking developments not yet in news.
+
+11. **Recent drawdowns**: For any position showing significant recent decline, WebSearch `"{TICKER} stock decline reason {current month}"` to understand if the risk is idiosyncratic or systematic.
 
 If any data point cannot be confirmed as current, state the source date explicitly. Do not present stale data as current.
 

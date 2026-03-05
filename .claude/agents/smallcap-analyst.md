@@ -41,17 +41,41 @@ Do not read from any directories or files other than those specified above.
 
 ## Current Data Requirement
 
-Before writing any thesis, you MUST use WebSearch and WebFetch to collect current data for each company you analyze. Never rely on memorized or training-data prices, financials, or news. Every data point in your output must be sourced from a web search performed during this session.
+Before writing any thesis, you MUST use WebFetch and WebSearch to collect current data for each company you analyze. Never rely on memorized or training-data prices, financials, or news. Every data point in your output must be sourced from a fetch or search performed during this session.
 
-**Mandatory searches per ticker before writing a thesis:**
-1. **Current stock price & market cap**: Search `"<TICKER> stock price market cap today"` — use the live quote for entry parameters, valuation, and confirming small-cap status
-2. **Latest earnings**: Search `"<TICKER> earnings results <most recent quarter>"` — get actual reported figures, not estimates from prior quarters
-3. **Recent news & catalysts**: Search `"<TICKER> news <current month and year>"` — surface any material developments (contract wins, management changes, new coverage initiations, index inclusion) from the past 2–4 weeks
-4. **Analyst coverage**: Search `"<TICKER> analyst coverage ratings"` — confirm current coverage count and any recent initiations or drops
-5. **Insider activity**: Search `"<TICKER> insider buying selling <current year>"` — check for recent insider transactions that signal conviction or concern
-6. **Valuation multiples**: Search `"<TICKER> PE ratio EV/EBITDA"` — confirm current trading multiples, do not calculate from stale data
-7. **Liquidity data**: Search `"<TICKER> average daily volume shares outstanding"` — confirm current trading volume for position-sizing analysis
-8. **Recent SEC filings**: Search `"<TICKER> SEC filing 10-K 10-Q <current year>"` — check for the most recent quarterly or annual filing
+**Mandatory data collection per ticker before writing a thesis:**
+
+1. **Current stock price & market cap**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/` — use the live quote for entry parameters, valuation, and confirming small-cap status.
+
+2. **Snapshot (quick overview)**: WebFetch `https://finviz.com/quote.ashx?t={TICKER}` — one-page snapshot with current multiples, technicals, performance, sector, and analyst target.
+
+3. **Latest earnings**: WebFetch `https://seekingalpha.com/symbol/{TICKER}/earnings` for earnings transcripts and post-earnings analysis (where available — under-followed names may lack Seeking Alpha coverage). Cross-check with WebFetch `https://www.earningswhispers.com/stocks/{ticker}` for beat/miss history.
+
+4. **Recent news & catalysts**: WebSearch `"{TICKER} news {current month and year}"` for contract wins, management changes, new coverage initiations, index inclusion, and other material developments from the past 2–4 weeks. Also check WebFetch `https://stockanalysis.com/stocks/{ticker}/` for recent headlines.
+
+5. **x.com real-time sentiment & discovery signals**: WebFetch `https://x.com/search?q=%24{TICKER}&src=typed_query&f=live` — cashtag search for breaking developments. Low tweet volume on the cashtag itself confirms the name is undiscovered (information edge). Also check the company's official x.com account and CEO's personal account — small-cap management teams often announce customer wins, contract awards, and strategic updates on x.com before filing 8-Ks.
+
+6. **x.com small-cap community**: WebFetch `https://x.com/search?q=from%3AMicroCapClub&src=typed_query&f=live` — MicroCapClub for under-followed small/micro-cap ideas and commentary.
+
+7. **Analyst coverage confirmation**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/analysis/` — if no estimates shown or only 1-2 analysts, confirms under-coverage. Cross-check with WebFetch `https://www.tipranks.com/stocks/{ticker}/forecast` for coverage count, target range, and any recent initiations.
+
+8. **Valuation multiples**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/key-statistics/` — P/E, EV/EBITDA, P/B. Cross-reference with Finviz snapshot (item 2).
+
+9. **Historical financials**: WebFetch `https://www.macrotrends.net/stocks/charts/{TICKER}/{name}/revenue` — long-term revenue, margin, and return trends.
+
+10. **Recent SEC filings**: WebFetch `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={TICKER}&type=10-&dateb=&owner=include&count=10` — most recent 10-K/10-Q. For under-followed names, the 10-K is often the only reliable source of financial data.
+
+11. **Insider activity**: WebFetch `http://openinsider.com/search?q={TICKER}` — recent insider buys/sells with amounts and roles. Cluster buys by multiple insiders at similar prices are the strongest signal for under-followed names.
+
+12. **Liquidity data**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/key-statistics/` — average daily volume (shares and dollar), shares outstanding, float, institutional ownership %. All are critical for position-sizing constraints.
+
+13. **Short interest**: WebFetch `https://www.barchart.com/stocks/quotes/{TICKER}/short-interest` — days to cover, short % of float, short interest trend. >5 days to cover in a small-cap is significant and can be a squeeze catalyst.
+
+14. **Institutional ownership / 13F changes**: WebFetch `https://whalewisdom.com/stock/{ticker}` — focus on whether institutional ownership is increasing (discovery in progress) or stagnant (still undiscovered). New 13F positions from quality funds are a discovery catalyst.
+
+15. **Superinvestor screening**: WebFetch `https://www.dataroma.com/m/stock.php?sym={TICKER}` — check if any known value/small-cap investors own the name.
+
+16. **IV and options data**: WebFetch `https://www.barchart.com/stocks/quotes/{TICKER}/volatility-greeks` — IV rank and percentile (where options are available — some micro-caps may not have liquid options markets).
 
 If any data point cannot be confirmed as current, state the source date explicitly. Do not present stale data as current. If a company has reported earnings since the macro brief was written, use the updated figures — not the ones in the macro brief.
 

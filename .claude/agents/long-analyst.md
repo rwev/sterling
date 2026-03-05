@@ -39,15 +39,31 @@ The upstream source is `artifacts/research/macro/` — macro outlooks and idea b
 
 ## Current Data Requirement
 
-Before writing any thesis, you MUST use WebSearch and WebFetch to collect current data for each company you analyze. Never rely on memorized or training-data prices, financials, or news. Every data point in your output must be sourced from a web search performed during this session.
+Before writing any thesis, you MUST use WebFetch and WebSearch to collect current data for each company you analyze. Never rely on memorized or training-data prices, financials, or news. Every data point in your output must be sourced from a fetch or search performed during this session.
 
-**Mandatory searches per ticker before writing a thesis:**
-1. **Current stock price**: Search `"<TICKER> stock price today"` — use the live quote for entry parameters and valuation
-2. **Latest earnings**: Search `"<TICKER> earnings results <most recent quarter>"` — get actual reported figures, not estimates from prior quarters
-3. **Recent news & catalysts**: Search `"<TICKER> news <current month and year>"` — surface any material developments (M&A, management changes, regulatory actions, product launches) from the past 2–4 weeks
-4. **Analyst estimates**: Search `"<TICKER> analyst estimates revenue EPS"` — get current consensus for forward estimates
-5. **Valuation multiples**: Search `"<TICKER> PE ratio EV/EBITDA"` — confirm current trading multiples, do not calculate from stale data
-6. **Recent SEC filings**: Search `"<TICKER> SEC filing 10-K 10-Q <current year>"` — check for the most recent quarterly or annual filing
+**Mandatory data collection per ticker before writing a thesis:**
+
+1. **Current stock price**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/` — use the live quote for entry parameters and valuation.
+
+2. **Snapshot (quick overview)**: WebFetch `https://finviz.com/quote.ashx?t={TICKER}` — one-page snapshot with current multiples, technicals, performance, sector, and analyst target. Good starting point before deep-diving.
+
+3. **Latest earnings**: WebFetch `https://seekingalpha.com/symbol/{TICKER}/earnings` for earnings transcripts and post-earnings analysis. Cross-check with WebFetch `https://www.earningswhispers.com/stocks/{ticker}` for whisper numbers and beat/miss history.
+
+4. **Recent news & catalysts**: WebSearch `"{TICKER} news {current month and year}"` for material developments from the past 2–4 weeks. Also check WebFetch `https://stockanalysis.com/stocks/{ticker}/` for recent headlines.
+
+5. **x.com real-time sentiment**: WebFetch `https://x.com/search?q=%24{TICKER}&src=typed_query&f=live` — cashtag search for breaking developments, trader sentiment, and earnings reactions not yet in news. Also check the company's official x.com handle for IR announcements.
+
+6. **Analyst estimates & price targets**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/analysis/` — consensus revenue, EPS, and revision trends. Cross-reference with WebFetch `https://www.tipranks.com/stocks/{ticker}/forecast` for analyst consensus, price target range, and buy/hold/sell breakdown.
+
+7. **Valuation multiples**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/key-statistics/` — P/E, EV/EBITDA, P/S, P/B. Cross-reference with Finviz snapshot (item 2).
+
+8. **Historical financials**: WebFetch `https://www.macrotrends.net/stocks/charts/{TICKER}/{name}/revenue` — long-term revenue, margin, and return trends for context on current financial trajectory.
+
+9. **Recent SEC filings**: WebFetch `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={TICKER}&type=10-&dateb=&owner=include&count=10` — most recent 10-K/10-Q.
+
+10. **IV and options data**: WebFetch `https://www.barchart.com/stocks/quotes/{TICKER}/volatility-greeks` — IV rank and percentile help gauge market sentiment and risk around catalysts.
+
+11. **Institutional ownership**: WebFetch `https://whalewisdom.com/stock/{ticker}` — 13F filings showing which funds own the stock, recent additions/reductions.
 
 If any data point cannot be confirmed as current, state the source date explicitly. Do not present stale data as current. If a company has reported earnings since the macro brief was written, use the updated figures — not the ones in the macro brief.
 

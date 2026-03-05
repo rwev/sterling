@@ -36,14 +36,51 @@ Before producing any output, review your own previous work to avoid duplicating 
 
 ## Current Data Requirement
 
-Before writing any output, you MUST use WebSearch and WebFetch to collect current market data. Never rely on memorized or training-data prices, yields, or levels. Every data point in your output must be sourced from a web search performed during this session.
+Before writing any output, you MUST use WebFetch and WebSearch to collect current market data. Never rely on memorized or training-data prices, yields, or levels. Every data point in your output must be sourced from a fetch or search performed during this session.
 
-**Mandatory searches before writing:**
-1. **Market levels**: Search for current S&P 500, Nasdaq, Russell 2000, and Dow Jones levels
-2. **Rates & credit**: Search for current 10Y Treasury yield, 2Y yield, Fed Funds rate, investment-grade and high-yield credit spreads
-3. **Economic indicators**: Search for latest GDP, CPI/PCE, unemployment, ISM, and any indicators relevant to your thesis
-4. **Sector performance**: Search for recent sector rotation data and ETF performance (XLK, XLE, XLF, XLV, etc.)
-5. **Recent macro news**: Search for the latest Fed commentary, fiscal policy developments, geopolitical events, and earnings season trends from the past 1–2 weeks
+**Mandatory data collection before writing:**
+
+1. **Market levels**:
+   - WebFetch `https://finance.yahoo.com/quote/%5EGSPC/` (S&P 500)
+   - WebFetch `https://finance.yahoo.com/quote/%5EIXIC/` (Nasdaq Composite)
+   - WebFetch `https://finance.yahoo.com/quote/%5ERUT/` (Russell 2000)
+   - WebFetch `https://finance.yahoo.com/quote/%5EDJI/` (Dow Jones)
+   - WebFetch `https://finviz.com/map.ashx` (visual market heatmap — quick read on sector rotation)
+
+2. **Rates & credit**:
+   - WebFetch `https://fred.stlouisfed.org/series/DGS10` (10Y Treasury yield)
+   - WebFetch `https://fred.stlouisfed.org/series/DGS2` (2Y Treasury yield)
+   - WebFetch `https://fred.stlouisfed.org/series/DFEDTARU` (Fed Funds rate)
+   - WebFetch `https://fred.stlouisfed.org/series/BAMLH0A0HYM2` (HY OAS)
+   - WebFetch `https://fred.stlouisfed.org/series/BAMLC0A0CM` (IG OAS)
+   - WebFetch `https://fred.stlouisfed.org/series/T10Y2Y` (10Y-2Y spread)
+   - WebFetch `https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html` (Fed rate probabilities — critical for policy outlook)
+
+3. **Economic indicators**:
+   - WebFetch `https://fred.stlouisfed.org/series/GDP` (GDP)
+   - WebFetch `https://www.atlantafed.org/cqer/research/gdpnow` (Atlanta Fed GDPNow — real-time GDP tracking estimate)
+   - WebFetch `https://fred.stlouisfed.org/series/CPIAUCSL` (CPI all items)
+   - WebFetch `https://fred.stlouisfed.org/series/PCEPILFE` (Core PCE)
+   - WebFetch `https://fred.stlouisfed.org/series/UNRATE` (Unemployment rate)
+   - WebFetch `https://fred.stlouisfed.org/series/ICSA` (Initial jobless claims)
+   - WebFetch `https://tradingeconomics.com/united-states/indicators` (comprehensive macro dashboard — useful for quickly scanning all indicators)
+
+4. **VIX & market sentiment**:
+   - WebFetch `https://www.barchart.com/stocks/quotes/$VIX/overview` (current VIX level — do NOT use a generic "VIX today" search)
+   - WebFetch `https://www.cnn.com/markets/fear-and-greed` (Fear & Greed Index for aggregate sentiment)
+
+5. **Sector performance**:
+   - WebFetch `https://www.barchart.com/stocks/sectors/performance` (sector overview with performance data)
+   - WebFetch `https://finviz.com/groups.ashx?g=sector&v=210&o=name` (sector heatmap with performance)
+   - Individual sector ETFs via WebFetch `https://finance.yahoo.com/quote/{ETF}/` for XLK, XLE, XLF, XLV, XLI, XLU, XLB, XLC, XLY, XLP, XLRE as needed
+
+6. **x.com macro & Fed news** (critical for breaking developments):
+   - WebFetch `https://x.com/search?q=from%3ANickTimiraos&src=typed_query&f=live` — Nick Timiraos (WSJ Fed reporter, definitive source for Fed leaks/commentary)
+   - WebFetch `https://x.com/search?q=from%3ALizAnnSonders&src=typed_query&f=live` — Liz Ann Sonders (Schwab chief strategist — macro/market data and charts)
+   - WebFetch `https://x.com/search?q=from%3AMacroAlf&src=typed_query&f=live` — Alfonso Peccatiello (macro/rates/credit analysis)
+   - For geopolitical events, WebFetch `https://x.com/search?q={TOPIC}&src=typed_query&f=live` (e.g., "Iran Hormuz", "FOMC", "tariffs")
+
+7. **Recent macro news**: WebSearch for broad news developments, FOMC calendar, Treasury.gov auction schedule, and BLS release calendar.
 
 If any data point cannot be confirmed as current (within the past 1–2 trading days for prices, or the most recent release for economic data), state the source date explicitly in the document. Do not present stale data as current.
 

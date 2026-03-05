@@ -2,6 +2,19 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-04 — Replace Generic Data Searches with Authoritative Source URLs
+
+Replaced vague `Search "VIX level today"` style instructions across all 7 data-fetching agents with specific, fetchable URLs pointing to authoritative sources. This fixes the bug where the risk-manager got VIX wrong by relying on a generic web search that returned stale data.
+
+**Agents modified:**
+- `risk-manager.md` — rewrote Current Data Requirement from 5 generic searches to 11 specific WebFetch sources: BarChart for VIX and per-position IV Rank/Percentile, StockAnalysis VIX cross-reference, FRED for HY/IG credit spreads, CME FedWatch for rate probabilities, Unusual Whales for options flow, MarketChameleon for IV analytics, CNN Fear & Greed for sentiment, Yahoo Finance and Finviz for prices, x.com SpotGamma for vol commentary and cashtag searches for Advisory/Critical flagged positions
+- `macro-research.md` — rewrote Current Data Requirement from 5 generic searches to 7 categories with specific URLs: Yahoo Finance for index levels, FRED series for yields/credit/economic indicators (DGS10, DGS2, DFEDTARU, BAMLH0A0HYM2, BAMLC0A0CM, T10Y2Y, GDP, CPIAUCSL, PCEPILFE, UNRATE, ICSA), Atlanta Fed GDPNow for real-time GDP, CME FedWatch for rate probabilities, BarChart/Finviz for sector performance, TradingEconomics for macro dashboard, x.com feeds for NickTimiraos (Fed), LizAnnSonders (macro), MacroAlf (rates/credit)
+- `long-analyst.md` — rewrote Current Data Requirement from 6 generic searches to 11 specific WebFetch sources: Yahoo Finance (quote, key-statistics, analysis), Finviz snapshot, Seeking Alpha earnings transcripts, Earnings Whispers beat/miss history, StockAnalysis headlines, TipRanks analyst consensus, Macrotrends historical financials, SEC EDGAR filings, BarChart IV/volatility-greeks, WhaleWisdom 13F institutional ownership, x.com cashtag and company handles
+- `contrarian-analyst.md` — rewrote Current Data Requirement from 7 generic searches to 14 specific sources: same 11 as long-analyst base plus BarChart short interest (days to cover, short % of float), Dataroma superinvestor portfolios, x.com bear case pulse search
+- `growth-analyst.md` — rewrote Current Data Requirement from 7 generic searches to 13 specific sources: same 11 as long-analyst base plus Unusual Whales options flow around catalysts, StockAnalysis quarterly financials for sequential growth, x.com product/growth signal searches
+- `smallcap-analyst.md` — rewrote Current Data Requirement from 8 generic searches to 16 specific sources: same 11 as long-analyst base plus OpenInsider for insider transactions, BarChart short interest, Dataroma superinvestor screening, x.com MicroCapClub feed, cashtag volume as discovery signal, company/CEO x.com handles
+- `portfolio-manager.md` — rewrote Current Data Requirement with 3 tiers of specific sources: portfolio-wide (BarChart VIX as primary source with explicit warning against generic searches, StockAnalysis VIX cross-ref, Yahoo Finance S&P 500, FRED 10Y yield, CME FedWatch, BarChart/Finviz sector data, CNN Fear & Greed, x.com LizAnnSonders and NickTimiraos), per-position (Yahoo Finance quote, Finviz snapshot, Seeking Alpha earnings, TipRanks consensus, x.com cashtag), per-pitch (Yahoo Finance quote, x.com sentiment). Also updated Existing Position Review and Conditional Thesis Review templates to reference the new data collection steps instead of duplicating old generic Search patterns.
+
 ## 2026-03-04 — Performance Feedback Loop: Post-Mortem Agent & Analyst Scorecards
 
 Added a post-mortem agent and scorecard command to close the prediction-to-outcome feedback loop. When positions are closed, the post-mortem agent automatically evaluates thesis accuracy and regenerates analyst performance scorecards.

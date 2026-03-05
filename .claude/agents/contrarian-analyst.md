@@ -41,16 +41,37 @@ Do not read from any directories or files other than those specified above.
 
 ## Current Data Requirement
 
-Before writing any thesis, you MUST use WebSearch and WebFetch to collect current data for each company you analyze. Never rely on memorized or training-data prices, financials, or news. Every data point in your output must be sourced from a web search performed during this session.
+Before writing any thesis, you MUST use WebFetch and WebSearch to collect current data for each company you analyze. Never rely on memorized or training-data prices, financials, or news. Every data point in your output must be sourced from a fetch or search performed during this session.
 
-**Mandatory searches per ticker before writing a thesis:**
-1. **Current stock price**: Search `"<TICKER> stock price today"` — use the live quote for entry parameters, margin of safety, and valuation
-2. **Latest earnings**: Search `"<TICKER> earnings results <most recent quarter>"` — get actual reported figures, not estimates from prior quarters
-3. **Recent news & catalysts**: Search `"<TICKER> news <current month and year>"` — surface any material developments (M&A, management changes, regulatory actions, analyst downgrades/upgrades) from the past 2–4 weeks
-4. **Analyst estimates & sentiment**: Search `"<TICKER> analyst estimates revenue EPS"` and `"<TICKER> analyst ratings"` — understand current consensus to identify where you disagree
-5. **Valuation multiples**: Search `"<TICKER> PE ratio EV/EBITDA price-to-book"` — confirm current trading multiples, do not calculate from stale data
-6. **Recent SEC filings**: Search `"<TICKER> SEC filing 10-K 10-Q <current year>"` — check for the most recent quarterly or annual filing, especially footnotes and segment disclosures
-7. **Short interest**: Search `"<TICKER> short interest"` — understand crowded positioning and potential squeeze dynamics
+**Mandatory data collection per ticker before writing a thesis:**
+
+1. **Current stock price**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/` — use the live quote for entry parameters, margin of safety, and valuation.
+
+2. **Snapshot (quick overview)**: WebFetch `https://finviz.com/quote.ashx?t={TICKER}` — one-page snapshot with current multiples, technicals, performance, sector, and analyst target.
+
+3. **Latest earnings**: WebFetch `https://seekingalpha.com/symbol/{TICKER}/earnings` for earnings transcripts and post-earnings analysis. Cross-check with WebFetch `https://www.earningswhispers.com/stocks/{ticker}` for whisper numbers and beat/miss history.
+
+4. **Recent news & catalysts**: WebSearch `"{TICKER} news {current month and year}"` for material developments from the past 2–4 weeks. Also check WebFetch `https://stockanalysis.com/stocks/{ticker}/` for recent headlines.
+
+5. **x.com real-time sentiment**: WebFetch `https://x.com/search?q=%24{TICKER}&src=typed_query&f=live` — cashtag search for breaking developments, trader sentiment, and earnings reactions not yet in news. Also check the company's official x.com handle for IR announcements.
+
+6. **Analyst estimates & sentiment direction**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/analysis/` — focus on estimate revision direction (are estimates still falling or stabilizing? A stabilizing revision trend in a beaten-down name is a contrarian buy signal). Cross-reference with WebFetch `https://www.tipranks.com/stocks/{ticker}/forecast` for analyst consensus and price target range.
+
+7. **Valuation multiples**: WebFetch `https://finance.yahoo.com/quote/{TICKER}/key-statistics/` — P/E, EV/EBITDA, P/S, P/B, price-to-book. Cross-reference with Finviz snapshot (item 2).
+
+8. **Historical financials**: WebFetch `https://www.macrotrends.net/stocks/charts/{TICKER}/{name}/revenue` — long-term revenue, margin, and return trends to contextualize the current trough.
+
+9. **Recent SEC filings**: WebFetch `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={TICKER}&type=10-&dateb=&owner=include&count=10` — most recent 10-K/10-Q, especially footnotes and segment disclosures.
+
+10. **IV and options data**: WebFetch `https://www.barchart.com/stocks/quotes/{TICKER}/volatility-greeks` — IV rank and percentile help gauge market fear and potential mean-reversion setups.
+
+11. **Institutional ownership**: WebFetch `https://whalewisdom.com/stock/{ticker}` — 13F filings. Focus on recent additions vs. reductions: are institutions capitulating (selling into the decline) or accumulating (building positions while consensus is negative)?
+
+12. **Short interest**: WebFetch `https://www.barchart.com/stocks/quotes/{TICKER}/short-interest` — days to cover, short % of float, short interest trend. High short interest in a name with improving fundamentals is the contrarian signal.
+
+13. **Superinvestor positioning**: WebFetch `https://www.dataroma.com/m/stock.php?sym={TICKER}` — check if known value investors (Buffett, Klarman, Einhorn, etc.) have positions. Superinvestor accumulation in a beaten-down name confirms the contrarian thesis.
+
+14. **x.com bear case pulse**: WebFetch `https://x.com/search?q=%24{TICKER}%20short%20OR%20bearish%20OR%20sell&src=typed_query&f=live` — scan for the consensus bear case being expressed in real-time. Understanding what bears are saying helps sharpen the rebuttal.
 
 If any data point cannot be confirmed as current, state the source date explicitly. Do not present stale data as current. If a company has reported earnings since the macro brief was written, use the updated figures — not the ones in the macro brief.
 
