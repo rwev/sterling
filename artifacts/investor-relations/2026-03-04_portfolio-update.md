@@ -1,35 +1,27 @@
 2026-03-04 23:59 UTC
-
 # Sterling — Portfolio Update
 
-Broadcom's Q1 earnings were the loudest confirmation of the AI capex cycle we have heard. Revenue and guidance both crushed consensus; the CEO's line of sight to $100B in AI semiconductor revenue by 2027 settles a debate that had lingered in the market. We held our positioning unchanged, but we are now operating in a regime where the AI infrastructure chain's conviction has shifted from thesis to vindication.
+AVGO's earnings print confirms what we suspected: AI capex is accelerating faster than the market had priced in, and the industrial infrastructure required to absorb it is genuine. We're holding tight.
 
 ## What Changed
 
-Nothing. All 10 positions held. No entries, no exits, no rebalancing this cycle.
+No position changes. The portfolio remains fully deployed across 10 holdings with 17% cash. Two conditional theses (CF Industries, Freeport-McMoRan) dropped from the pipeline due to unfavorable entry levels relative to risk-reward. One new thesis (Venture Global, a US LNG exporter) conditionally approved but not deployed, subject to favorable entry and a geopolitical crowding constraint.
 
-We did approve four new conditional ideas below the portfolio line—LNG as a tactical Hormuz-dependent alternative to FRO (our tanker position), Symbotic as a pure warehouse automation play on reshoring, CF Industries in nitrogen, and Rockwell Automation in industrial control—each subject to specific triggers and correlation constraints. None displaced existing holdings because our portfolio is full at target and every active position is working.
-
-We also rejected two smaller pitches (pre-revenue LNG versus the fundamentally superior Cheniere, and sub-$1B cap nitrogen fertilizer versus the fortress balance sheet option) for being inferior vehicles in crowded trade lines.
+The macro backdrop has settled slightly: volatility eased from draft levels, but remains elevated. Iran's Hormuz closure persists into Week 2. Domestic activity remains robust (services PMI at levels unseen since mid-2022). The portfolio is operating near the upper bound of our risk tolerance, but within guidelines.
 
 ## Where We Stand
 
-**AI Infrastructure:** Two core positions (Broadcom and Vertiv) anchoring the portfolio at 21% of capital. Vertiv's 3x book-to-bill and $15B backlog are now explicitly validated by Broadcom's demand signal. The chain—Broadcom silicon, Vertiv cooling, Constellation and Vistra power generation—runs at 39% of NAV, a hard ceiling. VRT will be trimmed into any $310 print to maintain discipline.
+**Core thesis: AI electrification.** The portfolio's dominant tilt (39% of NAV) is concentrated across the power generation, cooling infrastructure, and silicon layers of the AI capex supply chain. AVGO's confirmation validates the demand side; we're comfortable with our infrastructure positioning.
 
-**Power Generation:** 18% across two names. Nuclear scarcity (Constellation) is no longer a thesis; it is operational reality as AI data center demand becomes load-on-system. Vistra has the best risk/reward in the active portfolio at 4:1. The dividend floor (Q4 record date March 12) provides near-term anchoring for Frontline, our tanker proxy to Hormuz friction.
+**Tactical geopolitical positioning.** A 7% position in tanker shipping captures the elevated shipping rates stemming from the Hormuz closure, offset by a diversified defense allocation (12%) that benefits from the conflict duration. Net exposure is approximately neutral to ceasefire outcomes.
 
-**Defense:** Iran has kept the door open—Day 6 of conflict with no ceasefire on the table makes our 12% in L3Harris structural rather than tactical. Missile Solutions IPO in H2 2026 adds optionality to the thesis.
+**Contrarian semiconductor and industrial plays.** Intel remains our foundational contrarian bet ahead of a March 31 catalyst event. Industrial photonics captures industrial recovery and defense demand. Both positions carry modestly compressed risk-reward at current prices, so execution discipline around upcoming catalysts is binding.
 
-**Tactical Offsetting Bets:** Frontline is our only active position with binary event risk, but the risk is now more nuanced. The market is already pricing in energy substitution (TTF gas has rolled from 60 to 48 EUR/MWh), so our real exposure is to *gradual* premium erosion rather than a sudden ceasefire shock. We have raised our monitoring bar: a drift below $35 (without a ceasefire catalyst) triggers a defensive 25% reduction. The hard stop at $33 remains inviolable. Total portfolio loss if Frontline stops out: 67 basis points.
-
-**Cash:** 17%, above our target ceiling. This reflects patience in a regime where the Iran crisis, VIX drifting higher, and three major catalyst windows (CIEN earnings March 5, INTC Vision March 31, and a broader Q1 corporate earnings stream) argue for optionality over maximum deployment.
-
-**Contrarian Positioning:** Intel (8%, foundry thesis) and IPGP (7%, industrial photonics with defense optionality) remain underowned by consensus but working fundamentals. Both are approaching milestones—Intel Vision on March 31, IPGP locking in Lockheed orders for its laser franchise.
+**Cash reserves at 17%.** Above our typical target, reflecting elevated volatility regimes and portfolio deployment constraints. We're not chasing entry prices.
 
 ## Looking Ahead
 
-The AVGO data point settles the demand side of the AI capex story through 2027. Our positioning gains conviction at the infrastructure layer—Broadcom silicon, Vertiv cooling, nuclear power, and defense exposure. The tactical hedges (Frontline's energy premium, Intel's foundry upside, gold's structural bid, Innodata's AI services demand) remain asymmetrically sized. We are not adding here; we are mining the portfolio's existing thesis with higher confidence and managing geopolitical tail risk with surgical precision. The next 90 days will be about validating supply-chain tightness (CIEN on March 5) and resolving whether the Iran crisis inflates or deflates.
+Broadcom's earnings have validated the macro thesis (AI capex acceleration), not invalidated it. The industrial supply chain — power generation, cooling, foundry capital, optical networking — will be the portfolio's performance driver through the second half of 2026. Intel Vision (March 31) and the narrowing window before AI data-center power constraints become binding are the next focal points. We are positioned to participate in both without excess leverage.
 
 ---
-
 *For existing Sterling investors and qualified prospects only. Past performance does not guarantee future results.*
