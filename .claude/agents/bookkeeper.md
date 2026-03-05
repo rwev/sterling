@@ -37,6 +37,33 @@ Do not read from any directories or files other than those specified above.
 
 All output → `artifacts/bookkeeping/YYYY-MM-DD_<slug>.md`
 
+### Current Holdings JSON
+
+After every booking, write `artifacts/bookkeeping/current-holdings.json` with the current portfolio state. This file is overwritten each cycle (not date-stamped). Structure:
+
+```json
+{
+  "as_of": "YYYY-MM-DD",
+  "cycle": "Cycle VIII",
+  "source": "YYYY-MM-DD_ic-memo.md",
+  "total_deployed_pct": 83.0,
+  "cash_pct": 17.0,
+  "holdings": [
+    {
+      "ticker": "VRT",
+      "allocation_pct": 13.0,
+      "entry_range": [240, 260],
+      "current_price": 251.28,
+      "target": 310,
+      "stop": 210,
+      "sector": "AI Infrastructure"
+    }
+  ]
+}
+```
+
+All prices must match the IC memo's mark-to-market prices. Include every active position. Do not include conditional/pipeline names.
+
 ### Weekly P&L Summary
 ```
 YYYY-MM-DD HH:MM UTC

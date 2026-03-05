@@ -1,0 +1,100 @@
+{
+  "portfolio_value": 48000,
+  "as_of": "2026-03-04",
+  "cycle": "Cycle VIII",
+  "cash_reserve": 8160,
+  "positions": [
+    {
+      "ticker": "VRT",
+      "allocation_pct": 13,
+      "price": 251.28,
+      "price_source": "live",
+      "shares": 24,
+      "target_value": 6240,
+      "actual_value": 6030.72
+    },
+    {
+      "ticker": "LHX",
+      "allocation_pct": 12,
+      "price": 368.75,
+      "price_source": "live",
+      "shares": 15,
+      "target_value": 5760,
+      "actual_value": 5531.25
+    },
+    {
+      "ticker": "CEG",
+      "allocation_pct": 10,
+      "price": 322.85,
+      "price_source": "live",
+      "shares": 14,
+      "target_value": 4800,
+      "actual_value": 4519.9
+    },
+    {
+      "ticker": "VST",
+      "allocation_pct": 8,
+      "price": 163.36,
+      "price_source": "live",
+      "shares": 23,
+      "target_value": 3840,
+      "actual_value": 3757.28
+    },
+    {
+      "ticker": "INTC",
+      "allocation_pct": 8,
+      "price": 45.58,
+      "price_source": "live",
+      "shares": 84,
+      "target_value": 3840,
+      "actual_value": 3828.72
+    },
+    {
+      "ticker": "AVGO",
+      "allocation_pct": 8,
+      "price": 317.53,
+      "price_source": "live",
+      "shares": 12,
+      "target_value": 3840,
+      "actual_value": 3810.36
+    },
+    {
+      "ticker": "FRO",
+      "allocation_pct": 7,
+      "price": 36.28,
+      "price_source": "live",
+      "shares": 92,
+      "target_value": 3360,
+      "actual_value": 3337.76
+    },
+    {
+      "ticker": "IPGP",
+      "allocation_pct": 7,
+      "price": 129.27,
+      "price_source": "live",
+      "shares": 25,
+      "target_value": 3360,
+      "actual_value": 3231.75
+    },
+    {
+      "ticker": "AEM",
+      "allocation_pct": 5,
+      "price": 232.73,
+      "price_source": "live",
+      "shares": 10,
+      "target_value": 2400,
+      "actual_value": 2327.3
+    },
+    {
+      "ticker": "INOD",
+      "allocation_pct": 5,
+      "price": 44.43,
+      "price_source": "live",
+      "shares": 54,
+      "target_value": 2400,
+      "actual_value": 2399.22
+    }
+  ],
+  "total_invested": 38774.26,
+  "rounding_remainder": 1065.74
+}

@@ -2,6 +2,13 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-04 — Bookkeeper: Add Current Holdings JSON Output
+
+Added a structured JSON output to the bookkeeper agent so downstream scripts can consume the current portfolio state programmatically.
+
+**Agents modified:**
+- `bookkeeper.md` — added "Current Holdings JSON" subsection to Output requiring the agent to write `artifacts/bookkeeping/current-holdings.json` after every booking cycle with ticker, allocation, entry range, current price, target, stop, and sector for each active position
+
 ## 2026-03-04 — Post-Mortem Agent: Switch Discord Channel to Bookkeeping
 
 Changed the post-mortem agent's Discord posting target from the portfolio-manager channel to the bookkeeping channel.
