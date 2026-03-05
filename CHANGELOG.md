@@ -2,6 +2,24 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-04 — Performance Feedback Loop: Post-Mortem Agent & Analyst Scorecards
+
+Added a post-mortem agent and scorecard command to close the prediction-to-outcome feedback loop. When positions are closed, the post-mortem agent automatically evaluates thesis accuracy and regenerates analyst performance scorecards.
+
+**Agents added:**
+- `post-mortem.md` — new agent that reads closed theses from `theses/closed/`, fetches realized price data via WebSearch, produces structured post-mortem documents (predicted vs realized R/R, catalyst scorecard, verdict) and regenerates an aggregated analyst scorecard
+
+**Commands modified:**
+- `exploration-pipeline.md` — added Stage 6 (Post-Mortem Analysis) between PM Final and Bookkeeper/IR; renumbered Stages 7-8
+- `portfolio-review.md` — added Stage 4 (Post-Mortem Analysis) between PM Final and Commit & Push; renumbered Stage 5
+
+**Commands added:**
+- `scorecard.md` — on-demand command to regenerate the analyst scorecard from all existing post-mortem documents
+
+**Other changes:**
+- `CLAUDE.md` — added Post-Mortem role to folder structure, team roles table, and agent data flow table
+- `artifacts/post-mortems/` — new output directory for post-mortem docs and scorecards
+
 ## 2026-03-04 — PM: Willingness to Exit Intact Positions for Better Opportunities
 
 Reinforced that the PM's goal is returns, not thesis defense. Positions with intact theses should still be exited when a materially superior risk/reward opportunity arises — but without overtrading or chasing.
