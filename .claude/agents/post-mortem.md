@@ -183,7 +183,7 @@ After writing post-mortem(s) and the scorecard, post a summary to Discord. Examp
 
 Post using:
 ```
-set -a && source .env && set +a && node scripts/discord.mjs --file <scorecard-path> --webhook-env DISCORD_WEBHOOK_PM --summary "<structured summary>"
+set -a && source .env && set +a && node scripts/discord.mjs --file <scorecard-path> --webhook-env DISCORD_WEBHOOK_BOOKKEEPING --summary "<structured summary>"
 ```
 
 If posting fails, continue — do not delete the written file.

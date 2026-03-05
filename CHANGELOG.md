@@ -2,6 +2,13 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-04 — Post-Mortem Agent: Switch Discord Channel to Bookkeeping
+
+Changed the post-mortem agent's Discord posting target from the portfolio-manager channel to the bookkeeping channel.
+
+**Agents modified:**
+- `post-mortem.md` — changed `--webhook-env DISCORD_WEBHOOK_PM` to `--webhook-env DISCORD_WEBHOOK_BOOKKEEPING` in the Discord posting command
+
 ## 2026-03-04 — Small-Cap Analyst: Remove Position-Sizing & Liquidity Constraints
 
 Sterling is a small shop with no meaningful liquidity constraints. Removed all position-sizing, days-to-liquidate, and maximum allocation language from the small-cap analyst so it focuses purely on thesis quality.
