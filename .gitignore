@@ -1,3 +1,4 @@
 .obsidian/
 .env
 logs/
+node_modules/
