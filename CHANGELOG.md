@@ -2,6 +2,20 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-04 — Small-Cap Analyst: Remove Position-Sizing & Liquidity Constraints
+
+Sterling is a small shop with no meaningful liquidity constraints. Removed all position-sizing, days-to-liquidate, and maximum allocation language from the small-cap analyst so it focuses purely on thesis quality.
+
+**Agents modified:**
+- `smallcap-analyst.md` — removed "liquidity-aware" and position-sizing constraint language from Mentality; removed Liquidity data item from Current Data Requirement (renumbered remaining items 12–15); removed "Assess liquidity and position-sizing constraints" from Responsibilities; removed entire "Liquidity & Position Sizing" table from thesis template; removed liquidity sentence from output requirements; removed "Liquidity" line from Discord summary template
+
+## 2026-03-04 — PM: Broader Drop Criteria for Conditional Theses
+
+Expanded the Drop decision in the Conditional Thesis Review to prevent the conditional pipeline from becoming a stale parking lot.
+
+**Agents modified:**
+- `portfolio-manager.md` — broadened Drop criteria to include macro narrative invalidation and pipeline crowding, not just thesis-broken or catalyst-failed. Added guidance that the conditional list is a ranked queue of deployment-ready ideas, and that theses held 3+ cycles without approaching entry conditions should be dropped.
+
 ## 2026-03-04 — Replace Generic Data Searches with Authoritative Source URLs
 
 Replaced vague `Search "VIX level today"` style instructions across all 7 data-fetching agents with specific, fetchable URLs pointing to authoritative sources. This fixes the bug where the risk-manager got VIX wrong by relying on a generic web search that returned stale data.

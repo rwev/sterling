@@ -169,7 +169,7 @@ After the Existing Position Review and before evaluating new analyst pitches:
 5. Make one of three decisions for each conditional thesis:
    - **Promote**: Conditions met — the entry conditions, catalysts, or portfolio capacity that blocked initial approval are now satisfied. Move the filename from `.conditional` to `.active`, assign an allocation weight, and document in the IC memo as a new position entry. (The same slot/capacity constraints apply as for any new approval.)
    - **Hold (Conditional)**: Conditions not yet met but the thesis is still valid. Keep in `.conditional`. State what conditions are still pending.
-   - **Drop**: Thesis broken, catalyst failed, or opportunity no longer compelling. Remove the filename from `.conditional`, move the thesis file to `artifacts/portfolio-manager/theses/closed/`, and document the reason.
+   - **Drop**: Thesis broken, catalyst failed, opportunity no longer compelling, macro narrative has shifted to invalidate the setup, or the conditional pipeline has grown too crowded and this name no longer ranks among the top candidates. The conditional list is not a parking lot — it is a ranked queue of deployment-ready ideas. If a conditional thesis has been held for 3+ cycles without approaching entry conditions, that is a signal to drop it. Remove the filename from `.conditional`, move the thesis file to `artifacts/portfolio-manager/theses/closed/`, and document the reason.
 
 Include this review in the IC memo under the heading **"Conditional Thesis Review"**, after the Existing Position Review and before Pitch Reviews.
 
