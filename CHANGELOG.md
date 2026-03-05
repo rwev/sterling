@@ -2,6 +2,13 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-04 — PM: Willingness to Exit Intact Positions for Better Opportunities
+
+Reinforced that the PM's goal is returns, not thesis defense. Positions with intact theses should still be exited when a materially superior risk/reward opportunity arises — but without overtrading or chasing.
+
+**Agents modified:**
+- `portfolio-manager.md` — added "Thesis completion is not the goal — returns are" paragraph to Mentality: PM should exit weaker positions to fund higher-conviction pitches even if the original thesis is technically intact, while avoiding churn. Updated Hold criteria in Existing Position Review to require R/R competitiveness vs alternatives (not just thesis intact). Updated Close criteria to explicitly include displacement by a superior pitch (e.g., 1.5:1 R/R giving way to 3:1 R/R).
+
 ## 2026-03-02 — Aggressive Risk-Tolerant Mentality for PM and Risk Manager
 
 Rewrote the Mentality sections for both the Portfolio Manager and Risk Manager to favor calculated aggression and conviction-weighted sizing over conservative, limit-driven risk management.
