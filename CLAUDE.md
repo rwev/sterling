@@ -34,7 +34,6 @@ sterling/
     bookkeeping/          # P&L summaries, NAV calculations, ledger entries
     risk/                 # Risk reports, exposure analysis
     investor-relations/   # Portfolio updates for investors
-    post-mortems/         # Post-mortem analysis, analyst scorecards
 ```
 
 ## Team Roles and Responsibilities
@@ -50,7 +49,6 @@ sterling/
 | Bookkeeper         | `artifacts/bookkeeping/`         | P&L, NAV, ledger                        |
 | Risk Manager       | `artifacts/risk/`                | Risk reports, exposure analysis         |
 | Investor Relations | `artifacts/investor-relations/`  | Portfolio updates for investors         |
-| Post-Mortem      | `artifacts/post-mortems/`        | Post-mortem analysis, scorecards          |
 
 ## Agent Data Flow
 
@@ -67,7 +65,6 @@ Agents communicate through documents, not directly. Each agent reads from upstre
 | Risk Manager       | `artifacts/portfolio-manager/`                                                                                                                   | `artifacts/risk/`                |
 | Bookkeeper         | `artifacts/portfolio-manager/`                                                                                                                   | `artifacts/bookkeeping/`         |
 | Investor Relations | `artifacts/portfolio-manager/`                                                                                                                   | `artifacts/investor-relations/`  |
-| Post-Mortem      | `artifacts/portfolio-manager/theses/closed/`, `artifacts/portfolio-manager/`                                                                      | `artifacts/post-mortems/`        |
 
 ### PM–Risk Collaboration Loop
 

@@ -50,23 +50,7 @@ Wait for completion. Collect the output file path.
 
 ---
 
-## Stage 4 — Post-Mortem Analysis (sequential)
-
-If any positions were closed or dropped in Stage 1 or Stage 3 (thesis files moved to `artifacts/portfolio-manager/theses/closed/`), invoke `post-mortem`. Otherwise, skip this stage.
-
-**post-mortem** should:
-- Read `artifacts/post-mortems/.processed` and filter to only new files in `artifacts/portfolio-manager/theses/closed/`
-- For each newly closed position: read the archived thesis, find the relevant IC memos, run WebSearch for realized price/catalyst data, and write a post-mortem document to `artifacts/post-mortems/YYYY-MM-DD_<TICKER>-post-mortem.md`
-- After all individual post-mortems are written, regenerate the analyst scorecard from ALL post-mortem documents: `artifacts/post-mortems/YYYY-MM-DD_analyst-scorecard.md`
-- Update `artifacts/post-mortems/.processed` with the processed closed thesis paths
-
-If the agent reports "Nothing new to process", note it and continue.
-
-Wait for completion. Collect all output file paths.
-
----
-
-## Stage 5 — Commit & Push
+## Stage 4 — Commit & Push
 
 After all stages complete (or after the pipeline short-circuits with no changes):
 
@@ -85,7 +69,6 @@ Report back to the user with:
 1. Existing Position Review summary (Hold/Resize/Close decisions for each position with catalyst highlights)
 2. Conditional Thesis Review summary (Promote/Hold/Drop decisions)
 3. Key risk flags from the Risk Manager and how the PM addressed them in the final memo
-4. Post-mortem verdicts for any closed positions and scorecard highlights (if applicable)
-5. Allocation changes (before vs. after)
-6. Full file manifest with relative paths
-7. Git commit hash and push status
+4. Allocation changes (before vs. after)
+5. Full file manifest with relative paths
+6. Git commit hash and push status
