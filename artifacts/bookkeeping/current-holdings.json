@@ -1,15 +1,15 @@
 {
-  "as_of": "2026-03-04",
-  "cycle": "Cycle VIII",
-  "source": "2026-03-04_ic-memo.md",
-  "total_deployed_pct": 83.0,
-  "cash_pct": 17.0,
+  "as_of": "2026-03-06",
+  "cycle": "Cycle X",
+  "source": "2026-03-06_ic-memo.md",
+  "total_deployed_pct": 80.0,
+  "cash_pct": 20.0,
   "holdings": [
     {
       "ticker": "VRT",
       "allocation_pct": 13.0,
       "entry_range": [240, 260],
-      "current_price": 251.28,
+      "current_price": 246.93,
       "target": 310,
       "stop": 210,
       "sector": "AI Infrastructure"
@@ -18,7 +18,7 @@
       "ticker": "LHX",
       "allocation_pct": 12.0,
       "entry_range": [365, 380],
-      "current_price": 368.75,
+      "current_price": 362.02,
       "target": 450,
       "stop": 320,
       "sector": "Defense/Aerospace"
@@ -27,7 +27,7 @@
       "ticker": "CEG",
       "allocation_pct": 10.0,
       "entry_range": [310, 335],
-      "current_price": 322.85,
+      "current_price": 322.80,
       "target": 410,
       "stop": 275,
       "sector": "Power Generation"
@@ -36,7 +36,7 @@
       "ticker": "VST",
       "allocation_pct": 8.0,
       "entry_range": [165, 180],
-      "current_price": 163.36,
+      "current_price": 163.69,
       "target": 235,
       "stop": 145,
       "sector": "Power Generation"
@@ -45,7 +45,7 @@
       "ticker": "INTC",
       "allocation_pct": 8.0,
       "entry_range": [40, 47],
-      "current_price": 45.58,
+      "current_price": 44.74,
       "target": 65,
       "stop": 34,
       "sector": "Semiconductors"
@@ -54,25 +54,16 @@
       "ticker": "AVGO",
       "allocation_pct": 8.0,
       "entry_range": [305, 325],
-      "current_price": 317.53,
-      "target": 420,
+      "current_price": 336.18,
+      "target": 460,
       "stop": 270,
       "sector": "AI Infrastructure"
-    },
-    {
-      "ticker": "FRO",
-      "allocation_pct": 7.0,
-      "entry_range": [37, 40],
-      "current_price": 36.28,
-      "target": 46,
-      "stop": 33,
-      "sector": "Tanker Shipping"
     },
     {
       "ticker": "IPGP",
       "allocation_pct": 7.0,
       "entry_range": [120, 135],
-      "current_price": 129.27,
+      "current_price": 124.60,
       "target": 180,
       "stop": 100,
       "sector": "Industrial Photonics"
@@ -81,7 +72,7 @@
       "ticker": "AEM",
       "allocation_pct": 5.0,
       "entry_range": [235, 250],
-      "current_price": 232.73,
+      "current_price": 222.18,
       "target": 290,
       "stop": 195,
       "sector": "Gold Mining"
@@ -90,10 +81,33 @@
       "ticker": "INOD",
       "allocation_pct": 5.0,
       "entry_range": [44, 50],
-      "current_price": 44.43,
+      "current_price": 45.70,
       "target": 72,
       "stop": 36,
       "sector": "AI Services"
+    },
+    {
+      "ticker": "FRO",
+      "allocation_pct": 4.0,
+      "entry_range": [37, 40],
+      "current_price": 34.84,
+      "target": 46,
+      "stop": 33,
+      "sector": "Tanker Shipping"
     }
-  ]
+  ],
+  "notes": {
+    "weighted_r_r": "2.3:1",
+    "ai_chain_allocation": "39.0%",
+    "key_directives": [
+      "FRO hard stop at $33 absolute; dividend ex-date March 12",
+      "VST contingency: PANW deploys if VST stops out at $145",
+      "LNG thesis strengthened; Tier 1 deployment on FRO exit",
+      "INTC catalyst-dependent; Intel Vision March 31 decision point",
+      "LLY Priority 1 post-FDA (April 10); Tier 1A deployment",
+      "20% cash strategic for VIX environment",
+      "VaR escalation triggers: VIX >28 for 3+ sessions or HY OAS >3.50%"
+    ],
+    "conditional_pipeline": "14 names (ARMN preferred gold, LLY elevated post-FDA, ZS technical stabilization added, B deprioritized to AEM replacement)"
+  }
 }

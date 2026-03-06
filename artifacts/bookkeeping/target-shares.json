@@ -7,94 +7,94 @@
     {
       "ticker": "VRT",
       "allocation_pct": 13,
-      "price": 251.28,
+      "price": 252.53,
       "price_source": "live",
       "shares": 24,
       "target_value": 6240,
-      "actual_value": 6030.72
+      "actual_value": 6060.72
     },
     {
       "ticker": "LHX",
       "allocation_pct": 12,
-      "price": 368.75,
+      "price": 364.25,
       "price_source": "live",
       "shares": 15,
       "target_value": 5760,
-      "actual_value": 5531.25
+      "actual_value": 5463.75
     },
     {
       "ticker": "CEG",
       "allocation_pct": 10,
-      "price": 322.85,
+      "price": 326.33,
       "price_source": "live",
       "shares": 14,
       "target_value": 4800,
-      "actual_value": 4519.9
+      "actual_value": 4568.55
     },
     {
       "ticker": "VST",
       "allocation_pct": 8,
-      "price": 163.36,
+      "price": 165.86,
       "price_source": "live",
       "shares": 23,
       "target_value": 3840,
-      "actual_value": 3757.28
+      "actual_value": 3814.78
     },
     {
       "ticker": "INTC",
       "allocation_pct": 8,
-      "price": 45.58,
+      "price": 45.72,
       "price_source": "live",
-      "shares": 84,
+      "shares": 83,
       "target_value": 3840,
-      "actual_value": 3828.72
+      "actual_value": 3794.76
     },
     {
       "ticker": "AVGO",
       "allocation_pct": 8,
-      "price": 317.53,
+      "price": 329.24,
       "price_source": "live",
-      "shares": 12,
+      "shares": 11,
       "target_value": 3840,
-      "actual_value": 3810.36
+      "actual_value": 3621.59
     },
     {
       "ticker": "FRO",
       "allocation_pct": 7,
-      "price": 36.28,
+      "price": 35.67,
       "price_source": "live",
-      "shares": 92,
+      "shares": 94,
       "target_value": 3360,
-      "actual_value": 3337.76
+      "actual_value": 3352.51
     },
     {
       "ticker": "IPGP",
       "allocation_pct": 7,
-      "price": 129.27,
+      "price": 129.24,
       "price_source": "live",
       "shares": 25,
       "target_value": 3360,
-      "actual_value": 3231.75
+      "actual_value": 3231
     },
     {
       "ticker": "AEM",
       "allocation_pct": 5,
-      "price": 232.73,
+      "price": 224.3,
       "price_source": "live",
       "shares": 10,
       "target_value": 2400,
-      "actual_value": 2327.3
+      "actual_value": 2243
     },
     {
       "ticker": "INOD",
       "allocation_pct": 5,
-      "price": 44.43,
+      "price": 44.16,
       "price_source": "live",
       "shares": 54,
       "target_value": 2400,
-      "actual_value": 2399.22
+      "actual_value": 2384.53
     }
   ],
-  "total_invested": 38774.26,
-  "rounding_remainder": 1065.74
+  "total_invested": 38535.19,
+  "rounding_remainder": 1304.81
 }
