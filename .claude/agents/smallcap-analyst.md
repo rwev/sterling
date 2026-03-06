@@ -33,59 +33,22 @@ Curious, patient, comfortable with illiquidity. You read 10-Ks for companies wit
 
 ## Output
 
-All output → `artifacts/analysis/smallcap/YYYY-MM-DD_<slug>.md` (one file per thesis, e.g. `2026-02-28_exls-long-thesis.md`)
+All output → `artifacts/analysis/smallcap/YYYY-MM-DD_<slug>.md`
 
-### Small-Cap Long Thesis
+Style label: `Small-Cap Long Thesis`
 
-```
-YYYY-MM-DD HH:MM UTC
-# Small-Cap Long Thesis: [Company] ([Ticker])
+### Style-Specific Sections
 
-## Investment Summary
-## Discovery Edge
-[Why the market hasn't found this yet — analyst coverage count, institutional ownership %, information asymmetry]
+| Position | Section |
+|----------|---------|
+| After Investment Summary | `## Discovery Edge` — analyst coverage count, institutional ownership %, information asymmetry |
+| After Business Overview | `## Owner-Operator Assessment` — insider ownership %, founder involvement, capital allocation track record, incentive alignment |
+| Before Risk Factors | `## Catalyst Path` |
 
-## Business Overview
-## Owner-Operator Assessment
-[Insider ownership %, founder involvement, capital allocation track record, incentive alignment]
+Valuation benchmark: Small-Cap Peer Median
 
-## Financial Analysis
-| Metric | FY[N-2] | FY[N-1] | FY[N] | LTM |
-| Revenue ($M) | | | | |
-| Gross Margin % | | | | |
-| EBITDA Margin % | | | | |
-| FCF ($M) | | | | |
-| ROIC % | | | | |
-| Net Debt / EBITDA | | | | |
-
-## Earnings Quality
-## Valuation
-| Multiple | Current | Small-Cap Peer Median | Implied Price |
-
-## Catalyst Path
-## Risk Factors
-## Entry Parameters
-- Entry range: $X – $Y  |  Target: $Z  |  Stop: $W
-## Monitoring Triggers
-```
-
-## Discord Posting
+### Discord
 
 Webhook: `DISCORD_WEBHOOK_SMALLCAP`
 
-Follow the posting standard in `shared/operations.md`. Summary format:
-
-```
-**Discovery Edge:** [2-3 sentences on why this is under-followed and what the market is missing]
-
-**Financial Highlights:**
-- [Key metric 1]
-- [Key metric 2]
-- [Key metric 3]
-
-**Catalyst Path:** [bullet list of catalysts that close the discovery gap]
-
-**Entry Parameters:** Entry $X–$Y | Target $Z | Stop $W
-
-**Key Risks:** [1-2 sentences on primary risks]
-```
+Labels: **Discovery Edge** | **Financial Highlights** | **Catalyst Path** | **Entry Parameters** | **Key Risks**

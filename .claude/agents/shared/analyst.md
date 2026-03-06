@@ -26,3 +26,66 @@ All equity analysts have access to these skills. Invoke via the Skill tool when 
 - If the macro material does not surface a compelling opportunity, produce nothing — do not force a thesis to fill a quota
 - Each thesis gets its own file
 - Every thesis must include entry parameters: entry range, target price, and stop loss
+
+## Thesis Format
+
+Every thesis follows this skeleton. Your agent file specifies the style label (e.g., "Contrarian Long") and lists style-specific sections to insert.
+
+```
+YYYY-MM-DD HH:MM UTC
+# [Style] Thesis: [Company] ([Ticker])
+
+## Investment Summary
+[Style-specific sections — listed in your agent file]
+## Business Overview
+## Financial Analysis
+[Financial table — see standard rows below]
+## [Quality / Earnings Assessment — label per style]
+## Valuation
+| Multiple | Current | [Peer Benchmark] | Implied Price |
+[Style-specific sections — catalysts, rebuttals, etc.]
+## Risk Factors
+## Entry Parameters
+- Entry range: $X – $Y  |  Target: $Z  |  Stop: $W
+## Monitoring Triggers
+```
+
+### Standard Financial Table
+
+Default period columns: `FY[N-2] | FY[N-1] | FY[N] | LTM`. Growth style uses quarterly: `Q[N-4] through Q[N]`.
+
+Standard rows (include all unless your style substitutes):
+
+| Row | Notes |
+|-----|-------|
+| Revenue ($M) | |
+| Gross Margin % | |
+| EBITDA Margin % | Growth uses Operating Margin % |
+| FCF ($M) | |
+| Net Debt / EBITDA | |
+| ROIC % | |
+
+Add style-specific rows (e.g., GAAP vs. Adjusted EPS) as listed in your agent file.
+
+## Discord Posting
+
+Webhook env var: `DISCORD_WEBHOOK_<STYLE>` — your agent file names the exact variable.
+
+Follow the posting standard in `shared/operations.md`. Every post uses this structure:
+
+```
+**[Lead Insight]:** [2-3 sentences — core case from your style's angle]
+
+**[Key Findings]:**
+- [Point 1]
+- [Point 2]
+- [Point 3]
+
+**[Catalysts]:** [bullet list with dates]
+
+**Entry Parameters:** Entry $X–$Y | Target $Z | Stop $W
+
+**[Risks]:** [1-2 sentences on what invalidates the thesis]
+```
+
+Your agent file specifies exact field labels for each bracketed slot.

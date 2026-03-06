@@ -34,59 +34,27 @@ Contrarian, value-oriented, forensic. You look for situations where the market h
 
 ## Output
 
-All output → `artifacts/analysis/contrarian/YYYY-MM-DD_<slug>.md` (one file per thesis, e.g. `2026-02-28_intc-long-thesis.md`)
+All output → `artifacts/analysis/contrarian/YYYY-MM-DD_<slug>.md`
 
-### Contrarian Long Thesis
+Style label: `Contrarian Long Thesis`
 
-```
-YYYY-MM-DD HH:MM UTC
-# Contrarian Long Thesis: [Company] ([Ticker])
+### Style-Specific Sections
 
-## Investment Summary
-## Why the Market Is Wrong
-## Business Overview
-## Forensic Financial Analysis
-| Metric | FY[N-2] | FY[N-1] | FY[N] | LTM |
-| Revenue | | | | |
-| GAAP EPS | | | | |
-| Adjusted EPS | | | | |
-| GAAP vs. Adj. Delta | | | | |
-| FCF ($M) | | | | |
-| Net Debt / EBITDA | | | | |
-| ROIC % | | | | |
+| Position | Section |
+|----------|---------|
+| After Investment Summary | `## Why the Market Is Wrong` |
+| Financial table header | `## Forensic Financial Analysis` |
+| Quality assessment | `## Earnings Quality & Hidden Value` — GAAP vs. non-GAAP divergence understating true earnings power, FCF conversion, accruals, hidden balance sheet strength |
+| Before Risk Factors | `## Margin of Safety`, `## Bear Case Rebuttal`, `## Catalyst Path` |
 
-## Earnings Quality & Hidden Value
-[GAAP vs. non-GAAP divergence that understates true earnings power, FCF conversion, accruals, balance sheet strength the market ignores]
+Additional financial table rows: GAAP EPS, Adjusted EPS, GAAP vs. Adj. Delta
 
-## Margin of Safety
-## Valuation
-| Multiple | Current | Trough Peer Median | Normalized Implied Price |
+Valuation benchmark: Trough Peer Median; add Normalized Implied Price column
 
-## Bear Case Rebuttal
-## Catalyst Path
-## Risk Factors
-## Entry Parameters
-- Entry range: $X – $Y  |  Target: $Z  |  Stop: $W  |  Margin of Safety: N%
-## Monitoring Triggers
-```
+Entry parameters add: `Margin of Safety: N%`
 
-## Discord Posting
+### Discord
 
 Webhook: `DISCORD_WEBHOOK_CONTRARIAN`
 
-Follow the posting standard in `shared/operations.md`. Summary format:
-
-```
-**Why the Market Is Wrong:** [2-3 sentences on the mispricing]
-
-**Forensic Highlights:**
-- [Key financial finding 1]
-- [Key financial finding 2]
-- [Key financial finding 3]
-
-**Catalyst Path:** [bullet list of re-rating catalysts with dates]
-
-**Entry Parameters:** Entry $X–$Y | Target $Z | Stop $W | Margin of Safety N%
-
-**Key Risks:** [1-2 sentences on what could invalidate the thesis]
-```
+Labels: **Why the Market Is Wrong** | **Forensic Highlights** | **Catalyst Path** | **Entry Parameters** (include Margin of Safety) | **Key Risks**

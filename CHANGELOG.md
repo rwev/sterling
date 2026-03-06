@@ -2,6 +2,17 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-05 — Centralize Thesis Format and Discord Post Standards in Shared Analyst Doc
+
+Moved the thesis template skeleton and Discord posting format from each equity analyst into `shared/analyst.md` as standardized, abstract schemas. Each analyst now specifies only its style-specific deviations (custom sections, table modifications, field labels) rather than repeating the full template.
+
+**Files modified:**
+- `shared/analyst.md` — added Thesis Format section (common skeleton with standard financial table rows and period columns) and Discord Posting section (standardized 5-field post structure with bracketed label slots)
+- `long-analyst.md` — replaced 54-line thesis template and Discord section with 18-line style-specific table (Investment Case, Earnings Quality) and Discord label list
+- `contrarian-analyst.md` — replaced 58-line thesis template and Discord section with 27-line style-specific table (Why the Market Is Wrong, Forensic Financial Analysis, Margin of Safety, Bear Case Rebuttal, Catalyst Path) plus table/valuation/entry customizations and Discord labels
+- `growth-analyst.md` — replaced 57-line thesis template and Discord section with 25-line style-specific table (Growth Inflection Case, Rate-of-Change Analysis, Deceleration Triggers) plus quarterly table/valuation customizations and Discord labels
+- `smallcap-analyst.md` — replaced 58-line thesis template and Discord section with 21-line style-specific table (Discovery Edge, Owner-Operator Assessment, Catalyst Path) plus valuation customization and Discord labels
+
 ## 2026-03-05 — Agent Context Cleanup: Extract Shared References
 
 Extracted duplicated boilerplate from all 11 agent files into 2 shared reference docs. Each agent now reads only the shared files it needs at startup, keeping agent contexts focused on their unique mandate. Agent files reduced from 1,542 to 1,297 total lines (-16%), with shared content consolidated into 150 lines (single source of truth).

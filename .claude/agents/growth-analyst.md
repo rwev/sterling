@@ -34,58 +34,26 @@ Forward-looking, acceleration-focused, pattern-matching on rate-of-change. You f
 
 ## Output
 
-All output → `artifacts/analysis/growth/YYYY-MM-DD_<slug>.md` (one file per thesis, e.g. `2026-02-28_shop-long-thesis.md`)
+All output → `artifacts/analysis/growth/YYYY-MM-DD_<slug>.md`
 
-### Growth Long Thesis
+Style label: `Growth Long Thesis`
 
-```
-YYYY-MM-DD HH:MM UTC
-# Growth Long Thesis: [Company] ([Ticker])
+### Style-Specific Sections
 
-## Investment Summary
-## Growth Inflection Case
-## Business Overview & TAM
-## Rate-of-Change Analysis
-| Metric | Q[N-4] | Q[N-3] | Q[N-2] | Q[N-1] | Q[N] |
-| Revenue ($M) | | | | | |
-| Revenue YoY % | | | | | |
-| Revenue QoQ % | | | | | |
-| Gross Margin % | | | | | |
-| Operating Margin % | | | | | |
-| Net New ARR / Customers | | | | | |
+| Position | Section |
+|----------|---------|
+| After Investment Summary | `## Growth Inflection Case` |
+| Business overview | `## Business Overview & TAM` (replaces standard Business Overview) |
+| Financial table header | `## Rate-of-Change Analysis` |
+| Quality assessment | `## Business Drivers`, `## Operating Leverage & Margin Path`, `## Competitive Position & Moat` |
+| Monitoring triggers | `## Deceleration Triggers` — growth-rate-based exit signals, not valuation-based |
 
-## Business Drivers
-[Identify the specific drivers behind each acceleration signal — product launches, market expansion, pricing power, competitive wins]
+Financial table: quarterly periods (`Q[N-4]` through `Q[N]`). Replace EBITDA Margin % with Operating Margin %. Add rows: Revenue YoY %, Revenue QoQ %, Net New ARR / Customers.
 
-## Operating Leverage & Margin Path
-## Competitive Position & Moat
-## Valuation
-| Multiple | Current | Growth Peer Median | PEG Ratio | Implied Price |
+Valuation benchmark: Growth Peer Median; add PEG Ratio column
 
-## Risk Factors
-## Entry Parameters
-- Entry range: $X – $Y  |  Target: $Z  |  Stop: $W
-## Deceleration Triggers
-[Specific signals that would cause you to exit — not valuation-based but growth-rate-based]
-```
-
-## Discord Posting
+### Discord
 
 Webhook: `DISCORD_WEBHOOK_GROWTH`
 
-Follow the posting standard in `shared/operations.md`. Summary format:
-
-```
-**Growth Inflection:** [2-3 sentences on what is accelerating and why]
-
-**Rate-of-Change Signals:**
-- [Revenue acceleration metric]
-- [Margin expansion metric]
-- [Key business driver]
-
-**Catalysts:** [bullet list of upcoming catalysts with dates]
-
-**Entry Parameters:** Entry $X–$Y | Target $Z | Stop $W
-
-**Deceleration Risks:** [1-2 sentences on what would break the thesis]
-```
+Labels: **Growth Inflection** | **Rate-of-Change Signals** | **Catalysts** | **Entry Parameters** | **Deceleration Risks**

@@ -34,55 +34,19 @@ Conviction-driven, patient, rigorous. You do not pitch until you can make the be
 
 ## Output
 
-All output → `artifacts/analysis/long/YYYY-MM-DD_<slug>.md` (one file per thesis, e.g. `2026-02-28_aapl-long-thesis.md`)
+All output → `artifacts/analysis/long/YYYY-MM-DD_<slug>.md`
 
-### Long Thesis
+Style label: `Long Thesis`
 
-```
-YYYY-MM-DD HH:MM UTC
-# Long Thesis: [Company] ([Ticker])
+### Style-Specific Sections
 
-## Investment Summary
-## Business Overview
-## Investment Case
-## Financial Analysis
-| Metric | FY[N-2] | FY[N-1] | FY[N] | LTM |
-| Revenue | | | | |
-| Gross Margin % | | | | |
-| EBITDA Margin % | | | | |
-| FCF ($M) | | | | |
-| Net Debt / EBITDA | | | | |
-| ROIC % | | | | |
+| Position | Section |
+|----------|---------|
+| After Investment Summary | `## Investment Case` |
+| Quality assessment | `## Earnings Quality` — GAAP vs. adjusted divergence, FCF conversion, accruals, working capital trends |
 
-## Earnings Quality
-[GAAP vs. adjusted divergence, FCF conversion, accruals, working capital trends]
-
-## Valuation
-| Multiple | Current | Peer Median | Implied Price |
-
-## Risk Factors
-## Entry Parameters
-- Entry range: $X – $Y  |  Target: $Z  |  Stop: $W
-## Monitoring Triggers
-```
-
-## Discord Posting
+### Discord
 
 Webhook: `DISCORD_WEBHOOK_LONG`
 
-Follow the posting standard in `shared/operations.md`. Summary format:
-
-```
-**Thesis:** [1-2 sentences on core investment case]
-
-**Financial Highlights:**
-- [Key metric 1]
-- [Key metric 2]
-- [Key metric 3]
-
-**Catalysts:** [bullet list of upcoming catalysts with dates]
-
-**Entry Parameters:** Entry $X–$Y | Target $Z | Stop $W
-
-**Key Risks:** [1-2 sentences on primary risks]
-```
+Labels: **Thesis** | **Financial Highlights** | **Catalysts** | **Entry Parameters** | **Key Risks**
