@@ -2,6 +2,37 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-05 — Agent Context Cleanup: Extract Shared References
+
+Extracted duplicated boilerplate from all 11 agent files into 2 shared reference docs. Each agent now reads only the shared files it needs at startup, keeping agent contexts focused on their unique mandate. Agent files reduced from 1,542 to 1,297 total lines (-16%), with shared content consolidated into 150 lines (single source of truth).
+
+**Files added:**
+- `shared/data-sources.md` — all per-ticker web fetch URLs organized by tier: Core Equity (11 sources, used by 5 agents), Contrarian Extras (3), Growth Extras (2), Small-Cap Extras (4), Macro Sources (7 categories), Risk Sources (11). Each agent applies only its relevant tiers.
+- `shared/operations.md` — conventions (timestamp, file naming, markdown-only), input processing `.processed` loop pattern, Discord posting template and command, skills intro preamble. Used by all 10 writing agents.
+
+**Agents modified (all 11):**
+- `long-analyst.md` — added Startup (Core Equity); removed Current Data Requirement (29 lines), Conventions, skills intro boilerplate, .processed loop; condensed Discord section (146→106 lines)
+- `contrarian-analyst.md` — added Startup (Core Equity + Contrarian Extras); same removals (158→112 lines)
+- `growth-analyst.md` — added Startup (Core Equity + Growth Extras); same removals (155→110 lines)
+- `smallcap-analyst.md` — added Startup (Core Equity + Small-Cap Extras); same removals (159→110 lines)
+- `macro-research.md` — added Startup (Macro Sources); removed Current Data Requirement (49 lines), Conventions, skills intro, self-reference loop; condensed Discord section (163→100 lines)
+- `risk-manager.md` — added Startup (Risk Sources); removed Current Data Requirement (29 lines), Conventions, skills intro, .processed loop; condensed Discord section (165→120 lines)
+- `portfolio-manager.md` — added Startup (operations.md only, no data-sources — PM-unique market searches stay inline, per-ticker delegated to thesis-reviewer); removed Conventions, skills intro, condensed Inputs and Discord sections (237→216 lines)
+- `bookkeeper.md` — added Startup (operations.md); removed Conventions, condensed Inputs and Discord (121→109 lines)
+- `investor-relations.md` — added Startup (operations.md); removed Conventions, condensed Inputs and Discord (83→71 lines)
+- `post-mortem.md` — added Startup (operations.md); removed Conventions, condensed Inputs and Discord; kept inline Current Data Requirement (unique to post-mortem) (190→179 lines)
+- `thesis-reviewer.md` — added Startup (Core Equity from data-sources.md); replaced inline web fetch URLs with shared reference (65→64 lines)
+
+## 2026-03-05 — Add Thesis Reviewer Agent; PM Delegates Per-Ticker Research
+
+Created a mechanical data-collection agent that the Portfolio Manager spawns in parallel (one per ticker) to check current market facts against thesis parameters. The PM no longer performs per-ticker web searches itself — it delegates to thesis-reviewer agents for active positions, conditional theses, and new pitches, then reads structured factual summaries to make portfolio-level decisions. This reduces PM context consumption and enables parallel data collection across 27+ tickers.
+
+**Agents added:**
+- `thesis-reviewer.md` — new agent that reads a single thesis file, runs 7 mandatory web fetches (Yahoo Finance quote, Finviz snapshot, earnings/guidance search, per-catalyst status searches, material news search, analyst estimate revisions, x.com pulse), and returns a ~150-word structured summary with price vs. thesis parameters, catalyst statuses, and material developments. No opinions or recommendations — facts only.
+
+**Agents modified:**
+- `portfolio-manager.md` — added `Agent` to tools list; replaced "Mandatory data collection — per active/conditional position" and "per new pitch" sections with delegation instructions to spawn `thesis-reviewer` agents in parallel; updated Two-Round IC Process draft round description to reflect parallel reviewer spawning; updated Existing Position Review step 3 and Conditional Thesis Review step 3 to reference thesis-reviewer agents instead of inline web searches
+
 ## 2026-03-04 — Bookkeeper: Add Current Holdings JSON Output
 
 Added a structured JSON output to the bookkeeper agent so downstream scripts can consume the current portfolio state programmatically.
