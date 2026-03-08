@@ -52,7 +52,7 @@ Financial table: quarterly periods (`Q[N-4]` through `Q[N]`). Replace EBITDA Mar
 
 Valuation benchmark: Growth Peer Median; add PEG Ratio column
 
-### Discord
+### Discord Configuration
 
 Webhook: `DISCORD_WEBHOOK_GROWTH`
 

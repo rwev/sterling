@@ -53,7 +53,7 @@ Valuation benchmark: Trough Peer Median; add Normalized Implied Price column
 
 Entry parameters add: `Margin of Safety: N%`
 
-### Discord
+### Discord Configuration
 
 Webhook: `DISCORD_WEBHOOK_CONTRARIAN`
 

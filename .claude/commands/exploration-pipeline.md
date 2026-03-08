@@ -46,14 +46,7 @@ Wait for all four to complete. Collect all output file paths. If any analyst pro
 
 ## Stage 3 — Draft IC Memo (sequential)
 
-Provide all Stage 1 and Stage 2 file paths to `portfolio-manager`. Must read every document before writing.
-
-**portfolio-manager** should:
-- First, review all active positions in the thesis library: read `artifacts/portfolio-manager/theses/.active`, read each active thesis, run WebSearch catalyst checks (current price vs. stop/target, catalyst status, material news), and make Hold/Resize/Close decisions for each existing position
-- For any positions decided as Close: copy the thesis to `artifacts/portfolio-manager/theses/closed/` and update `.active`
-- Then, review all new research produced in Stages 1 and 2
-- For any new positions approved: copy the original thesis to `artifacts/portfolio-manager/theses/` and update `.active`
-- Produce a **draft** IC memo covering: Existing Position Review (all active positions with Hold/Resize/Close decisions and catalyst updates), each new idea reviewed, proposed decision (approved / rejected), and proposed allocation weights
+**portfolio-manager** should perform **draft round**
 - Write output to `artifacts/portfolio-manager/YYYY-MM-DD_ic-memo-draft.md`
 
 Wait for completion. Collect the output file path.
@@ -65,9 +58,6 @@ Wait for completion. Collect the output file path.
 Provide the Stage 3 draft IC memo file path to `risk-manager`. Must read the draft IC memo before writing.
 
 **risk-manager** should:
-- Assess marginal risk contribution of each proposed position from the draft IC memo
-- Produce a portfolio risk report: updated gross/net exposure, factor impacts, concentration flags, VaR estimate, liquidity profile, stress test snapshot, and any limit warnings
-- Explicitly flag any positions or allocations that breach risk limits or raise concerns the PM should address
 - Write output to `artifacts/risk/YYYY-MM-DD_risk-report.md`
 
 Wait for completion. Collect the output file path.
@@ -78,7 +68,8 @@ Wait for completion. Collect the output file path.
 
 Provide the Stage 4 risk report file path (plus all prior file paths) to `portfolio-manager`. Must read the risk report before writing.
 
-**portfolio-manager** should:
+**portfolio-manager** should perform **final round** 
+
 - Read the Risk Manager's assessment
 - Incorporate risk feedback: adjust allocations, add hedging directives, reject positions that breach limits, or accept flagged risks with documented rationale
 - If risk feedback causes any position to be closed (or reverses a draft-round approval): copy the thesis to `artifacts/portfolio-manager/theses/closed/` and remove it from `.active`
@@ -107,19 +98,6 @@ Provide the Stage 5 final IC memo file path to both `bookkeeper` and `investor-r
 
 Wait for both to complete.
 
----
-
-## Stage 7 — Commit & Push
-
-After all stages complete (or after the pipeline short-circuits with nothing new):
-
-1. Stage all new and modified files: `git add -A`
-2. Commit with message: `Add YYYY-MM-DD pipeline output and agent updates`
-3. Push to remote: `git push`
-
-If the commit or push fails, report the error but do not retry.
-
----
 
 ## Pipeline Complete
 

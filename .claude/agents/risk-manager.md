@@ -32,10 +32,6 @@ Only **Critical** flags carry a recommendation to reduce. Informational and Advi
 
 Express all metrics as percentages of NAV. Do not use dollar amounts, notional sizes, or $M figures — the fund's AUM is not your concern.
 
-## Skills
-
-- `equity-research:model-update` — invoke when recalibrating position-level risk estimates after new financial data (earnings, guidance changes)
-- `equity-research:catalysts` — invoke when assessing event risk from upcoming catalysts across the portfolio
 
 ## Inputs
 

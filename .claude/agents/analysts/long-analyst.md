@@ -45,7 +45,7 @@ Style label: `Long Thesis`
 | After Investment Summary | `## Investment Case` |
 | Quality assessment | `## Earnings Quality` — GAAP vs. adjusted divergence, FCF conversion, accruals, working capital trends |
 
-### Discord
+### Discord Configuration
 
 Webhook: `DISCORD_WEBHOOK_LONG`
 

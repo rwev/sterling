@@ -8,9 +8,9 @@ Today's date is available in your context. Use it for all timestamps and file na
 
 Invoke `portfolio-manager`. It should:
 
-- **Skip the `.processed` filter and new-pitch evaluation entirely** — there are no upstream analyst documents to review in this pipeline
-- **Existing Position Review**: Read `artifacts/portfolio-manager/theses/.active`, read each active thesis, run WebSearch catalyst checks (current price vs. stop/target, catalyst status, earnings/guidance, material news, analyst sentiment), and make Hold/Resize/Close decisions for each position
-- **Conditional Thesis Review**: Read `artifacts/portfolio-manager/theses/.conditional`, read each conditional thesis, run the same WebSearch checks, and make Promote/Hold/Drop decisions
+- Skip the **`New Thesis Pitch Reviews`** entirely** — there are no upstream analyst documents to review in this pipeline.
+- Execute **Existing Position Review**: Read `artifacts/portfolio-manager/theses/.active`, and delegate review to make make Hold/Resize/Close decisions for each position
+- Execute **Conditional Thesis Review**: Read `artifacts/portfolio-manager/theses/.conditional` and delegate review to make Promote/Hold/Drop decisions
 - For any positions decided as Close or Drop: copy the thesis to `artifacts/portfolio-manager/theses/closed/` and update `.active` / `.conditional`
 - For any conditional theses Promoted: move the filename from `.conditional` to `.active` and assign an allocation weight
 - Produce a **draft** IC memo covering: Existing Position Review, Conditional Thesis Review, updated Portfolio Snapshot, and any allocation changes
@@ -47,18 +47,6 @@ Provide the Stage 2 risk report file path (plus the Stage 1 draft) to `portfolio
 - Write output to `artifacts/portfolio-manager/YYYY-MM-DD_ic-memo.md`
 
 Wait for completion. Collect the output file path.
-
----
-
-## Stage 4 — Commit & Push
-
-After all stages complete (or after the pipeline short-circuits with no changes):
-
-1. Stage all new and modified files: `git add -A`
-2. Commit with message: `Add YYYY-MM-DD portfolio review output`
-3. Push to remote: `git push`
-
-If the commit or push fails, report the error but do not retry.
 
 ---
 

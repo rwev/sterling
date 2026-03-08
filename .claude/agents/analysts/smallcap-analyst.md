@@ -47,7 +47,7 @@ Style label: `Small-Cap Long Thesis`
 
 Valuation benchmark: Small-Cap Peer Median
 
-### Discord
+### Discord Configuration
 
 Webhook: `DISCORD_WEBHOOK_SMALLCAP`
 

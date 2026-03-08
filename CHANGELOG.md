@@ -2,6 +2,55 @@
 
 All notable changes to Sterling's agent system are documented here.
 
+## 2026-03-07 — Prompt Injection Defense for Web-Fetching Agents
+
+Added Web Content Security sections to all agents that use WebSearch/WebFetch, defending against adversarial text in web-sourced content propagating through the document chain.
+
+**Agents modified:**
+- `shared/analyst.md` — added Web Content Security section: treat web content as untrusted data (never as instructions), flag suspected prompt injection, require blockquote attribution with source URL and fetch timestamp for all web-sourced content, do not propagate unverified extraordinary claims
+- `macro-research.md` — added identical Web Content Security section (macro-research is upstream of analysts and does not read `shared/analyst.md`)
+- `thesis-reviewer.md` — added lighter Web Content Security section with prompt injection awareness and corroboration rule (no blockquote convention since reviewer returns inline summaries, not documents consumed downstream)
+
+## 2026-03-07 — Agent Restructure: Move Analysts to Subdirectory, Slim PM, Remove Skills & Commit Stages
+
+Relocated the four equity analyst agents from `agents/` to `agents/analysts/`, removed Skills sections across all agents (equity-research plugin skills are no longer referenced inline), added a conditional thesis cap, restructured the PM's IC process into clearly separated Draft/Final round sections, added a formal New Thesis Pitch Reviews section with `.processed`-based filtering, and removed auto-commit stages from both pipeline commands.
+
+**Agents moved:**
+- `contrarian-analyst.md`, `growth-analyst.md`, `long-analyst.md`, `smallcap-analyst.md` — moved from `.claude/agents/` to `.claude/agents/analysts/`; renamed Discord subsection header from "Discord" to "Discord Configuration" (content unchanged)
+
+**Agents modified:**
+- `portfolio-manager.md` — removed Startup, Skills, Inputs, Current Data Requirement, Two-Round IC Process, Library Structure, First-Run Backfill, and Resize vs. Close sections; added `# DRAFT ROUND` and `## FINAL ROUND` section headers to clearly separate the two IC rounds; added formal "New Thesis Pitch Reviews (Draft Round)" section with `.processed`-based filtering of already-evaluated pitches; consolidated Thesis Reviewer Delegation into a single standalone section (moved out of Inputs); added maximum 10 conditional theses constraint; inlined Discord post command (removed webhook reference to shared/operations.md); rewrote On Approving/On Conditionally Approving to use Bash `cp`
+- `risk-manager.md` — removed Skills section (equity-research:model-update, equity-research:catalysts)
+- `macro-research.md` — removed Skills section (equity-research:sector, screen, catalysts, morning-note)
+- `thesis-reviewer.md` — added Step 2 (Read the Latest Macro Report) with glob pattern, regime/sector/theme/trigger extraction, and no-editorializing rule; added `Macro:` line to structured summary template; renumbered Steps 2→3, 3→4; updated Rules to reference Step 3 for web fetches
+- `shared/analyst.md` — removed Skills section (7 equity-research skill references); added output rule requiring analysts to review existing files in their output directory before writing to avoid duplicates; added stray "Post" line after Discord template (appears to be incomplete edit)
+- `shared/operations.md` — removed Skills Preamble section; reworded Discord posting rules (clarified "summarize independently" for multi-document runs, replaced "Discord does NOT render markdown tables" with simpler "Do not use markdown tables"); minor reformatting of post command template
+
+**Commands modified:**
+- `exploration-pipeline.md` — removed detailed PM instructions from Stage 3 (replaced with "perform draft round" reference); removed detailed risk-manager bullet points from Stage 4 (agent follows its own instructions); removed Stage 7 (Commit & Push) entirely
+- `portfolio-review.md` — rewrote Stage 1 PM instructions to reference agent's own Existing Position Review and Conditional Thesis Review sections instead of duplicating steps; removed Stage 4 (Commit & Push) entirely
+
+## 2026-03-06 — Thesis Reviewer: Add Macro Report Cross-Reference Step
+
+Added a new Step 2 ("Read the Latest Macro Report") to the thesis-reviewer agent so that each per-ticker review now includes macro context. The reviewer globs for the most recent `*_macro-outlook.md`, extracts the regime classification, sector view for the ticker's sector, relevant themes/tailwinds/risks, and applicable monitoring triggers — all using the macro report's own language (no editorializing). A new `Macro:` line was added to the structured output template between `News:` and `Estimates:`. Existing steps renumbered (old Step 2→3, old Step 3→4) and the "do not skip steps" rule updated to reference the correct step number.
+
+**Agents modified:**
+- `thesis-reviewer.md` — added Step 2 (Read the Latest Macro Report) with glob pattern, four extraction bullets, and no-editorializing rule; added `Macro:` line to structured summary template; renumbered Steps 2→3, 3→4; updated Rules to reference Step 3 for web fetches
+
+## 2026-03-06 — PM: Explicit Agent Tool Delegation for Thesis-Reviewer
+
+The Portfolio Manager was spawning thesis-reviewer agents via `Bash(env -u CLAUDECODE claude ...)`, which creates unmanaged subprocesses, bypasses safety/permission models, loses structured result handling, and makes cost opaque. Added an explicit "Thesis Reviewer Delegation" section to the PM agent requiring use of the **Agent tool** with `subagent_type: "thesis-reviewer"` — the only supported mechanism. Updated all three spawn points (active, conditional, new-pitch) to reference this pattern. Added explicit prohibition against Bash-based agent spawning.
+
+**Agents modified:**
+- `portfolio-manager.md` — added "Thesis Reviewer Delegation" section after Constraints specifying Agent tool with `subagent_type: "thesis-reviewer"`, parallel dispatch pattern, required prompt fields (thesis file path + review type), example prompt, and explicit "Never use Bash to spawn agents" rule; updated Existing Position Review step 2, Conditional Thesis Review step 2, and New Thesis Pitch Reviews step 2 to reference the delegation section
+
+## 2026-03-05 — PM: Delegate All Thesis Reading to Thesis-Reviewer Agents
+
+Removed all direct thesis file reads from the Portfolio Manager to preserve clean PM context for decision-making. Thesis content (active positions, conditional theses, and new pitches) is now read exclusively by `thesis-reviewer` agents. File operations (approve, conditionally approve, close) use Bash `cp` instead of Read+Write to avoid pulling thesis content into PM context.
+
+**Agents modified:**
+- `portfolio-manager.md` — updated Inputs to note thesis content is read by thesis-reviewer agents, not the PM; removed "read the full thesis" step from Existing Position Review (step 2 deleted, renumbered 3→2, 4→3, 5→4); removed same from Conditional Thesis Review (step 2 deleted, renumbered); changed On Approving, On Conditionally Approving, and On Closing from Read+Write to Bash `cp`; updated First-Run Backfill to use `cp` instead of reading files into context
+
 ## 2026-03-05 — Centralize Thesis Format and Discord Post Standards in Shared Analyst Doc
 
 Moved the thesis template skeleton and Discord posting format from each equity analyst into `shared/analyst.md` as standardized, abstract schemas. Each analyst now specifies only its style-specific deviations (custom sections, table modifications, field labels) rather than repeating the full template.
